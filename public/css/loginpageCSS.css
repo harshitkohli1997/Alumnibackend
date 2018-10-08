@@ -1,0 +1,17 @@
+#emaillogindiv{
+    border: 1px solid black;
+height: auto;
+}
+.subtitle{
+color: rgb(93, 93, 93);
+    font-size: 17px;
+    font-weight: bold;
+    margin: 3px 10px;
+border-top: 1px solid black;
+
+}
+.subtitlecontent{
+    font-size: 12px;
+    font-family: "Proximanova", Helvetica, Arial, sans-serif;
+    padding: 10px;
+}

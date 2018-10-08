@@ -1,0 +1,199 @@
+#successhead{
+    font-size: 35px;
+    font-family: "Myanmar Text";
+    font-weight: bold;
+    
+
+}
+.sucessheadbackground{
+    padding: 25px;
+    border-radius: 3px;
+    background-color: #1b86bc;
+    border: 1px solid black;
+    
+}
+.successstorydiv{
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+.successstorymoverdiv{
+    position: relative;
+    width: 1600px;
+    min-height: 400px;
+    margin-left: 20px;
+    padding: 10px;
+
+}
+.alumnideptwise{
+    position: absolute;
+    border: 0.2px solid #dedede;
+    font-family: Roboto;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    height: 350px;
+}
+.alumnidiv-heading{
+    font-family: Candara;
+    letter-spacing: 2.5px;
+    border-top: #efa2a9 1px solid;
+    border-bottom: #efa2a9 solid 1px;
+    padding: 5px;
+    background-color: lightskyblue;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px
+}
+.alumni-div{
+    position: relative;
+    height: auto;
+    width: auto;
+}
+#cse-branch{
+    transform: translateX(20%);
+}
+#it-branch{
+    transform: translateX(135%);
+}
+
+#ece-branch{
+    transform: translateX(250%);
+}
+#mech-branch{
+    transform: translateX(360%);
+}
+#civil-branch{
+    transform: translateX(450%);
+}
+#eee-branch{
+    transform: translateX(550%);
+}
+
+/*Media query For md alumni divs*/
+@media screen and (max-width: 1000px){
+    .alumnideptwise{
+        position: relative;
+    }
+    #cse-branch{
+        transform: translateX(0);
+    }
+    #it-branch{
+        transform: translateX(330px);
+        top: -200px;
+    }
+    #ece-branch{
+        transform: translateX(0);
+        top: -300px;
+    }
+    #mech-branch{
+        transform: translateX(330px);
+        top: -500px;
+        display: block;
+    }
+    #civil-branch{
+        transform: translateX(0);
+        top: -600px;
+        display: block;
+    }
+    #eee-branch{
+        display: block;
+        top: -800px;
+        transform: translateX(330px);
+    }
+    .successstorymoverdiv{
+        height: 1500px;
+    }
+    .successmoverbtns{
+        display: none;
+    }
+}
+.successmoverbtns:hover{
+    cursor: pointer;
+}
+@media screen and (max-width: 768px){
+    .alumnideptwise{
+        position: absolute;
+    }
+    #it-branch{
+        transform: translateX(120%);
+        top: 10px;
+    }
+    #ece-branch{
+        transform: translateX(600px);
+        top: 10px;
+    }
+    .successstorymoverdiv{
+        height: auto;
+    }
+    .successmoverbtns{
+        display: block;
+    }
+}
+
+.movementbtns{ top: 50px;
+    height: 50px;
+    background-color: transparent;
+    font-size: 15px;
+}
+.movementbtns:hover{
+   background-color: #b1dfbb;
+}
+.successstoryitem{
+    position: relative;
+    width: 100%;
+
+}
+.successstoryitem-content{
+    font-size: 18px;
+    color: #6f42c1;
+    padding: 10px;
+
+}
+#successmoverprevbtn{
+    position: absolute;
+    bottom: 50%;
+    left: 10px;
+    font-size: 20px;
+
+}
+#successmoverprevbtn div{
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    border-radius: 100px;
+    border: 1px solid gray;
+}
+#successmovernextbtn{
+    position: absolute;
+    bottom: 50%;
+    right: 10px;
+    font-size: 20px;
+}
+#successmovernextbtn div{
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    border-radius: 100px;
+    border: 1px solid gray;
+}
+@keyframes frontback {
+    0%{
+
+    }
+    50%{
+        transform: translateX(3px);
+    }
+    100%{
+        transform: translateX(-3px);
+    }
+}
+#successmovernextbtn div i{
+    animation: ease-in 2s frontback infinite;
+}
+.carousel-img-settings{
+    height:auto; width:100%;
+}

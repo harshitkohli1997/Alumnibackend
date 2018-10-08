@@ -1,0 +1,44 @@
+#footermapcontainer{
+    margin-top: 70px;
+}
+#footermapimg{
+    position: relative;
+    width: 100%;
+    border: 2px solid black;
+    height: 335px;
+    background-image: url("../../files/footermapimage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#footermaptext{
+    font-weight: 400;
+    font-size: 20px;
+}
+#footermapheading{
+    color: rgb(255,255,255);
+    font-size: 27px;
+    font-weight: bold;
+    font-family: "Proximanova", "Helvetica", "Arial", "sans-serif";
+}
+.svgdivalign{
+    display: inline-block;
+}
+.svginnerdivtext{
+    display: inline-block;padding: 5px;
+}
+.svginnerdivsalignment{
+    font-size: 17px;text-align: left;margin-left: 3px;
+}
+.buildingfooter path{
+    fill: #1b86bc;
+}
+.buildingfooter:hover path{
+    stroke-opacity: 1;
+    cursor: pointer;
+}
+@media screen and (max-width: 766px){
+    #footermapcontainer{
+        display: none;
+    }
+}

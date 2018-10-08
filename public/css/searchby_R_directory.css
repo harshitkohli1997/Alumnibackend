@@ -1,0 +1,49 @@
+body{
+    overflow-x: hidden;
+}
+.first{
+    text-align: center;
+}
+input:focus{
+    outline: none;
+}
+.first{
+    text-align: center;
+}
+ul.resourcelist{
+    margin-top: 10px;
+    padding-left: 1px;
+    list-style-type: none;
+}
+ul.resourcelist li{
+    font-size: 15px;
+    font-family: "Proximanova",Helvetica,Arial,sans-serif;;
+    margin: 3px 0;
+    padding: 5px 1px;
+    color: rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+ul.resourcelist li:hover{
+
+    border: 0.05px solid rgba(0,0,0,0.1);
+
+}
+.resourcelist li a{ width: 50px;
+    padding:20px 10px;
+    text-decoration: none;
+    color: inherit;
+}
+.resourcelist li a:hover{
+    text-decoration: none;
+    color: inherit;
+
+}
+.clearfix{
+    display: inline-block;
+    width: auto;
+}
+.clearfix p{
+    display: inline-block;
+    width: auto;
+}
+

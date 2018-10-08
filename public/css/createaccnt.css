@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ececec;
+}
+
+
+
+p.already-member{
+   text-align: right;
+   margin-right: 6px;
+   font-style: italic;
+}
+
+p.title{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    background-color: skyblue;
+    color: darkblue;
+    
+    }
+
+p.text1{
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 12px;
+    text-align: center;
+    font-style: italic;
+    border-bottom: 1px solid black;
+    color: midnightblue
+}
+
+form{
+    width: 60%;
+    max-width: 600px;
+    padding: 10px 20px;
+    margin: 30px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    background-color: white;
+}
+
+label{
+    display: block;
+    padding: 10px 0px;
+    font-weight:500
+    
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    background-color: #ececec;
+    outline: none;
+    transition: all 0.4s;
+}
+
+#gender{
+    margin-top: 4px;
+}
+
+#gender label{
+    display: inline-block;
+    padding: 10px 0px;
+    
+}
+
+#gender input{
+    width: auto;
+    margin: 10px;
+}
+
+input:focus{
+    border: 1px solid blue;
+    background-color: white;
+}
+
+
+#create{
+    padding: 10px 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border: none;
+    background-color: midnightblue;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    border-radius: 20px 0px;
+    }
+
+#create:hover{
+    background-color: cadetblue;
+    color: black;
+}
+

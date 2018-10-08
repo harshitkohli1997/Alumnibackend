@@ -1,0 +1,158 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>updateinfo</title>
+    <link rel="stylesheet" href="../../css/updateinfo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="Bootstrap/dist/js/jquery-3.2.1.js"></script>
+    <script src="css/updateinfo.js"></script>
+</head> --}}
+{{!-- <body> --}}
+<!-- multistep form -->
+<form id="msform" method="post" action="/profileupdate">
+    <!-- progressbar -->
+    <ul id="progressbar">
+        <li class="active">Basic Info</li>
+        <li>Preferences</li>
+        <li>Update</li>
+    </ul>
+    <!-- fieldsets -->
+    <fieldset>
+
+        <h3 class="fs-subtitle">Your information helps us to deliver more value, greater personalization and relevant news.</h3>
+
+
+
+        <label for="mobile"><span>*</span>MOBILE</label>
+        <input type="tel"  id="mobile" name="mobilePhone" placeholder="+91-(999911100)" required >
+
+
+
+        <label for="city"><span>*</span>CITY</label>
+        <input type="text"  id="city" name="city" placeholder="Delhi,Mumbai,Banglore" required>
+
+        <label for="entry"><span>*</span>YEAR OF ENTRY</label>
+        <input type="text"  id="entry" name="entryYear" placeholder="1999" required>
+
+        <label for="graduation"><span>*</span>YEAR OF GRADUATION</label>
+        <input type="text"  id="graduation" name="graduationYear" placeholder="2018" required>
+
+        <label for="course"><span>*</span>COURSE</label>
+        <input type="text"  id="course" name="course" placeholder="Btech" required>
+
+        <label for="browser"><span>*</span>BRANCH</label>
+        <input list="browsers"  id="browser" name="branch" placeholder="Select" required>
+        <datalist id="browsers">
+            <option value="CSE"></option>
+            <option value="IT"></option>
+            <option value="ECE"></option>
+            <option value="EEE"></option>
+            <option value="MECHANICAL"></option>
+            <option value="CIVIL"></option>
+        </datalist>
+
+        <label for="enroll"><span>*</span>ENROLLMENT NUMBER</label>
+        <input type="text"  id="enroll" name="enrollementNumber" placeholder="12315602716" required>
+        <input type="button" name="next" class="next action-button" value="Proceed" required>
+    </fieldset>
+
+
+
+    <fieldset>
+
+        <h3 class="fs-subtitle">We care for your data and privacy more than ever. Feel safe.</h3>
+        <h4>COMMUNICATION & GDPR</h4>
+        <p>We occasionally send out updates that might be relevant to your city, class or all members of this community.</p>
+
+
+        <div id="comm1">
+            <label class="radio">1. I'm happy to receive updates on my email.</label>
+            <label class="radio">Yes
+                <input type="radio">
+            </label>
+            <label class="radio">No
+                <input type="radio">
+            </label>
+        </div>
+
+        <div id="comm2">
+            <label class="radio">2. I'm happy to receive mail at my address.</label>
+            <label class="radio">Yes
+                <input type="radio">
+            </label>
+            <label class="radio">No
+                <input type="radio">
+            </label>
+        </div>
+
+        <div id="comm3">
+            <label class="radio">3. I'm happy to be receive updates on my phone.</label>
+            <label class="radio">Yes
+                <input type="radio">
+            </label>
+            <label class="radio">No
+                <input type="radio">
+            </label>
+        </div>
+
+
+        </div>
+
+
+        <h4>OTHER PREFERENCES</h4>
+
+        <div id="pre1">
+            <label class="container">Receive messages from students
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+        <div id="pre2">
+            <label class="container">Mentor younger students
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+
+        <div id="pre3">
+            <label class="container">Support for Community Services
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+        <div id="pre4">
+            <label class="container">Support for Alumni meet
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+
+
+
+
+        <input type="button" name="next" class="next action-button" value="Next" >
+    </fieldset>
+
+
+
+    <fieldset>
+
+        <h3 class="fs-subtitle">Profiles with up to date information help us send you relevant information</h3>
+        <h4 class="update">UPDATE YOUR PROFILE INFORMATION</h4>
+
+        <button class="btn-own"><i class="fab fa-facebook-square"></i> Update using facebook</button>
+        <button class="btn-own"><i class="fab fa-linkedin"></i> Update using linkdin</button>
+
+        <p id="profile">Update your profile information and maximize your networking potential!</p>
+
+
+       <input type="submit" name="submit" class="submit action-button" value="Update Profile" />
+    </fieldset>
+</form>
+</body>

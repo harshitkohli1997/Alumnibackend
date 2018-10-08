@@ -1,0 +1,508 @@
+<html lang="en-us"><head>
+
+
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Official alumni website of ADGITM"><meta property="og:description" content="Official alumni website of ADGITM"><meta property="files/logo-adgitm-small2.jpg" content="files/logo-adgitm-small2.jpg"><meta name="keywords" content="Alumni, Students, Faculty, College, ADGITM"><title>ADGITM - Sign In / Sign Up</title><meta property="fb:app_id" content="620675051429160">
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://static.almabaseapp.com/css/themes/fifth/lpu.2a237530a31d.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="https://media.almabaseapp.com/533/meta/favicon-16x16x.png">
+
+    <style>
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            background-color: #F4F4F4 !important;
+        }
+        /******* Notibar ********/
+        #notibar {
+            background: rgba(234, 84, 85, 0.95);
+            color: #fff;
+            padding: 1.0rem;
+            width: 100%;
+            border-bottom: 1px solid #BF4443;
+            text-align: center;
+        }
+
+        #notibar p {
+            margin-bottom: 0;
+        }
+
+        #notibar a.learn_more,
+        #notibar #resend_link_btn {
+            padding: 0.1rem 1.3rem;
+            background: #BF4443;
+            display: inline-block;
+            vertical-align: bottom;
+            margin-left: 0.7rem;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #notibar.unverified {
+            background: rgba(167, 66, 92, 0.95);
+        }
+
+        #notibar.unverified a.learn_more {
+            background: #96203E;
+        }
+
+        /*** Header ***/
+
+        #header {
+            padding: 0 1.5rem;
+            background-color: #fff;
+            box-shadow: 0 0 0 2px #e4e4e4;
+        }
+
+        @media (max-width: 64rem) {
+            #header {
+                padding: 0;
+            }
+        }
+
+        #header .intro-root {
+            position: relative;
+            height: 7rem;
+            padding: 0;
+        }
+
+        .row.row-container, .row-container.row-container {
+            max-width: 98rem;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #header .intro-root .logo-section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            padding: 1rem 0;
+            display: block;
+        }
+
+        @media (max-width: 64rem) {
+            #header .intro-root .logo-section {
+                width: 100%;
+            }
+        }
+
+        #header .intro-root .logo-section a {
+            display: table;
+            text-decoration: none;
+            float: left;
+        }
+
+        #header .intro-root .logo-section a .logo {
+            height: 5rem;
+        }
+
+        #header .intro-root .logo-section a span {
+            display: table-cell;
+            vertical-align: middle;
+            color: #3f3f3f;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            text-decoration: none;
+            letter-spacing: 0.4px;
+            padding-left: 1.5rem;
+        }
+        @media (max-width: 64rem) {
+            #header .intro-root .logo-section a span.logo-section-full-name {
+                display: none;
+            }
+        }
+
+        #header .intro-root .logo-section a span.logo-section-short-name {
+            display: none;
+        }
+
+        @media (max-width: 64rem) {
+            #header .intro-root .logo-section a span.logo-section-short-name {
+                display: table-cell;
+            }
+        }
+
+        #header .intro-root .social-section {
+            justify-content: flex-end;
+            display: -ms-flexbox;
+            display: flex;
+            height: inherit;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+
+        @media (max-width: 64rem) {
+            #header .intro-root .social-section {
+                display: none;
+            }
+        }
+
+        #header .intro-root .social-section div {
+            display: inline-flex;
+        }
+
+        #header .intro-root .social-section div p {
+            display: inline;
+            color: #bababa;
+            font-size: 1.4rem;
+            margin: 0.5rem 1rem;
+        }
+
+        #header .intro-root .social-section div a {
+            margin: 0 0.5rem;
+            color: #bababa;
+            font-size: 1.4rem;
+            padding: 0.9rem 0;
+            line-height: 1;
+            text-align: center;
+        }
+
+        #root #loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin: -3.2rem;
+        }
+
+        #root #loader #lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+        #root #loader #lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-width: 6px;
+            border-style: solid;
+            border-color: #fff transparent transparent transparent;
+        }
+        #root #loader #lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+        #root #loader #lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+        #root #loader #lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /** Toast message **/
+        #toast_message {
+            position: fixed;
+            top: 30px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: auto;
+            z-index: 9999;
+            max-width: 600px;
+            min-width: 300px;
+            min-height: 20px;
+            padding: 5px;
+            background-color: #f9edbe;
+            border: 1px solid #f0c36d;
+            color: #222;
+            overflow: hidden;
+            text-align: center;
+            display: none;
+            cursor: pointer;
+            font-weight: 700;
+            box-sizing: content-box;
+        }
+
+    </style>
+
+
+
+    <style type="text/css">
+        #header .intro-root .logo-section a span {
+            display: none !important
+        }
+
+        #homepage-container #homepage-slider-container .homepage-slider-back .homepage-slider-content {
+            background-color: transparent
+        }
+
+        @media only screen and (min-width: 64em) {
+            #header .intro-root {
+                height: 10rem;
+            }
+
+            #header .intro-root .logo-section {
+                padding: 2rem 0;
+            }
+
+            #header .intro-root .logo-section a .logo {
+                height: 6rem;
+            }
+            #header .intro-root .social-section div a {
+                font-size: 1.4rem;
+                background: #F78222;
+                width: 25px;
+                height: 25px;
+                color: #fff;
+                text-align: center;
+                padding: 6px 0px;
+                border-radius: 4px;
+            }
+            #header .intro-root .social-section div a:hover {
+                color: #fff;
+                background: #ec7615;
+            }
+        }
+        @media only screen and (min-width: 64em){
+            #mentorship-dashboard-wrapper {
+                top: 15rem;
+            }
+        }
+    </style>
+
+
+
+
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KK66P4Z"></script><script>
+
+    navigator.sayswho= (function(){
+        var ua= navigator.userAgent, tem,
+            M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if(/trident/i.test(M[1])){
+            tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+            return 'IE '+(tem[1] || '');
+        }
+        if(M[1]=== 'Chrome'){
+            tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+            if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+        }
+        M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+        if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+        return M.join(' ');
+    })();
+
+    var browserVersion = navigator.sayswho;
+
+    if(browserVersion == 'MSIE 6' || browserVersion == 'MSIE 7' || browserVersion == 'MSIE 8' || browserVersion == 'MSIE 9') {
+        var unSupportedText = '<div style="text-align: center;padding: 1rem;"><p>Please upgrade your browser to use the website.</p>' +
+            '<p>We built alumni.lpu.in using the latest technology to give users the best experience possible. ' +
+            'Unfortunately, the browser that you are currently using does not support some of these technologies. ' +
+            'Please use modern browsers to get started.</p></div>';
+        document.write(unSupportedText);
+        try {
+            window.stop();
+        } catch (exception) {
+            document.execCommand('Stop');
+        }
+    }
+</script>
+
+
+    <script type="text/javascript" src="https://static.almabaseapp.com/js/jquery-latest.min.a9a0cc296e96.js"></script>
+
+
+
+    <script src="https://cdn.ravenjs.com/3.23.1/raven.min.js" crossorigin="anonymous"></script>
+    <script>
+        Raven.config('https://fa84fa555ce34dd39c836e97f4f90904@sentry.io/296246', {
+            logger: 'javascript',
+            environment: 'production',
+            whitelistUrls: [
+                window.location.href,       // your code
+                'static.almabaseapp.com'    // code served on CDN
+            ],
+            ignoreErrors: [
+                /^'\$' is undefined$/,
+                /^'\$' is not defined$/,
+                /^'jQuery' is undefined$/,
+                /^jQuery is not defined$/,
+                /^jQuery is undefined$/,
+                /^Modernizr is not defined$/,
+                /^'Modernizr' is not defined$/,
+                /^ntp is not defined$/,
+            ]
+
+        }).install();
+
+        Raven.setUserContext({
+            id: 'Anonymous',
+            site_id: '533',
+            domain: window.location.origin,
+        });
+        window.onerror = function (msg, url, lineNo, columnNo, error) {
+            /**
+             * Please read this to understand the behaviour of window.onerror
+             * why we are filtered the script error.
+             * https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror#Browser_compatibility
+             * **/
+            var string = msg.toLowerCase();
+            var substring = "script error";
+            if (string.indexOf(substring) > -1) {
+                console.log('Script Error: See Browser Console for Detail');
+            }
+            else {
+                Raven.setExtraContext({message: msg, lineNo: lineNo, columnNo: columnNo});
+                Raven.captureException(error)
+            }
+            return false;
+        }
+    </script>
+
+
+    <!-- Google Analytics bugfix with GA being asynchronous refer: https://www.simoahava.com/analytics/ga-snippet-and-ga-gtm-tag-on-the-same-page/#4 -->
+    <script>
+        window['GoogleAnalyticsObject'] = 'ga';
+        window['ga'] = window['ga'] || function () {
+            (window['ga'].q = window['ga'].q || []).push(arguments)
+        };
+    </script>
+
+
+
+    <!-- dataLayer snippet -->
+    <script>
+        dataLayer = window.dataLayer || [];
+        var provUserId = null;
+        var provUserRole = null;
+        var provUserIsAdmin = 'No';
+        var provIsAuthenticated = "No";
+
+
+        dataLayer.push({
+            'prov_status': true,
+            'prov_customername': 'Lovely Professional University',
+            'prov_ga_site_tracking_id': 'UA-80830854-6',
+            'prov_customer_country': 'USA',
+            'prov_customer_plan_purchased': 'Pro',
+            'prov_user_ID': provUserId,
+            'prov_user_is_admin': provUserIsAdmin,
+            'prov_user_role': provUserRole,
+            'prov_user_authenticated': provIsAuthenticated
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KK66P4Z');</script>
+    <!-- End Google Tag Manager -->
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+    </script>
+
+</head>
+
+<body><div id="toast_message"></div>
+
+
+
+
+<div id="header">
+    <ul class="intro-root row row-container">
+        <li class="logo-section">
+            <a href="/">
+
+                <img class="logo" src="files/logo-adgitm-small2.jpg">
+                <span class="logo-section-full-name">ADGITM</span>
+
+                <span class="logo-section-short-name">ADGITM</span>
+            </a>
+        </li>
+        <li class="social-section">
+
+            <div>
+                <p>Contact us on</p>
+                <a target="_blank" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+
+                <a target="_blank" href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+                <a target="_blank" href="https://www.youtube.com"><i class="fa fa-youtube"></i></a>
+
+
+                <a href="mailto:alumni@niec.co.in"><i class="fa fa-envelope"></i></a>
+                <a href="tel:9818281365"><i class="fa fa-phone"></i></a>
+            </div>
+
+        </li>
+    </ul>
+</div>
+
+
+
+
+<div id="root"><div><p id="login-text" class="beetle-p"><span>Already a member? <a href="/login" class="beetle-link-button">Login</a></span></p><div id="signup-view"><div class="ant-row-flex"><div id="side-cover-col" class="ant-col-xs-0 ant-col-lg-10 ant-col-xl-10"><div id="side-cover-image" style="background-image: url(&quot;https://media.almabaseapp.com/533/signup/step/Create%20Account/76c1ed74caa049589cb83a2c082041d8/1-copy.jpg&quot;);"><div id="side-cover-overlay"><div id="side-cover-content" class="position-bottom"><p class="beetle-h600 title">Welcome to LPU Alumni Network</p><div></div></div></div></div></div><div id="step-form-col" class="ant-col-xs-24 ant-col-lg-14 ant-col-xl-14"><div><div id="step-form-header"><p class="beetle-h500 title">Create Account</p><p class="beetle-p text">42846+ members are already on the platform sharing benefits of an engaging alumni network.</p></div><div id="step-form-container"><form class="ant-form ant-form-horizontal"><div class="ant-row-flex" style="margin-left: -12px; margin-right: -12px;"><div class="ant-col-xs-24 ant-col-lg-12 ant-col-xl-12" style="padding-left: 12px; padding-right: 12px;"><div><div class="ant-row ant-form-item ant-form-item-no-colon"><div class="ant-form-item-label"><label for="first_name" class="ant-form-item-required" title="First Name">First Name</label></div><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control has-success"><span class="ant-form-item-children"><input type="text" placeholder="" id="first_name" data-__meta="[object Object]" data-__field="[object Object]" class="ant-input" value="Vaibhav"></span></div></div></div></div></div><div class="ant-col-xs-24 ant-col-lg-12 ant-col-xl-12" style="padding-left: 12px; padding-right: 12px;"><div><div class="ant-row ant-form-item ant-form-item-no-colon"><div class="ant-form-item-label"><label for="last_name" class="ant-form-item-required" title="Last Name">Last Name</label></div><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control has-success"><span class="ant-form-item-children"><input type="text" placeholder="" id="last_name" data-__meta="[object Object]" data-__field="[object Object]" class="ant-input" value="Aggarwal"></span></div></div></div></div></div><div class="ant-col-xs-24 ant-col-lg-24 ant-col-xl-24" style="padding-left: 12px; padding-right: 12px;"><div><div class="ant-row ant-form-item ant-form-item-no-colon"><div class="ant-form-item-label"><label for="email" class="ant-form-item-required" title="Email">Email</label></div><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control has-success"><span class="ant-form-item-children"><input type="email" placeholder="" id="email" data-__meta="[object Object]" data-__field="[object Object]" class="ant-input" value="vaibhav.aggarwal2402@gmail.com"></span><div class="ant-form-extra">This will be your login email ID and password,  you can add communication email later.</div></div></div></div></div></div><div class="ant-col-xs-24 ant-col-lg-12 ant-col-xl-12" style="padding-left: 12px; padding-right: 12px;"><div><div class="ant-row ant-form-item ant-form-item-no-colon"><div class="ant-form-item-label"><label for="password" class="ant-form-item-required" title="Password">Password</label></div><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control has-success"><span class="ant-form-item-children"><span class="ant-input-group-wrapper"><span class="ant-input-wrapper ant-input-group"><input type="password" placeholder="" id="password" data-__meta="[object Object]" data-__field="[object Object]" class="ant-input" value="12345678"><span class="ant-input-group-addon"><i class="anticon anticon-eye-o"></i></span></span></span></span></div></div></div></div></div><div class="ant-col-xs-24 ant-col-lg-12 ant-col-xl-12" style="padding-left: 12px; padding-right: 12px;"><div><div class="ant-row ant-form-item ant-form-item-no-colon"><div class="ant-form-item-label"><label for="role" class="ant-form-item-required" title=""><span><span style="margin-right: 0.5rem;">Role</span><i class="anticon anticon-question-circle-o"></i></span></label></div><div class="ant-form-item-control-wrapper"><div class="ant-form-item-control has-success"><span class="ant-form-item-children"><div class="ant-select ant-select-enabled ant-select-allow-clear"><div class="ant-select-selection
+            ant-select-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0"><div class="ant-select-selection__rendered"><div class="ant-select-selection-selected-value" title="Alumni" style="display: block; opacity: 1;">Alumni</div><div class="ant-select-search ant-select-search--inline" style="display: none;"><div class="ant-select-search__field__wrap"><input id="role" autocomplete="off" class="ant-select-search__field" value=""><span class="ant-select-search__field__mirror">&nbsp;</span></div></div></div><span unselectable="on" class="ant-select-selection__clear" style="user-select: none;"></span><span class="ant-select-arrow" unselectable="on" style="user-select: none;"><b></b></span></div></div></span></div></div></div></div></div></div></form></div><div id="step-form-footer" class="ant-row"><div class="ant-col-xs-24 ant-col-lg-12 ant-col-xl-12"><p class="beetle-p-help">By creating an account, you agree to our&nbsp;<a href="/privacy-policy" target="_blank">Privacy Policy</a> &amp;&nbsp;<a href="/terms-of-use" target="_blank">Terms of Service.</a></p></div><div class="ant-col-xs-24 ant-col-lg-12 ant-col-xl-12" style="text-align: right;"><button id="proceed-btn" type="button" class="ant-btn beetle-confirmation-button ant-btn-primary"><i class="anticon anticon-right-circle-o"></i><span>Create Account</span></button></div></div></div></div></div></div></div></div>
+<script>
+    var csrfToken = 'rOfZ1dch0YHYm3yZET6BkETU6Cz2wD99';
+    var mapKey = 'AIzaSyCdpaD7GIMVrA-uYXILnXpxy4KYsotouVY';
+    var degreeChoices = {"BBA, LL.B. (Hons.)": {}, "B.Design ": {"Fashion": [], "Multimedia": [], "Interior & Furniture": [], "Graphics": [], "Product & Industrial": [], "Film & TV Production": []}, "Ph.D. [Full Time]": {"Ayurvedic Pharmacy": [], "Performing Arts": [], "Management": [], "Psychology": [], "Computer Science & Engineering": [], "Nutrition & Dietetics": [], "Microbiology": [], "Environmental Sciences": [], "Hindi": [], "Political Science": [], "Mathematics": [], "Clinical Microbiology": [], "Electronics & Communication Engineering": [], "Pharmacognosy": [], "Physical Education": [], "Soil Science": [], "Mechanical Engineering": [], "Fine Arts": [], "Fruit Science": [], "Entomology": [], "Biochemistry": [], "Plant Pathology": [], "Law": [], "Food Technology": [], "Commerce": [], "Computer Applications": [], "Pharmacology": [], "Punjabi": [], "Economics": [], "Clinical Biochemistry": [], "Plant Breeding & Genetics": [], "Physiotherapy": [], "English": [], "Biotechnology": [], "Vegetable Science": [], "Chemistry": [], "Physics": [], "History": [], "Botany": [], "Journalism and Mass Communication": [], "Pharmaceutical chemistry": [], "Civil Engineering": [], "Hotel Management": [], "Zoology": [], "Electrical Engineering": [], "Agronomy": [], "Education": [], "Sociology": [], "Pharmaceutics": [], "Geography": []}, "Integrated B.Sc. - B.Ed. ": {}, "Diploma": {"Physical Education (D.P.Ed.)": [], "Bakery & Confectionary": [], "Library & Information Sciences (D. Lib.I.Sc.)": [], "Elementary Education (D.El.Ed.)": [], "Business Administration": [], "Pharmacy-Upvaid (Ayurvedic)": [], "Medical Lab. Technology (DMLT)": [], "Food Production": [], "Fashion Design": [], "Architectural Assistantship": [], "Airline Cabin Crew and Hospitality": [], "Agriculture": [], "Yoga & Physical Education (D.Y.P.E)": []}, "M.Ed.": {"LIED": []}, "BBA [Lateral Entry]": {}, "Master of Library & Information Sciences (M. Lib. I. Sc.)": {}, "B.Tech. -[JEE Main]": {"Mechanical Engineering": [], "Computer Science & Engineering": [], "Civil Engineering": [], "Biotechnology": [], "Electronics & Communication Engineering": [], "Information Technology": []}, "B.Com. [Lateral Entry]": {}, "Integrated B.Tech. - MBA ": {"Biotechnology": [], "Mechanical Engineering": [], "Computer Science & Engineering": [], "BT - Food Process Engineering": [], "Electrical and Electronics Engineering": [], "ME-Mechatronics": [], "AUTOMOBILE ENGINEERING": [], "Civil Engineering": [], "Electronics Computer Engineering": [], "Electrical Engineering": [], "Electronics & Communication Engineering": [], "ME - Aerospace Engineering": [], "CHE - Petroleum": [], "Information Technology": [], "Chemical Engineering": []}, "B.A.LL.B.(Hons.)": {}, "LL.B": {}, "Dual Degree BPT-MPT": {}, "B.A (Hons)": {" English/ Psychology/ Geography/ Sociology/  History/  Economics": []}, "Integrated B.Com - M.Com.": {}, "Post Graduate Diploma": {"Yoga": []}, "MCA (Hons.)  ": {}, "M.Arch.  [Part Time] ": {"Executive": []}, "Dual Degree BCA (Hons.) - MCA (Hons.)": {}, "Dual Programme Diploma": {"Architectural Assistantship - B.Tech. (Civil Engineering)": [], "Agriculture - B.Sc. (Hons.) Agriculture": [], "Architectural Assistantship \u2013  B.Design (Interior & Furniture )": [], "Fashion Design - B.Design (Fashion)": []}, "Diploma (Engg.)[Lateral Entry]": {"Mechanical Engg. (ME)": [], "Electrical Engg. (EE)": [], "Computer Sc & Engg": [], "Computer Sc. & Engg. (CSE)": [], "Civil Engg. (CE)": [], "Information Technology (IT)": []}, "B.Sc(Hons)": {"Botany": [], "Physics": [], "Economics": [], "Microbiology": [], "Zoology": [], "Biotechnology": [], "Chemistry": [], "Agriculture": []}, "M.P.Ed.": {}, "PGDCA": {}, "Diploma Engg.": {"Electronics & Comm. Engg. (ECE)": [], "Mechanical Engg. (ME)": [], "Electrical Engg. (EE)": [], "Computer Sc. & Engg. (CSE)": [], "Civil Engg. (CE)": [], "Information Technology (IT)": []}, "B. Com. (Hons.)": {}, "M.Phil": {"Botany": [], "Physical Education": [], "Management": [], "Hindi": [], "Psychology": [], "Commerce": [], "Punjabi": [], "Economics": [], "Microbiology": [], "Music- Vocal and Instrumental": [], "Education": [], "Computer Science": [], "Mathematics": [], "Zoology": [], "Biotechnology": [], "Chemistry": [], "Physics": [], "English": [], "History": []}, "M.Pharm": {"Ayurveda": [], "Pharmacology": [], "Pharmaceutics": [], "Quality Assurance": []}, "B.A.": {"Performing Arts": [], "Sociology": [], "Psychology": [], "Public Administration": [], "Fine Arts": [], "Yoga & Physical Education": [], "History": [], "Journalism, Mass Communication": [], "Hindi": [], "Political Science": [], "English": [], "Geography": [], "Punjabi": [], "Liberal Arts": []}, "LL.M.": {"Law School": []}, "Dual Programme Diploma (Engg.)": {"B.Tech (Electronics & Communication Engineering)": [], "B.Tech Information Technology": [], "B.Tech Civil Engineering": [], "B.Tech Mechanical Engineering": [], "B.Tech Electrical Engineering": [], "B.Tech(Computer Science & Engineering)": []}, "Bachelor of  Performing Arts (BPA) ": {}, "Bachelor of Hotel Mgt & Catering Technology (BHMCT) [Lateral Entry]": {}, "Master  of Physical Education & Sports (MPES)": {}, "B.Arch.": {}, "B.COM LL.B. (H)": {"Law School": []}, "M.Sc. [Lateral Entry]": {"Computer Science": [], "Hotel Management": []}, "Bachelor of Fine Arts (BFA)": {}, "B.Pharm": {"Regular": [], "Ayurveda": []}, "M.DESIGN": {"Interior & Furniture": [], "Product & Industrial": [], "Fashion": [], "Multimedia": []}, "MCA [Lateral Entry]": {}, "Dual Programme DMLT - B.Sc ": {"Medical Lab Technology": []}, "Integrated B.A. - B.Ed. ": {}, "Dual Degree BBA - MBA": {}, "B.Sc.[Lateral Entry]": {"Design - Product & Industrial": [], "Airlines, Tourism & Hospitality": [], "Medical Lab Technology": [], "Hotel Management": [], "Design - Interior & Furniture": [], "Information Technology": [], "Design - Fashion": []}, "Bachelor of Physiotherapy (BPT)": {}, "Integrated B.Tech. - M.Tech.": {"Biotechnology": [], "Mechanical Engineering": [], "Computer Science & Engineering": [], "Civil Engineering": [], "Electrical Engineering": [], "Electronics & Communication Engineering": [], "Information Technology": []}, "B.Pharm (Lateral Entry)": {"Ayurveda": []}, "Integrated B.A. - M.A.": {}, "MCA (Hons.) [Lateral Entry]": {}, "B.A.(Professional)": {}, "M.Sc (Hons)": {"Botany": [], "Microbiology": [], "Zoology": [], "Mathematics": [], "Chemistry": [], "Physics": []}, "MPT": {"Orthopedics": [], "Sports Medicine": [], "Manual Theraphy": [], "Cardiopulmonology": [], "Neurology": []}, "Bachelor of Library & Information Sciences (B. Lib. I.Sc.)": {}, "B.P.Ed.": {}, "LL.B(H)": {"Law School": []}, "BCA": {}, "B. Plan": {}, "B.Tech. [Lateral Entry]": {"Mechanical Engineering": [], "AUTOMOBILE ENGINEERING": [], "Computer Science & Engineering": [], "BT - Food Process Engineering": [], "Electrical and Electronics Engineering": [], "ME-Mechatronics": [], "Civil Engineering": [], "Electronics & Communication Engineering": [], "Electrical Engineering": [], "Biotechnology": [], "Information Technology": []}, "B.Com. (Professional ) ": {}, "M.Tech. [Full Time]": {"Mechanical Engineering": [], "AUTOMOBILE ENGINEERING": [], "Electronics and Communication engineering": [], "Computer Science and Engineering": [], "Civil Engineering": [], "Biotechnology": [], "Electrical Engineering": [], "Information Technology": []}, "B.A.LL.B (H)": {"Law School": []}, "MBA (Hons.)": {}, "Bachelor of Hotel Mgt & Catering Technology (BHMCT)": {}, "Ph.D - Part Time": {"Ayurvedic Pharmacy": [], "Performing Arts": [], "Management": [], "Psychology": [], "Computer Science & Engineering": [], "Nutrition & Dietetics": [], "Microbiology": [], "Environmental Sciences": [], "Hindi": [], "Political Science": [], "Mathematics": [], "Clinical Microbiology": [], "Electronics & Communication Engineering": [], "Pharmacognosy": [], "Physical Educaiton": [], "Soil Science": [], "Mechanical Engineering": [], "Fine Arts": [], "Fruit Science": [], "Entomology": [], "Biochemistry": [], "Plant Pathology": [], "Law": [], "Food Technology": [], "Commerce": [], "Computer Applications": [], "Pharmacology": [], "Punjabi": [], "Economics": [], "Clinical Biochemistry": [], "Plant Breeding & Genetics": [], "Physiotherapy": [], "English": [], "Biotechnology": [], "Vegetable Science": [], "Chemistry": [], "Physics": [], "History": [], "Botany": [], "Journalism and Mass Communication": [], "Pharmaceutical chemistry": [], "Civil Engineering": [], "Hotel Management": [], "Zoology": [], "Electrical Engineering": [], "Agronomy": [], "Education": [], "Sociology": [], "Pharmaceutics": [], "Geography": []}, "BCA [Lateral Entry]": {}, "Master of Fine Arts (MFA)": {}, "BBA": {"Financial Markets": [], "Management": [], "Oil & Gas Management": [], "Information Technology": []}, "B.Tech.": {"Computer Science & Engineering": [], "ME-Mechatronics": [], "Electronics & Communication Engineering(Hons.)": [], "Electronics Computer Engineering": [], "Electronics & Communication Engineering": [], "CHE - Petroleum": [], "Mechanical Engineering": [], "Civil Engineering, Hons": [], "AUTOMOBILE ENGINEERING": [], "BT - Food Process Engineering": [], "Biotechnology(Hons.)": [], "Civil Engineering": [], "Computer Science & Engineering (Hons)": [], "Electrical and Electronics Engineering(Hons.)": [], "Chemical Engineering": [], "Biotechnology": [], "Mechanical Engineering (Hons)": [], "Information Technology": [], "Nano Technology": [], "ME - Aerospace Engineering": [], "Electrical and Electronics Engineering": [], "Information Technology(Hons.)": [], "Electrical Engineering(Hons.)": [], "Electrical Engineering": []}, "B.Sc": {"Design - Product & Industrial": [], "Design - Graphics ": [], "Forensic Sciences": [], "Airlines, Tourism & Hospitality": [], "Microbiology": [], "Design - Film & TV Production": [], "Medical Lab Technology": [], "Mathematics": [], "Non Medical": [], "Computer Science": [], "Food Technology": [], "Nutrition & Dietetics": [], "Medical": [], "Design:-Multimedia": [], "Home Science": [], "Design - Interior & Furniture": [], "Biotechnology": [], "Information Technology": [], "Design - Fashion": [], "Physical Education, Health Education and Sports": [], "Hotel Management": [], "Physician Assistant": []}, "B.Com., LL.B.(Hons.)": {}, "Bachelor of Physiotherapy (BPT) [Lateral Entry]": {}, "M. Plan.": {}, "Diploma [Lateral Entry] ": {"Architectural Assistantship": []}, "Integrated BCA-MCA": {}, "B.Com.": {"Regular": [], "Management Accounting & International Finance": []}, "Bachelor of Physical Education & Sports (BPES)": {}, "B.Design[Lateral Entry]": {"Interior & Furniture": [], "Product & Industrial": [], "Fashion": []}, "M.A": {"Sociology": [], "Psychology": [], "Public Administration": [], "Fine Arts": [], "Punjabi": [], "Applied Psychology": [], "Journalism, Mass Communication": [], "Education": [], "Education - Leadership & Management": [], "Hindi": [], "Political Science": [], "English": [], "Geography": [], "Performing Arts -Theatre and Television": [], "Performing Arts - Music": [], "History": []}, "Dual Degree BCA - MCA ": {}, "M.Arch.  [Regular]": {"Architecture": []}, "M.Sc.": {"Forensic Sciences": [], "Ag. - Plant Pathology": [], "Nutrition & Dietetics": [], "Microbiology": [], "Ag.-Agronomy": [], "Mathematics": [], "Ag. - Plant Breeding": [], "Ag. -  Soil Science": [], "Fruit Science": [], "Microbiology - Industrial": [], "Computer Science": [], "Food Technology": [], "Ag. - Entomology": [], "Economics": [], "Clinical Biochemistry": [], "Design:-Multimedia": [], "Design - Interior & Furniture": [], "Biotechnology": [], "Vegetable Science": [], "Chemistry": [], "Physics": [], "Information Technology": [], "Design - Fashion": [], "Botany": [], "Pharmaceutical chemistry": [], "Design - Film and TV Production": [], "Hotel Management": [], "Zoology": [], "Geography": [], "Clinical Microbiology": []}, "Dual Degree B.Com. (Professional ) - MBA": {}, "M.Com.": {}, "MBA": {"Financial Markets": [], "International Business": [], "Banking & Insurance": [], "Tourism and Hospitality": [], "Sports and Fitness Management": [], "Executive": [], "Business Analytics": [], "E-Commerce": [], "Management": [], "Oil & Gas Management": [], "Agri - Business Management": [], "Supply Chain & Logistics": [], "Information Technology": [], "Financial Engineering": []}, "M.Tech.(part-time)": {"Civil Engineering": [], "Computer Science and Engineering": []}, "BBA Hons.": {}, "Integrated BBA - MBA": {}, "M.Com. (Hons.)": {}, "Dual Degree B.Com. (Hons.) \u2013 MBA": {}, "BBA LL.B. (H)": {"Law School": []}, "Dual Degree BBA (Hons.) - MBA": {}, "Integrated B.Sc. - M.Sc.": {"Botany": [], "Economics": [], "Microbiology": [], "Mathematics": [], "Zoology": [], "Biotechnology": [], "Chemistry": [], "Physics": []}, "BCA (Hons.)   ": {}, "BPE  [Lateral Entry]": {}, "Integrated B.Ed.-M.Ed. ": {}, "Other ": {}, "MCA": {}, "Integrated B.Com.- MBA": {}, "B.ED": {"Yoga": [], "LIED": []}};
+    var isTermsConditionsEnabled = '';
+    var layout = [{"sections": [{"fields": [{"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "first_name", "label": "First Name", "autocomplete_url": "", "key": "first_name", "help_text": "", "hidden": false, "type": "text", "options": []}, {"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "last_name", "label": "Last Name", "autocomplete_url": "", "key": "last_name", "help_text": "", "hidden": false, "type": "text", "options": []}, {"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "email", "label": "Email", "autocomplete_url": "", "key": "email", "help_text": "This will be your login email ID and password,  you can add communication email later.", "hidden": false, "type": "email", "options": []}], "step": 1, "name": "Full Name", "key": "full_name"}, {"fields": [{"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "", "label": "Password", "autocomplete_url": "", "key": "password", "help_text": "", "hidden": false, "type": "password", "options": []}], "step": 1, "name": "Password", "key": "password"}, {"fields": [{"default_value": "Alumni", "tooltip_text": "If you are not an alumnus, select the appropriate role", "placeholder": "", "required": true, "lookup_key": "role", "label": "Role", "autocomplete_url": "", "key": "role", "help_text": "", "hidden": false, "type": "select", "options": [{"text": "Alumni", "value": "Alumni"}, {"text": "Student", "value": "Student"}, {"text": "Faculty", "value": "Faculty"}, {"text": "Staff", "value": "Staff"}, {"text": "Other", "value": "Other"}]}], "step": 1, "name": "Role", "key": "role"}], "cover": {"step": 1, "picture_url": "https://media.almabaseapp.com/533/signup/step/Create%20Account/76c1ed74caa049589cb83a2c082041d8/1-copy.jpg", "description": "", "title": "Welcome to LPU Alumni Network"}}, {"sections": [{"fields": [{"default_value": "", "tooltip_text": "Your phone number is needed for verification by the admins. It will not be shared with anyone and you can hide it from others once you have signed up.", "placeholder": "415 5552671", "required": true, "lookup_key": "phone_numbers__0__number", "label": "Mobile", "autocomplete_url": "", "key": "phone_number", "help_text": "", "hidden": false, "type": "tel", "options": []}, {"default_value": "", "tooltip_text": "Pick your current city here. You can update your exact address on your profile after registration. Start typing the name of your city and pick from the suggestions below. If you cannot find your city please try searching for a city that it's a part of", "placeholder": "Boston, MA, USA", "required": true, "lookup_key": "location", "label": "City", "autocomplete_url": "", "key": "location", "help_text": "", "hidden": false, "type": "location", "options": []}], "step": 2, "name": "Contact Details", "key": "contact"}, {"fields": [{"default_value": "2014", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "educations__0__year_of_joining", "label": "Year of Entry", "autocomplete_url": "", "key": "year_of_joining", "help_text": "", "hidden": false, "type": "select", "options": [{"text": "1935", "value": "1935"}, {"text": "1936", "value": "1936"}, {"text": "1937", "value": "1937"}, {"text": "1938", "value": "1938"}, {"text": "1939", "value": "1939"}, {"text": "1940", "value": "1940"}, {"text": "1941", "value": "1941"}, {"text": "1942", "value": "1942"}, {"text": "1943", "value": "1943"}, {"text": "1944", "value": "1944"}, {"text": "1945", "value": "1945"}, {"text": "1946", "value": "1946"}, {"text": "1947", "value": "1947"}, {"text": "1948", "value": "1948"}, {"text": "1949", "value": "1949"}, {"text": "1950", "value": "1950"}, {"text": "1951", "value": "1951"}, {"text": "1952", "value": "1952"}, {"text": "1953", "value": "1953"}, {"text": "1954", "value": "1954"}, {"text": "1955", "value": "1955"}, {"text": "1956", "value": "1956"}, {"text": "1957", "value": "1957"}, {"text": "1958", "value": "1958"}, {"text": "1959", "value": "1959"}, {"text": "1960", "value": "1960"}, {"text": "1961", "value": "1961"}, {"text": "1962", "value": "1962"}, {"text": "1963", "value": "1963"}, {"text": "1964", "value": "1964"}, {"text": "1965", "value": "1965"}, {"text": "1966", "value": "1966"}, {"text": "1967", "value": "1967"}, {"text": "1968", "value": "1968"}, {"text": "1969", "value": "1969"}, {"text": "1970", "value": "1970"}, {"text": "1971", "value": "1971"}, {"text": "1972", "value": "1972"}, {"text": "1973", "value": "1973"}, {"text": "1974", "value": "1974"}, {"text": "1975", "value": "1975"}, {"text": "1976", "value": "1976"}, {"text": "1977", "value": "1977"}, {"text": "1978", "value": "1978"}, {"text": "1979", "value": "1979"}, {"text": "1980", "value": "1980"}, {"text": "1981", "value": "1981"}, {"text": "1982", "value": "1982"}, {"text": "1983", "value": "1983"}, {"text": "1984", "value": "1984"}, {"text": "1985", "value": "1985"}, {"text": "1986", "value": "1986"}, {"text": "1987", "value": "1987"}, {"text": "1988", "value": "1988"}, {"text": "1989", "value": "1989"}, {"text": "1990", "value": "1990"}, {"text": "1991", "value": "1991"}, {"text": "1992", "value": "1992"}, {"text": "1993", "value": "1993"}, {"text": "1994", "value": "1994"}, {"text": "1995", "value": "1995"}, {"text": "1996", "value": "1996"}, {"text": "1997", "value": "1997"}, {"text": "1998", "value": "1998"}, {"text": "1999", "value": "1999"}, {"text": "2000", "value": "2000"}, {"text": "2001", "value": "2001"}, {"text": "2002", "value": "2002"}, {"text": "2003", "value": "2003"}, {"text": "2004", "value": "2004"}, {"text": "2005", "value": "2005"}, {"text": "2006", "value": "2006"}, {"text": "2007", "value": "2007"}, {"text": "2008", "value": "2008"}, {"text": "2009", "value": "2009"}, {"text": "2010", "value": "2010"}, {"text": "2011", "value": "2011"}, {"text": "2012", "value": "2012"}, {"text": "2013", "value": "2013"}, {"text": "2014", "value": "2014"}, {"text": "2015", "value": "2015"}, {"text": "2016", "value": "2016"}, {"text": "2017", "value": "2017"}, {"text": "2018", "value": "2018"}]}, {"default_value": "2018", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "educations__0__year_of_leaving", "label": "Year of Leaving", "autocomplete_url": "", "key": "year_of_leaving", "help_text": "", "hidden": true, "type": "select", "options": [{"text": "1940", "value": "1940"}, {"text": "1941", "value": "1941"}, {"text": "1942", "value": "1942"}, {"text": "1943", "value": "1943"}, {"text": "1944", "value": "1944"}, {"text": "1945", "value": "1945"}, {"text": "1946", "value": "1946"}, {"text": "1947", "value": "1947"}, {"text": "1948", "value": "1948"}, {"text": "1949", "value": "1949"}, {"text": "1950", "value": "1950"}, {"text": "1951", "value": "1951"}, {"text": "1952", "value": "1952"}, {"text": "1953", "value": "1953"}, {"text": "1954", "value": "1954"}, {"text": "1955", "value": "1955"}, {"text": "1956", "value": "1956"}, {"text": "1957", "value": "1957"}, {"text": "1958", "value": "1958"}, {"text": "1959", "value": "1959"}, {"text": "1960", "value": "1960"}, {"text": "1961", "value": "1961"}, {"text": "1962", "value": "1962"}, {"text": "1963", "value": "1963"}, {"text": "1964", "value": "1964"}, {"text": "1965", "value": "1965"}, {"text": "1966", "value": "1966"}, {"text": "1967", "value": "1967"}, {"text": "1968", "value": "1968"}, {"text": "1969", "value": "1969"}, {"text": "1970", "value": "1970"}, {"text": "1971", "value": "1971"}, {"text": "1972", "value": "1972"}, {"text": "1973", "value": "1973"}, {"text": "1974", "value": "1974"}, {"text": "1975", "value": "1975"}, {"text": "1976", "value": "1976"}, {"text": "1977", "value": "1977"}, {"text": "1978", "value": "1978"}, {"text": "1979", "value": "1979"}, {"text": "1980", "value": "1980"}, {"text": "1981", "value": "1981"}, {"text": "1982", "value": "1982"}, {"text": "1983", "value": "1983"}, {"text": "1984", "value": "1984"}, {"text": "1985", "value": "1985"}, {"text": "1986", "value": "1986"}, {"text": "1987", "value": "1987"}, {"text": "1988", "value": "1988"}, {"text": "1989", "value": "1989"}, {"text": "1990", "value": "1990"}, {"text": "1991", "value": "1991"}, {"text": "1992", "value": "1992"}, {"text": "1993", "value": "1993"}, {"text": "1994", "value": "1994"}, {"text": "1995", "value": "1995"}, {"text": "1996", "value": "1996"}, {"text": "1997", "value": "1997"}, {"text": "1998", "value": "1998"}, {"text": "1999", "value": "1999"}, {"text": "2000", "value": "2000"}, {"text": "2001", "value": "2001"}, {"text": "2002", "value": "2002"}, {"text": "2003", "value": "2003"}, {"text": "2004", "value": "2004"}, {"text": "2005", "value": "2005"}, {"text": "2006", "value": "2006"}, {"text": "2007", "value": "2007"}, {"text": "2008", "value": "2008"}, {"text": "2009", "value": "2009"}, {"text": "2010", "value": "2010"}, {"text": "2011", "value": "2011"}, {"text": "2012", "value": "2012"}, {"text": "2013", "value": "2013"}, {"text": "2014", "value": "2014"}, {"text": "2015", "value": "2015"}, {"text": "2016", "value": "2016"}, {"text": "2017", "value": "2017"}, {"text": "2018", "value": "2018"}, {"text": "2019", "value": "2019"}, {"text": "2020", "value": "2020"}, {"text": "2021", "value": "2021"}, {"text": "2022", "value": "2022"}]}, {"default_value": "2018", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "educations__0__year_of_graduation", "label": "Year of Graduation", "autocomplete_url": "", "key": "year_of_graduation", "help_text": "", "hidden": false, "type": "select", "options": [{"text": "1940", "value": "1940"}, {"text": "1941", "value": "1941"}, {"text": "1942", "value": "1942"}, {"text": "1943", "value": "1943"}, {"text": "1944", "value": "1944"}, {"text": "1945", "value": "1945"}, {"text": "1946", "value": "1946"}, {"text": "1947", "value": "1947"}, {"text": "1948", "value": "1948"}, {"text": "1949", "value": "1949"}, {"text": "1950", "value": "1950"}, {"text": "1951", "value": "1951"}, {"text": "1952", "value": "1952"}, {"text": "1953", "value": "1953"}, {"text": "1954", "value": "1954"}, {"text": "1955", "value": "1955"}, {"text": "1956", "value": "1956"}, {"text": "1957", "value": "1957"}, {"text": "1958", "value": "1958"}, {"text": "1959", "value": "1959"}, {"text": "1960", "value": "1960"}, {"text": "1961", "value": "1961"}, {"text": "1962", "value": "1962"}, {"text": "1963", "value": "1963"}, {"text": "1964", "value": "1964"}, {"text": "1965", "value": "1965"}, {"text": "1966", "value": "1966"}, {"text": "1967", "value": "1967"}, {"text": "1968", "value": "1968"}, {"text": "1969", "value": "1969"}, {"text": "1970", "value": "1970"}, {"text": "1971", "value": "1971"}, {"text": "1972", "value": "1972"}, {"text": "1973", "value": "1973"}, {"text": "1974", "value": "1974"}, {"text": "1975", "value": "1975"}, {"text": "1976", "value": "1976"}, {"text": "1977", "value": "1977"}, {"text": "1978", "value": "1978"}, {"text": "1979", "value": "1979"}, {"text": "1980", "value": "1980"}, {"text": "1981", "value": "1981"}, {"text": "1982", "value": "1982"}, {"text": "1983", "value": "1983"}, {"text": "1984", "value": "1984"}, {"text": "1985", "value": "1985"}, {"text": "1986", "value": "1986"}, {"text": "1987", "value": "1987"}, {"text": "1988", "value": "1988"}, {"text": "1989", "value": "1989"}, {"text": "1990", "value": "1990"}, {"text": "1991", "value": "1991"}, {"text": "1992", "value": "1992"}, {"text": "1993", "value": "1993"}, {"text": "1994", "value": "1994"}, {"text": "1995", "value": "1995"}, {"text": "1996", "value": "1996"}, {"text": "1997", "value": "1997"}, {"text": "1998", "value": "1998"}, {"text": "1999", "value": "1999"}, {"text": "2000", "value": "2000"}, {"text": "2001", "value": "2001"}, {"text": "2002", "value": "2002"}, {"text": "2003", "value": "2003"}, {"text": "2004", "value": "2004"}, {"text": "2005", "value": "2005"}, {"text": "2006", "value": "2006"}, {"text": "2007", "value": "2007"}, {"text": "2008", "value": "2008"}, {"text": "2009", "value": "2009"}, {"text": "2010", "value": "2010"}, {"text": "2011", "value": "2011"}, {"text": "2012", "value": "2012"}, {"text": "2013", "value": "2013"}, {"text": "2014", "value": "2014"}, {"text": "2015", "value": "2015"}, {"text": "2016", "value": "2016"}, {"text": "2017", "value": "2017"}, {"text": "2018", "value": "2018"}, {"text": "2019", "value": "2019"}, {"text": "2020", "value": "2020"}, {"text": "2021", "value": "2021"}, {"text": "2022", "value": "2022"}]}], "step": 2, "name": "Education", "key": "years"}, {"fields": [{"default_value": "", "tooltip_text": "", "placeholder": "", "required": false, "lookup_key": "educations__0__college__name", "label": "Sub College", "autocomplete_url": "", "key": "college", "help_text": "", "hidden": true, "type": "select", "options": {}}, {"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "educations__0__course__name", "label": "Course", "autocomplete_url": "", "key": "course", "help_text": "", "hidden": false, "type": "select", "options": [[]]}, {"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "educations__0__branch__name", "label": "Branch", "autocomplete_url": "", "key": "branch", "help_text": "", "hidden": false, "type": "select", "options": [[]]}, {"default_value": "", "tooltip_text": "", "placeholder": "", "required": false, "lookup_key": "educations__0__specialization__name", "label": "Specialization", "autocomplete_url": "", "key": "specialization", "help_text": "", "hidden": false, "type": "select", "options": [[]]}, {"default_value": "", "tooltip_text": "", "placeholder": "", "required": "true", "lookup_key": "educations__0__roll_number", "label": "Reg no.", "autocomplete_url": "", "key": "roll_number", "help_text": "", "hidden": false, "type": "text", "options": []}], "step": 2, "name": "Course Structure", "key": "course_structure"}, {"fields": [{"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "teachings__0__department__name", "label": "Department", "autocomplete_url": "/resources/autofilllist?r=departments&q={}", "key": "department", "help_text": "", "hidden": false, "type": "autocomplete", "options": [[]]}, {"default_value": "", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "teachings__0__designation__name", "label": "Designation", "autocomplete_url": "/resources/autofilllist?r=designations&q={}", "key": "designation", "help_text": "", "hidden": false, "type": "autocomplete", "options": [[]]}, {"default_value": "2018", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "teachings__0__start_year", "label": "From Year", "autocomplete_url": "", "key": "start_year", "help_text": "", "hidden": false, "type": "select", "options": [{"text": "1950", "value": "1950"}, {"text": "1951", "value": "1951"}, {"text": "1952", "value": "1952"}, {"text": "1953", "value": "1953"}, {"text": "1954", "value": "1954"}, {"text": "1955", "value": "1955"}, {"text": "1956", "value": "1956"}, {"text": "1957", "value": "1957"}, {"text": "1958", "value": "1958"}, {"text": "1959", "value": "1959"}, {"text": "1960", "value": "1960"}, {"text": "1961", "value": "1961"}, {"text": "1962", "value": "1962"}, {"text": "1963", "value": "1963"}, {"text": "1964", "value": "1964"}, {"text": "1965", "value": "1965"}, {"text": "1966", "value": "1966"}, {"text": "1967", "value": "1967"}, {"text": "1968", "value": "1968"}, {"text": "1969", "value": "1969"}, {"text": "1970", "value": "1970"}, {"text": "1971", "value": "1971"}, {"text": "1972", "value": "1972"}, {"text": "1973", "value": "1973"}, {"text": "1974", "value": "1974"}, {"text": "1975", "value": "1975"}, {"text": "1976", "value": "1976"}, {"text": "1977", "value": "1977"}, {"text": "1978", "value": "1978"}, {"text": "1979", "value": "1979"}, {"text": "1980", "value": "1980"}, {"text": "1981", "value": "1981"}, {"text": "1982", "value": "1982"}, {"text": "1983", "value": "1983"}, {"text": "1984", "value": "1984"}, {"text": "1985", "value": "1985"}, {"text": "1986", "value": "1986"}, {"text": "1987", "value": "1987"}, {"text": "1988", "value": "1988"}, {"text": "1989", "value": "1989"}, {"text": "1990", "value": "1990"}, {"text": "1991", "value": "1991"}, {"text": "1992", "value": "1992"}, {"text": "1993", "value": "1993"}, {"text": "1994", "value": "1994"}, {"text": "1995", "value": "1995"}, {"text": "1996", "value": "1996"}, {"text": "1997", "value": "1997"}, {"text": "1998", "value": "1998"}, {"text": "1999", "value": "1999"}, {"text": "2000", "value": "2000"}, {"text": "2001", "value": "2001"}, {"text": "2002", "value": "2002"}, {"text": "2003", "value": "2003"}, {"text": "2004", "value": "2004"}, {"text": "2005", "value": "2005"}, {"text": "2006", "value": "2006"}, {"text": "2007", "value": "2007"}, {"text": "2008", "value": "2008"}, {"text": "2009", "value": "2009"}, {"text": "2010", "value": "2010"}, {"text": "2011", "value": "2011"}, {"text": "2012", "value": "2012"}, {"text": "2013", "value": "2013"}, {"text": "2014", "value": "2014"}, {"text": "2015", "value": "2015"}, {"text": "2016", "value": "2016"}, {"text": "2017", "value": "2017"}, {"text": "2018", "value": "2018"}]}, {"default_value": "2018", "tooltip_text": "", "placeholder": "", "required": true, "lookup_key": "teachings__0__end_year", "label": "To Year", "autocomplete_url": "", "key": "end_year", "help_text": "", "hidden": false, "type": "select", "options": [{"text": "1950", "value": "1950"}, {"text": "1951", "value": "1951"}, {"text": "1952", "value": "1952"}, {"text": "1953", "value": "1953"}, {"text": "1954", "value": "1954"}, {"text": "1955", "value": "1955"}, {"text": "1956", "value": "1956"}, {"text": "1957", "value": "1957"}, {"text": "1958", "value": "1958"}, {"text": "1959", "value": "1959"}, {"text": "1960", "value": "1960"}, {"text": "1961", "value": "1961"}, {"text": "1962", "value": "1962"}, {"text": "1963", "value": "1963"}, {"text": "1964", "value": "1964"}, {"text": "1965", "value": "1965"}, {"text": "1966", "value": "1966"}, {"text": "1967", "value": "1967"}, {"text": "1968", "value": "1968"}, {"text": "1969", "value": "1969"}, {"text": "1970", "value": "1970"}, {"text": "1971", "value": "1971"}, {"text": "1972", "value": "1972"}, {"text": "1973", "value": "1973"}, {"text": "1974", "value": "1974"}, {"text": "1975", "value": "1975"}, {"text": "1976", "value": "1976"}, {"text": "1977", "value": "1977"}, {"text": "1978", "value": "1978"}, {"text": "1979", "value": "1979"}, {"text": "1980", "value": "1980"}, {"text": "1981", "value": "1981"}, {"text": "1982", "value": "1982"}, {"text": "1983", "value": "1983"}, {"text": "1984", "value": "1984"}, {"text": "1985", "value": "1985"}, {"text": "1986", "value": "1986"}, {"text": "1987", "value": "1987"}, {"text": "1988", "value": "1988"}, {"text": "1989", "value": "1989"}, {"text": "1990", "value": "1990"}, {"text": "1991", "value": "1991"}, {"text": "1992", "value": "1992"}, {"text": "1993", "value": "1993"}, {"text": "1994", "value": "1994"}, {"text": "1995", "value": "1995"}, {"text": "1996", "value": "1996"}, {"text": "1997", "value": "1997"}, {"text": "1998", "value": "1998"}, {"text": "1999", "value": "1999"}, {"text": "2000", "value": "2000"}, {"text": "2001", "value": "2001"}, {"text": "2002", "value": "2002"}, {"text": "2003", "value": "2003"}, {"text": "2004", "value": "2004"}, {"text": "2005", "value": "2005"}, {"text": "2006", "value": "2006"}, {"text": "2007", "value": "2007"}, {"text": "2008", "value": "2008"}, {"text": "2009", "value": "2009"}, {"text": "2010", "value": "2010"}, {"text": "2011", "value": "2011"}, {"text": "2012", "value": "2012"}, {"text": "2013", "value": "2013"}, {"text": "2014", "value": "2014"}, {"text": "2015", "value": "2015"}, {"text": "2016", "value": "2016"}, {"text": "2017", "value": "2017"}, {"text": "2018", "value": "2018"}]}], "step": 2, "name": "Faculty", "key": "faculty"}], "cover": {"step": 2, "picture_url": "/static/img/registration/step2.jpg", "description": "<p><span style=\"font-size: 18px;\">Events and Networking</span></p><p><br></p><p><span style=\"font-size: 18px;\">Job opportunities</span></p><p><br></p><p><span style=\"font-size: 18px;\">Mentorship</span></p><p><br></p><p><span style=\"font-size: 18px;\">News from your community</span></p><p><br></p>", "title": "How do you benefit?"}}, {"sections": [{"fields": [{"default_value": false, "tooltip_text": "", "placeholder": "", "required": false, "lookup_key": "", "label": "I'm happy to receive updates on my email.", "autocomplete_url": "", "key": "can_email", "help_text": "", "hidden": false, "type": "switch", "options": [[]]}, {"default_value": false, "tooltip_text": "", "placeholder": "", "required": false, "lookup_key": "", "label": "I'm happy to receive mail at my address.", "autocomplete_url": "", "key": "can_mail", "help_text": "", "hidden": false, "type": "switch", "options": [[]]}, {"default_value": false, "tooltip_text": "", "placeholder": "", "required": false, "lookup_key": "", "label": "I'm happy to be informed by phone of important updates.", "autocomplete_url": "", "key": "can_call", "help_text": "", "hidden": false, "type": "switch", "options": [[]]}], "step": 3, "name": "Communication & GDPR", "key": "communication_preferences"}, {"fields": [{"default_value": "", "tooltip_text": "", "placeholder": "", "required": false, "lookup_key": "", "label": "Preferences", "autocomplete_url": "", "key": "preferences", "help_text": "", "hidden": false, "type": "checkbox", "options": [{"name": "Receive messages from students", "id": 2923, "key": "can_students_contact", "description": "", "default_value": true}, {"name": "Mentor younger alumni / students", "id": 2924, "key": "will_mentor", "description": "", "default_value": false}, {"name": "Host alumni/students in my city", "id": 2925, "key": "will_accommodate", "description": "", "default_value": false}, {"name": " Conduct /Support for  Community Services", "id": 2926, "key": "Community_Services", "description": "", "default_value": false}, {"name": "Conduct/ Support  for Alumni meet /reunions", "id": 2927, "key": "support_alumni_meet /reunions", "description": "", "default_value": false}]}], "step": 3, "name": "Other Preferences", "key": "preferences"}], "cover": {"step": 3, "picture_url": "/static/img/registration/step3.jpg", "description": "<p><span style=\"font-size: 18px;\">Enroll as a mentor</span></p><p><br></p><p><span style=\"font-size: 18px;\">Donate to a project</span></p><p><br></p><p><span style=\"font-size: 18px;\">Be a class volunteer</span></p>", "title": "How can you give back?"}}, {"sections": [], "cover": {"step": 4, "picture_url": "/static/img/registration/step4.jpg", "description": "<p><span style=\"font-size: 18px;\">Invite your fellow alumni who are missing on the network.</span></p><p><br></p>", "title": "Thank you"}}];
+    var profileData = {};
+    var isSubCollegesExist = false;
+    var defaultCollege = 'ADGITM';
+    var totalProfiles = '42846';
+    var isUserAuthenticated = false;
+    var isGroupsEnabled = false;
+    var signupProvider = '';
+    var isFacebookSignupDisabled = false;
+    var isLinkedinSignupDisabled = false;
+    var isGoogleSignupEnabled = false;
+    var hiddenPlaces = '';
+    var signupRedirectUrl = '';
+</script>
+<link rel="stylesheet" type="text/css" href="https://static.almabaseapp.com/assets/dist/experiment/signup.17395d05cdfd.css">
+<script type="text/javascript" src="https://static.almabaseapp.com/assets/dist/experiment/signup.a76d6b78db7a.js"></script>
+</body></html>
+
+
+
+
+<!--
+<head>WELCOME</head>
+<p>You are succesfully Logged In!!</p>
+
+--->

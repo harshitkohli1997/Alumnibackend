@@ -1,0 +1,260 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: montserrat, arial, verdana;
+    background-color: #ececec;
+}
+/*form styles*/
+
+#msform fieldset {
+    width: 60%;
+    max-width: 600px;
+    padding: 10px 20px;
+    margin: 30px auto;
+    background-color: white;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+/*inputs*/
+#msform input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+    background-color: #ececec;
+    outline: none;
+    transition: all 0.4s;
+}
+
+#msform input:focus{
+    border: 1px solid blue;
+    background-color: white;
+}
+
+/*label*/
+#msform label{
+    display: block;
+    padding: 10px 0px;
+    font-weight:500;
+}
+/*buttons*/
+#msform .action-button {
+    padding: 10px 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border: none;
+    background-color: midnightblue;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    border-radius: 20px 0px;
+}
+#msform .action-button:hover{
+    background-color: cadetblue;
+    color: black;
+}
+
+/*headings*/
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: black;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+h4{
+    padding-bottom: 13px;
+}
+
+p{
+    font-size: 14px;
+    padding-bottom: 45px;
+    font-style: italic;
+}
+
+
+/*progressbar*/
+#progressbar {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    text-align: center;
+}
+#progressbar li {
+    list-style-type: none;
+    color: black;
+
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+}
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: black;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+    background: black;
+    color: white;
+}
+
+#comm1 label{
+    display: inline-block;
+
+
+}
+
+#comm1 input{
+    width: auto;
+    margin: 10px;
+
+}
+
+#comm2 label{
+    display: inline-block;
+
+
+}
+
+#comm2 input{
+    width: auto;
+    margin: 10px;
+
+}
+
+#comm3 label{
+    display: inline-block;
+
+
+
+}
+
+#comm3 input{
+    width: auto;
+    margin: 10px;
+
+}
+
+#pre1 label{
+    display: inline-block;
+
+}
+
+#pre1 input{
+    width: auto;
+    margin: 10px;
+}
+
+#pre2 label{
+    display: inline-block;
+
+}
+
+#pre2 input{
+    width: auto;
+    margin: 10px;
+}
+
+#pre3 label{
+    display: inline-block;
+
+}
+
+#pre3 input{
+    width: auto;
+    margin: 10px;
+}
+
+#pre4 label{
+    display: inline-block;
+
+}
+
+#pre4 input{
+    width: auto;
+    margin: 10px;
+}
+
+#comm3{
+    padding-bottom: 50px;
+}
+
+.update{
+    text-align: center;
+}
+
+.btn-own{
+    margin: 10px 7px;
+    padding: 10px 7px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 2%;
+    background-color: lightblue;
+    color: midnightblue;
+    transition: background-color 0.4s ;
+    transition: color 0.4s;
+    cursor: pointer;
+}
+
+.btn-own:hover{
+    background-color: dodgerblue;
+    color: #333333;
+}
+
+button{
+    text-align: center;
+}
+
+#profile{
+    text-align: center;
+}
+
+label span{
+    color: darkred;
+}
+
+

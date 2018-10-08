@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/createaccnt.css">
+</head>
+<body>
+  
+   <section id="create-account">
+       <div class="container">
+           <p class="already-member">Already a member?<a href="">Login</a></p>
+           
+           <div class="sign-up-container">
+               <div class="text-container">
+                   <p class="title">CREATE ACCOUNT</p>
+                   <p class="text1">42846+ members are already on the platform sharing benefits of an engaging alumni network.</p>
+               </div>
+               <div class="form-container">
+                   <form method="post" action="/adddetails">
+                      <label for="fname">*FIRST NAME</label>
+                       <input id="fname" type="text" placeholder="First Name" required>
+                       
+                       <label for="lname">*LAST NAME</label>
+                       <input id="lname" type="text" placeholder="Last Name" required>
+                       
+                       <label for="email">*EMAIL</label>
+                       <input type="email" id="email" placeholder="Email" required>
+                       
+                       <div id="gender">
+                           <label for="gen1">*GENDER: Male</label>
+                           <input type="radio" name="gender" id="gen1">
+                           
+                           <label for="gen2">Female</label>
+                           <input type="radio" name="gender" id="gen2">
+                       </div>
+                       
+                       <label for="pass">*PASSWORD</label>
+                       <input type="password" id="pass" placeholder="Password" required>
+                       
+                       <label for="browsers">*ROLE</label>
+                       <input list="browsers" name="browser" placeholder="Select">
+                       <datalist id="browsers">
+                           <option value="Alumni"></option>
+                           <option value="Student"></option>
+                           <option value="Faculty"></option>
+                       </datalist>
+                       
+                       <input id="create" type="submit" value="Create Account">
+                       
+                       <p class="text">
+                           By creating an account you agree to our <a href="">Privacy Policy</a> &amp; <a href="">Terms of Service</a>.
+                       </p>
+                       
+                   </form>
+               </div>
+           </div>
+       </div>
+   </section>
+    
+</body>
+</html>
