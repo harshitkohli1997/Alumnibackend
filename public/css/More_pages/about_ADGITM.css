@@ -1,0 +1,19 @@
+
+.aboutcontainer{
+    margin: 50px;
+    padding: 10px;
+    border: 5px solid red;
+    background-color: lightpink;
+}
+
+.aboutheading{
+    text-align: center;
+    color: darkred;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+}
+
+.aboutdescription ul li{
+    font-size: 1.4em;
+    padding-bottom: 13px;
+}

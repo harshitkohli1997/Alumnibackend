@@ -2,16 +2,16 @@
     height: auto;
     transition: 2s;background-color:  #bc0404; opacity: 1; border: none;z-index: 10;
     position: relative;
+    min-height: 50px;
 }
 #scrollingdiv{
     display: none;
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     word-spacing: 2.5px;
-    color: black;
-    text-decoration: solid line-through green;
+    color: white;
     text-outline: forestgreen 1px;
     font-family:  Helvetica, sans-serif,"Monotype Corsiva","Times New Roman",Roboto,Jokerman;
 }
@@ -66,7 +66,8 @@
     color: gray;
     position: fixed;
     transition: 2s;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     top: 0;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     right: 0; height: 100%;z-index: 10; box-shadow: 0 5px 2px 3px rgba(0,0,0,0.3)
@@ -77,16 +78,21 @@
     letter-spacing: 1.5px;
     font-weight: bold;
     word-spacing: 3px;
-    padding: 8px 5px;
+    padding: 4px 20px;
     font-size: 22px;
-    margin-top: 15px;
+    margin-top: 4px;
 
 }
 .innerdiv-subheadings{
-    padding: 5px 10px;
+    padding: 5px 30px;
     font-size: 18px;
     letter-spacing: 1px;
 
+}
+.innerdiv-subheadings li{
+    padding-left: 5px;
+    font-size: 15px;
+    font-weight: normal;
 }
 #side-div-ul{
     margin: 2px;
@@ -128,4 +134,11 @@
 }
 .card-img-settings{
     border: 2px solid white;width: 120px;height: 120px;border-radius: 100px;
+}
+.inner-hoverable-carousel-div{
+    transition: 1s;
+    display: none;
+}
+.card:hover .inner-hoverable-carousel-div{
+    display: block;
 }

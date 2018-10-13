@@ -13,11 +13,15 @@
 
         font-weight: bold;
     }
+    .card-img-settings:hover{
+        background-color: rgba(0,0,0,0.4);
+        cursor: pointer;
+    }
 </style>
 <div class="container-fluid" id="background-img-div">
     <div class="row justify-content-center">
         <div>
-            <img src="files/adgitm_banner_new.jpeg" width="100%" height="auto">
+            <img src="files/poster.png" width="1350px" height="auto">
         </div>
     </div>
 </div>
@@ -31,8 +35,8 @@
 
                  <div class="col-3 pl-1 pr-1">
                     <div class="row"  >
-                        <div class="col-10" style="border: 1px solid black">
-                            <h4>Connect with Alumni</h4>
+                        <div class="col-10 pt-2" style="border: 1px solid black;background-color: rgba(0,0,0,0.7)">
+                            <h4 style="text-align: center;color: white">Connect with Alumni</h4>
                         </div>
                         <div class="col-10">
                             <ul id="side-div-ul">
@@ -41,15 +45,13 @@
                                     <ul>
                                         <li> <a href=""> Search An Alumni</a></li>
                                         <li><a href="/searchbyresource"> Search by Resource</a></li>
-                                        <li><a href=""> Search by Map</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href=""> Events </a>
                                     <ul>
-                                        <li><a href=""> Check for Events</a></li>
+                                        <li><a href="">All Events</a></li>
                                         <li><a href=""> Request for an event</a></li>
-                                        <li><a href=""> Alumni Calender</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -64,7 +66,7 @@
                                         <li>
                                             <a href="/internships"> Internship</a>
                                         </li>
-                                        <li style="padding-left: 8px"><a href="" > Look for an internship</a></li>
+                                        <li><a href="" >Post an internship</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -73,14 +75,17 @@
                                         <li>
                                             <a href=""> Glimpse of Alumni </a>
                                         </li>
-                                        <li><a href=""> Volunteer Opportunities</a></li>
-                                        <li><a href=""> FAQs</a></li>
+                                        <li><a href="/volunteer"> Volunteer Opportunities</a></li>
+                                        <li><a href="/faqs"> FAQs</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
 
                     </div>
+                     {{#if user}}
+
+                     {{else}}
                     <div class="row">
                         <div class="col-10 p-4" style="border: 0.5px solid rgba(0,0,0,0.1); background-color: rgb(255,255,255)">
                             <div class="row ">
@@ -88,14 +93,20 @@
                                     <h4> Join/Login ADGITM Alumni Network </h4>
                                 </div>
                                 <div class="col-12 p-1">
-                                    <p style="padding: 10px; font-style: italic;font-size: 18px;font-weight: 300"> Login Faster with Google </p>
+                                    <p class="mb-0" style="text-align: justify;padding: 10px; font-style: italic;font-size: 18px;font-weight: 300"> Login Faster with Google </p>
                                 </div>
-                                <div class="row justify-content-center"><div class="col-8"><button class="btn btn-dark"><a href="/login">Login</a> </button> </div> </div>
-                                <div class="row mt-3 mb-2 justify-content-center"><div class="col-5 col-md-8 googlecolor"><a style="color: inherit;text-decoration: none" href="/auth/google"><i class="fab fa-google"></i> Connect with Google </a> </div> </div>
+                                <!--<div class="row justify-content-center"><div class="col-8"><button class="btn btn-dark"><a href="/login">Login</a> </button> </div> </div>-->
+                                <!--<div class="row mt-3 mb-2 justify-content-center"><a style="color: inherit;text-decoration: none" href="/auth/google"><img src="files/homepage_google" class="col-5 col-md-8" width="100%" height="auto" ></img></a></div>-->
+
+                                    <!--<div class="col-6"><a href="/auth/linkedin"> <button class="btn btn-dark">Connect with Linkedin</button></a></div>-->
+
+                                <div class="col-12"  align="center"><a href="/auth/google"><img align ="center" src = "files/final_google.png" alt="image here" width="100%" height="60px" ></a></div>
+
 
                             </div>
                         </div>
                     </div>
+                     {{/if}}
                     <!--Side divs-->
                   </div>
 
@@ -107,7 +118,7 @@
 
                     <div class="row mt-3">
                         <div class="col-10">
-                            <p> ADGITM values gathering and connecting with Gusties old and new and all who have given of their time, talent, and resources to the College. It is in this spirit that we describe the ways in which the College and alumni interact with one another.</p>
+                            <p> ADGITM values gathering and connecting with old and new and all who have given of their time, talent, and resources to the College. It is in this spirit that we describe the ways in which the College and alumni interact with one another.</p>
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -116,7 +127,7 @@
                             <div class="row pl-3 pr-3">
                                 <h2 class="alumni-gcg-headings">We Gather</h2>
                                 <div class="col-12 pl-0" style="text-align: justify">
-                                    The building of relationships is a critical part of what it means to be a Gustie. From the first day on the Hill to a 60th Class Reunion, Gustavus is an integral part of maintaining relationships for alumni and friends of the College. Gustavus offers a variety of ways for alumni and friends of the College to gather together.
+                                    The building of relationships is a critical part of what it means to be a ADGITMian. From the first day on the Hill to a 60th Class Reunion, ADGITM is an integral part of maintaining relationships for alumni and friends of the College. ADGITM offers a variety of ways for alumni and friends of the College to gather together.
                                 </div>
                             </div>
                         </div>
@@ -126,7 +137,7 @@
                             <div class="row pl-3 pr-3">
                                 <h2 class="alumni-gcg-headings">We Connect</h2>
                                 <div class="col-12 pl-0" style="text-align: justify">
-                                    A connection to Gustavus and the resources offered by the College and College Alumni is a critical part of navigating the world after time on the Hill. Gustavus is committed to connecting graduates old and new so that they may fully utilize the College and the resources it offers.
+                                    A connection to ADGITM and the resources offered by the College and College Alumni is a critical part of navigating the world after time on the Hill. ADGITM is committed to connecting graduates old and new so that they may fully utilize the College and the resources it offers.
                                 </div>
                             </div>
                         </div>
@@ -136,7 +147,7 @@
                             <div class="row pl-3 pr-3">
                                 <h2 class="alumni-gcg-headings">We Give</h2>
                                 <div class="col-12 pl-0" style="text-align: justify">
-                                    The gift of a ADGITM expereince is made possible through the time, talents, and resources of the Gustavus community. Financial gifts ensure student access to the finest faculty and opportunites the College can provide. Through mentoring and direct service students see first hand what it means to live a life of service after time on the Hill.
+                                    The gift of a ADGITM expereince is made possible through the time, talents, and resources of the ADGITM community. Financial gifts ensure student access to the finest faculty and opportunites the College can provide. Through mentoring and direct service students see first hand what it means to live a life of service after time on the Hill.
                                 </div>
                             </div>
                         </div>
@@ -146,63 +157,62 @@
                     <!--Notable Alumni-->
                     <div class="row mt-5 pt-2 pb-1 pl-2 pr-2" style="background-color: gray">
                         <div class="col-11 pl-2">  <h3 style="color: white;letter-spacing: 1.2px">Notable Alumni</h3> </div>
-                        <div style="display: inline-block;float: right" ><button class="btn btn-info" >More</button></div>
                     </div>
                     <!--Alumni Card Row-->
                     <div class="row justify-content-center mt-2">
                         <!--Alumni 1-->
-                        <div class="card mr-1" style="width: 12.7rem;box-shadow: 0px 0px 10px rgba(0,0,0,.2)" align="center">
+                        <div class="card mr-1" style="height: 300px;width: 12.7rem; box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
-                                <img class="card-img-settings" src="files/gal-gadot.jpg" alt="image here" width="100%">
+                                <img class="card-img-settings" src="files/notable-Alumni/rohit-sikka-Google.png" alt="image here" title="Rohit Sikka" width="100%">
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="height: 150px">
 
 
-                                <h4 class="card-title"> Name </h4>
-                                <p class="card-text"> Year of pass</p>
-                                <p class="card-text"> Current Designation </p>
+                                <h4 class="card-title"> Rohit Sikka </h4>
+                                <p class="card-text pb-1 mb-1"> Year of pass</p>
+                                <p class="card-text pb-1 mt-1"> Developer at Google </p>
 
                             </div>
                         </div>
                         <!--Alumni 2-->
-                        <div class="card ml-1 mr-1" style="width: 12.7rem;box-shadow: 0px 0px 10px rgba(0,0,0,.2)" align="center">
+                        <div class="card ml-1 mr-1" style="height: 300px;width: 12.7rem;box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
-                                <img class="card-img-settings" src="files/person3.jpg" alt="image here" width="100%" >
+                                <img class="card-img-settings" src="files/notable-Alumni/noopur-aroraIBM.png" title="Noopur Arora" alt="image here" width="100%" >
                             </div>
                             <div class="card-body">
 
 
-                                <h4 class="card-title"> Name </h4>
-                                <p class="card-text"> Year of pass</p>
-                                <p class="card-text"> Current Designation </p>
+                                <h4 class="card-title">Noopur Arora </h4>
+                                <p class="card-text pb-1 mb-1"> Year of pass</p>
+                                <p class="card-text pb-1 mb-1">Developer at IBM </p>
 
                             </div>
                         </div>
                         <!--Alumni 3-->
-                        <div class="card ml-1 mr-1" style="width: 12.7rem;box-shadow: 0px 0px 10px rgba(0,0,0,.2)" align="center">
+                        <div class="card ml-1 mr-1" style="height: 300px;width: 12.7rem;box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
-                                <img src="files/person4.jpg" alt="image here" width="100%" class="card-img-settings">
+                                <img src="files/notable-Alumni/Isha-BhatiyaADOBE.png" title="Isha Bhatiya" alt="image here" width="100%" class="card-img-settings">
                             </div>
                             <div class="card-body">
 
 
-                                <h4 class="card-title"> Name </h4>
-                                <p class="card-text"> Year of pass</p>
-                                <p class="card-text"> Current Designation </p>
+                                <h4 class="card-title"> Isha Bhatiya </h4>
+                                <p class="card-text pb-1 mb-1"> Year of pass</p>
+                                <p class="card-text pb-1 mb-1"> Developer at Adobe </p>
 
                             </div>
                         </div>
                         <!--Alumni 4-->
-                        <div class="card ml-1" style="width: 12.7rem;box-shadow: 0px 0px 10px rgba(0,0,0,.2)" align="center">
+                        <div class="card ml-1" style="height: 300px;width: 12.7rem;box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
-                                <img src="files/Kayla_Person1.jpg" alt="image here" width="100%" class="card-img-settings">
+                                <img src="files/notable-Alumni/pranjal-jumdeStackRox.png" title="Pranjal" alt="image here" width="100%" class="card-img-settings">
                             </div>
                             <div class="card-body">
 
 
-                                <h4 class="card-title"> Name </h4>
-                                <p class="card-text"> Year of pass</p>
-                                <p class="card-text"> Current Designation </p>
+                                <h4 class="card-title"> Pranjal Jumde </h4>
+                                <p class="card-text pb-1 mb-1"> Year of pass</p>
+                                <p class="card-text pb-1 mb-1"> Developer at StackRox </p>
 
                             </div>
                         </div>
@@ -231,7 +241,7 @@
                         <div class="card-title mb-2" style="font-size: 25px;padding: 5px">Job Portal</div>
                         <div class="card-text " style="margin-left: 6px; width: 30%;height: 3px;background-color: crimson"></div>
                         <div class="card-text mt-2 mb-3">Exchange jobs from your company with fellow Alumni</div>
-                        <div class="card-link"> <button style="width: 40%" class="btn btn-info">View</button> </div>
+                        <div class="card-link"> <a style="text-decoration: none" href="/jobs"> <button style="width: 40%" class="btn btn-info">View</button></a> </div>
                     </div>
                 </div>
                 <!--Alumni Guidance-->
@@ -242,7 +252,7 @@
                     <div class="card-title mb-2" style="font-size: 25px;padding: 5px">Alumni Guidance</div>
                     <div class="card-text " style="margin-left: 6px; width: 30%;height: 3px;background-color: crimson"></div>
                     <div class="card-text mt-2 mb-3">Give advice to your fellow alumni or take guidance from Alumni.</div>
-                    <div class="card-link"> <button style="width: 40%" class="btn btn-info">View</button> </div>
+                    <div class="card-link"><a href="/mentorship"> <button style="width: 40%" class="btn btn-info">View</button> </a> </div>
                 </div>
             </div>
         </div>
@@ -251,10 +261,10 @@
                 <div class="col-12">
                     <div class="row mb-2">
                         <div class="col-9">
-                            <h4 style="margin-left: 20px">Gallery</h4>
+                            <h3 style="margin-left: 20px">Gallery</h3>
                         </div>
                         <div class="col-3" align="center">
-                            <span><a href="">Go to Gallery</a> </span>
+                            <span class="btn btn-dark" style="color: white"><a style="color: inherit" href="/gallery">Go to Gallery</a> </span>
                         </div>
                     </div>
 
@@ -280,19 +290,40 @@
                             </div>
                         </div>
                         <!--Carousel Image Small Divs-->
-                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2" style="background-color: black;width: 13rem;height: 150px">
-                            <div class="card-img-top" style="width: 100%;height: 160px">
-                                <img src="files/demoimg3.jpg" width="100%" >
+                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2" style="    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: black;width: 13rem;height: 150px;position: relative">
+                                <div class="carousel slide" id="carouselCSE" data-ride="carousel" style="width: auto;height: 100%;">
+                                    <div class="carousel-inner" style="height: inherit">
+                                        <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" width="206px" ></div>
+                                        <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" width="100%"></div>
+                                        <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide" width="100%"></div>
+                                    </div>
+
                             </div>
+                            <div class="inner-hoverable-carousel-div" style="text-align: center;align-content: center;width: 100%;position: absolute;top: 0;left: 0;height: 100%;background-color: rgba(255,255,255,0.8)"><p style="color: black;cursor: pointer;font-size: 25px;letter-spacing: 1.3px;font-weight: bold;padding-top: 40px">CSE</p></div>
                         </div>
                         <div class="card mt-3 ml-2 mr-2 pt-2 pb-2" style="background-color: black;width: 13rem;height: 150px">
-                            <div class="card-img-top" style="width: 100%;height: 100%">
-                                <img class="pt-2" src="files/demoimg4.jpg" width="100%">
+                            <!--IT Branch-->
+                            <div class="carousel slide" id="carouselIT" data-ride="carousel" style="width: auto;height: 100%;">
+                                <div class="carousel-inner" style="height: inherit">
+                                    <div class="carousel-item active"> <img src="files/IT_conference.jpg" alt="First Slide" width="206px" ></div>
+                                    <div class="carousel-item"><img src="files/IT_conference3.jpg" alt="Second Slide" width="100%"></div>
+                                    <div class="carousel-item"><img src="files/IT_conference2.jpg" alt="Second Slide" width="100%"></div>
+                                </div>
+                                <div class="inner-hoverable-carousel-div" style="text-align: center;align-content: center;width: 100%;position: absolute;top: 0;left: 0;height: 100%;background-color: rgba(255,255,255,0.8)"><p style="color: black;cursor: pointer;font-size: 25px;letter-spacing: 1.3px;font-weight: bold;padding-top: 40px">IT</p></div>
+
                             </div>
+
                         </div>
                         <div class="card mt-3 ml-2 mr-1 pt-2 pb-2" style="background-color: black;width: 13rem;height: 150px">
-                            <div class="card-img-top" style="width: 100%;height: 100%">
-                                <img src="files/demoimg2.jpg" width="100%">
+                           <!--Mechanical Branch -->
+                            <div class="carousel slide" id="carouselMECH" data-ride="carousel" style="width: auto;height: 100%;">
+                                <div class="carousel-inner" style="height: inherit">
+                                    <div class="carousel-item active"> <img src="files/demoimg4.jpg" alt="First Slide" width="206px" ></div>
+                                    <div class="carousel-item"><img src="files/Mech_event2.jpg" alt="Second Slide" width="100%"></div>
+                                    <div class="carousel-item"><img src="files/Mech_event3.jpg" alt="Second Slide" width="100%"></div>
+                                </div>
+                                <div class="inner-hoverable-carousel-div" style="text-align: center;align-content: center;width: 100%;position: absolute;top: 0;left: 0;height: 100%;background-color: rgba(255,255,255,0.8)"><p style="color: black;cursor: pointer;font-size: 25px;letter-spacing: 1.3px;font-weight: bold;padding-top: 40px">MECH</p></div>
+
                             </div>
                         </div>
 
@@ -308,24 +339,21 @@
 <!--Social Media Div-->
 <div class="container-fluid mt-5 pb-5" id="socialcontainer">
     <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 " align="center" style="padding-top: 20px"> <h1 >ADGITM SOCIAL</h1> </div>
+        <div class="col-12 col-sm-10 " align="center" style="padding-top: 20px"> <h1>ADGITM SOCIAL</h1> </div>
     </div>
     <!--Icons Row-->
     <div class="mt-5 row justify-content-center">
-        <div class="col-1 iconsets"><div id="fb" align="center"><i title="Fb page" class="fab fa-facebook-f" ></i></div> </div>
-        <div class="col-1 iconsets"><div id="twitter" align="center"> <i class="fab fa-twitter"></i></div> </div>
-        <div class="col-1 iconsets"><div id="instagram" align="center"> <i class="fab fa-instagram"></i> </div></div>
-        <div class="col-1 iconsets"><div id="youtube" align="center"> <i class="fab fa-youtube"></i> </div></div>
+        <div class="col-1 p-0 iconsets"><div id="fb" align="center"><i title="Fb page" class="fab fa-facebook-f" ></i></div> </div>
+        <div class="col-1 p-0 iconsets"><div id="twitter" align="center"> <i class="fab fa-twitter"></i></div> </div>
+        <div class="col-1 p-0 iconsets"><div id="instagram" align="center"> <i class="fab fa-instagram"></i> </div></div>
+        <div class="col-1 p-0 iconsets"><div id="youtube" align="center"> <i class="fab fa-youtube"></i> </div></div>
 
     </div>
     <!--Social Media Stuff Divs -->
     <!--Streaming Data From different Social Media-->
     <div class="row mt-5 justify-content-center" style="height: auto">
         <div class="col-8 col-md-6 col-lg-4 pr-0" >
-            <div class="fb-page" style="width: 100%" data-href="https://www.facebook.com/alumnicseniec/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
-                <blockquote style="width: 100%" cite="https://www.facebook.com/alumnicseniec/" class="fb-xfbml-parse-ignore">
-                    <a style="width: 100%" href="https://www.facebook.com/alumnicseniec/">Alumni CSE Adgitm</a></blockquote>
-            </div>
+            <div class="fb-page" data-href="https://www.facebook.com/alumnicseniec/" data-tabs="timeline" data-width="410" data-height="430" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/alumnicseniec/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/alumnicseniec/">Alumni CSE Adgitm</a></blockquote></div>
         </div>
         <div class="col-12 col-md-6 col-lg-3 specialsocialdivs">
             <div class="row p-0" style="height: auto">
@@ -423,9 +451,9 @@
                                 </svg>
                     </div>
                     <div class="svginnerdivtext">
-                        <div class="svginnerdivsalignment" >London</div>
+                        <div class="svginnerdivsalignment" >BANGALORE</div>
                         <div style="margin-left: 3px;font-weight: bold">
-                            875 Alumni
+                            250 Alumni
                         </div>
                     </div>
                 </div>
@@ -458,9 +486,9 @@
                                 </svg>
                     </div>
                     <div class="svginnerdivtext">
-                        <div class="svginnerdivsalignment" >USA</div>
+                        <div class="svginnerdivsalignment" >DELHI</div>
                         <div style="margin-left: 3px;font-weight: bold">
-                            1250 Alumni
+                            150 Alumni
                         </div>
                     </div>
                 </div>
@@ -493,12 +521,12 @@
                                 </svg>
                     </div>
                     <div class="svginnerdivtext">
-                        <div class="svginnerdivsalignment" >Spain</div>
+                        <div class="svginnerdivsalignment" >MUMBAI</div>
                         <div style="margin-left: 3px;font-weight: bold">
-                            423 Alumni
+                            23 Alumni
                         </div>
                     </div>  </div>
-                <div class="col-12 m-4 p-2"><div class="row justify-content-center p-2"> <div class="col-6 col-sm-4 btn btn-info">Search Alumni By Map</div></div> </div>
+                <!--<div class="col-12 m-4 p-2"><div class="row justify-content-center p-2"> <div class="col-6 col-sm-4 btn btn-info">Search Alumni By Map</div></div> </div>-->
             </div>
         </div>
     </div>

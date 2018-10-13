@@ -7,33 +7,30 @@
     <link href="../../Bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-    <script src="../../Bootstrap/dist/js/bootstrap.js"></script>
-    <link href="../../Bootstrap/dist/css/font-awesome.css" rel="stylesheet">
-</head>
-<style>
-    textarea{
-        resize: none;
-    }
-    textarea:focus{
-        outline: none;
-    }
-    label{
-        display: block;
-        color: gray;
-        font-size: 14px;
-        margin: 4px 0;
-    }
-    input{
-        width: 90%;
-        padding: 10px;
-        border: 0.4px solid rgba(0,0,0,0.1);
+<!--<style>-->
+    <!--textarea{-->
+        <!--resize: none;-->
+    <!--}-->
+    <!--textarea:focus{-->
+        <!--outline: none;-->
+    <!--}-->
+    <!--label{-->
+        <!--display: block;-->
+        <!--color: gray;-->
+        <!--font-size: 14px;-->
+        <!--margin: 4px 0;-->
+    <!--}-->
+    <!--input{-->
+        <!--width: 90%;-->
+        <!--padding: 10px;-->
+        <!--border: 0.4px solid rgba(0,0,0,0.1);-->
 
-    }
-    input:focus{
-        outline-color: skyblue;
-    }
-</style>
-<body>
+    <!--}-->
+    <!--input:focus{-->
+        <!--outline-color: skyblue;-->
+    <!--}-->
+<!--</style>-->
+<!--<body>-->
 <div class="first" style="text-align: center ;background-color:#F7F7F7; box-shadow:2px 1px;">
     <div class="container mt-4">
         <h5 class="pt-4 mb-0">
@@ -56,22 +53,22 @@
     <div class="row justify-content-center p-3">
         <div class="col-12 col-sm-10 col-md-8 ">
             <!--Main-->
-            <form>
+            <form id="msform" method="post" action="/postjob">
                 <div class="row">
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >* Job Title / Position</label>
-                        <input type="text" placeholder="Eg. Salesman, Engineer">
+                        <input type="text" name="jobTitle" placeholder="Eg. Salesman, Engineer">
                     </div>
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >* Company</label>
-                        <input type="text" placeholder="">
+                        <input type="text" placeholder="" name="company">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-sm-6 mt-1 mb-2">
-                    <label >* Location</label>
-                    <input type="text" placeholder="Eg. Delhi Noida Gurugram">
-                </div>
+                        <label >* Location</label>
+                        <input type="text" placeholder="Eg. Delhi Noida Gurugram" name="locaton">
+                    </div>
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >Last Date of Application </label>
                         <input type="text">
@@ -80,27 +77,27 @@
                 <div class="row">
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >Salary per year</label>
-                        <input style="width: 100px" type="number">
-                        <span style="margin: 0 10px"> To</span>
-                        <input style="width: 100px" type="number">
+                        <input style="width: 100px" type="number" name="salary">
+                        <!--<span style="margin: 0 10px"> To</span>-->
+                        <!--<input style="width: 100px" type="number">-->
                     </div>
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >Year Of Experience </label>
-                        <input style="width: 100px" type="number">
-                        <span style="margin: 0 10px"> To</span>
-                        <input style="width: 100px" type="number">
+                        <input style="width: 100px" type="number" name="experience">
+                        <!--<span style="margin: 0 10px"> To</span>-->
+                        <!--<input style="width: 100px" type="number">-->
                     </div>
 
                 </div>
                 <div class="row">
-                    <div class="col-12 col-sm-6 mt-1 mb-2">
-                        <label >* Domain </label>
-                        <input type="text">
-                    </div>
-                    <div class="col-12 col-sm-6 mt-1 mb-2">
-                        <label >Send Applications To  </label>
-                        <input type="text">
-                    </div>
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                    <!--<label >* Domain </label>-->
+                    <!--<input type="text" name="domain">-->
+                    <!--</div>-->
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                    <!--<label >Send Applications To  </label>-->
+                    <!--<input type="text">-->
+                    <!--</div>-->
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >External Links  </label>
                         <input type="text">
@@ -121,14 +118,14 @@
                                 </div>
                             </div>
                             <div class="col-12 p-0" style="border: 0.5px solid rgba(0,0,0,0.1)">
-                                        <div class="" align="left" style="height: 300px;text-align: left">
+                                <div class="" align="left" style="height: 300px;text-align: left">
                                             <textarea rows="5" cols="100"  style="height: 300px; margin: 0;text-align: left;width: 100%">Functions/Responsibilities &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;Skills Required&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;Other Details&#13;&#10;
                                             </textarea>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
                 <div class="row justify-content-end">
                     <div class="col-2 p-2">
                         <button class="btn btn-info p-2 m-2" style="width: 75px;font-size: 18px;font-weight: 200">Post</button>

@@ -10,12 +10,15 @@ var express           =     require('express')
   ,LocalStrategy = require('passport-local').Strategy
   ,User = require('./model/user'),
   Info = require('./model/info')
+  ,Job = require('./model/job')
   ,expressValidator = require('express-validator')
   ,flash = require('connect-flash')
   ,bcrypt = require('bcryptjs')
   ,mongo = require('mongodb')
   ,mongoose = require('mongoose')
+  require('./model/event')
   ,routes = require('./routes/index');
+  
 
 const auth = require('./routes/auth')
 mongoose.Promise = global.Promise;

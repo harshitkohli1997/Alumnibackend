@@ -12,13 +12,12 @@ router.get('/auth/google', passport.authenticate('google',
 router.get('/auth/google/callback',
 passport.authenticate('google',{failureRedirect:'/'}),
 (req,res)=>{
-    Info.findOne({userID:req.user.id,
-              email:req.user.email})
+    Info.findOne({userID:req.user.id})
     .then(info => {
       if(info)
       {
           console.log('User Info exists');
-          res.redirect('/updateinfo');
+          res.redirect('/dashboard');
       }
       else {
               console.log('Update info required');

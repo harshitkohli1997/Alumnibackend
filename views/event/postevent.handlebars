@@ -1,0 +1,41 @@
+<style>
+    .card {
+        background-color:#F7F7F7;
+        box-shadow: 2px 2px;
+    }
+    .secred{
+        background-color: #FF3B3B  ;
+        color: white;
+    }
+</style>
+<br><br>
+<div class="container">
+    <div class="card" style="width:55%; margin-left:20%;">
+<form action="/postevent" method="POST">
+    <div class="secred" style="height:80%;">
+    <h3 style="margin-left:30%;">Post a new Event</h3>
+    </div>
+    <br><br>
+  <div class="form-group" style="width:70%; margin-left:15%;">
+    <label for="formGroupExampleInput">Event name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name = "eventnm" placeholder="Event Name">
+  </div>
+  <div class="form-group" style="width:70%; margin-left:15%;">
+    <label for="formGroupExampleInput2">Venue</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" name = "venue" placeholder="Venue">
+  </div>
+  <div class="form-group" style="width:70%; margin-left:15%;">
+    <label for="formGroupExampleInput">Date</label>
+    <input type="date" class="form-control" id="formGroupExampleInput" name="date" placeholder="Date">
+  </div>
+  <div class="form-group" style="width:70%; margin-left:15%;">
+    <label for="formGroupExampleInput2">Description</label><br>
+    <textarea name="eventdesc" style="width:100%; h eight:70%;"></textarea>
+  </div>
+ 
+ <input type="submit" class="btn btn-danger" style="margin-left:40%;">
+ <br><br>
+</form>
+</div>
+</div>
+<br><br><br>

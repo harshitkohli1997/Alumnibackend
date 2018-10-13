@@ -1,14 +1,15 @@
 const express  = require('express')
     ,router = express.Router()
     ,mongoose = require('mongoose')
-    ,User = require('../model/user')
+    ,User = mongoose.model('User')
 const Info = mongoose.model('Info');
+
 
 
 router.post('/profileupdate', function(req, res) {
 
    const newInfo = {
-    //  userID : req.user.id,
+      userID : req.user.id,
     //  email : req.user.email,
      mobilePhone : req.body.mobilePhone,
      city : req.body.city,
@@ -40,14 +41,33 @@ console.log(newInfo)
 
         new Info(newInfo)
         .save()
-        .then(info => done(null,info))
     }
-    console.log(newInfo);
-    res.render('profile/profile_checkoutpage',newInfo)
+   // console.log(newInfo);
+    res.redirect('/profileupdate');
 });
 
-router.post('/adddetails', function(req, res) {
-res.render('Login/updateinfo')
+router.get('/profileupdate', (req,res)=> {
+    console.log('return function');
+    User.findOne({googleID: req.user.googleID})
+        .then(result => {
+            userData = result;
+            Info.findOne({})
+                .then(result1 => {
+                    infoData = result1;
+
+                    const data = {
+                        userData,
+                        infoData
+                    };
+                    console.log(userData);
+                    console.log('end of data');
+                    console.log(data);
+                    res.render('profile/abc', {
+                        result1:data
+
+                    })
+                })
+        })
 })
 
 

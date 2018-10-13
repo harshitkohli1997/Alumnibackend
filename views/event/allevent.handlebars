@@ -1,0 +1,44 @@
+<style>
+    .first {
+    text-align: center;
+    }
+    .second {
+        margin-left:9%;
+    }
+    .card{
+        box-shadow: 2px 2px;
+        color:grey;
+    }
+</style>
+
+<div class="first" style="background-color:#F7F7F7; box-shadow:2px 1px;">
+<div class="container">
+<h1>Events</h1>
+<h5>Discover and participate at events organized for alumn</h5>
+<button class="btn btn-danger">Post a new Event</button>
+<br><br><br></div> </div>
+<div class="second"><br><br><br>
+
+<div class="container">
+{{#each event}}
+{{event}}
+<div class="card text-center" style="margin-right:12%;">
+  <div class="card-header">
+   
+  </div>
+  <div class="card-body">
+      
+    <h5 class="card-title"><b>Event Name :</b>{{eventnm}}t</h5>
+    <h5 class="card-text"><b>Venue <i class="fas fa-map-marker-alt"></i> : </b>{{venuenm}}</h5>
+    <h5><b>Description :</b>{{eventdesc}} </h5>
+
+    <h5><b>Posted by :  </b>{{useremail}}</h5>
+  </div>
+  <div class="card-footer text-muted">
+    Date : {{date}}
+  </div>
+</div>
+{{/each}}
+</div>
+</div>
+

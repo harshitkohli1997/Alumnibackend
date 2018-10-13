@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(0,0,0,0.1);
+}
+
+#top-image img{
+    border-top: 4px solid darkred;
+    border-bottom: 4px solid darkred;
+    margin-left: 65px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+
+.volunteer-img img{
+    width: 400px;
+    height: 300px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.volunteer{
+    width: 400px;
+    height: 430px;
+    margin-left: 100px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-right: 160px;
+    background-color: white;
+}
+
+.para1{
+    text-align: center;
+    font-weight: bold;
+}
+
+.para2{
+    text-align: center;
+}

@@ -1,0 +1,145 @@
+
+.jobtop{
+
+    background-color: rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+}
+
+.jobdetail{
+    padding-top: 70px;
+    padding-left: 150px;
+    display: inline-block;
+    position: relative;
+}
+
+.jobbuttons{
+    display: inline-block;
+    padding-bottom: 20px;
+    position: absolute;
+    padding-left: 290px;
+    padding-top: 80px;
+}
+
+.jobtext{
+    font-size: 13px;
+}
+
+
+.fresherheading{
+    font-size: 1.5em;
+    line-height: 1px;
+
+}
+
+.fresheraddress{
+    font-size: 14px;
+    color: rgba(0,0,0,0.4);
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.salary{
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 0px;
+}
+
+.experience{
+    padding-top: 6px;
+    font-size: 14px;
+    line-height: 0px;
+    padding-bottom: 10px;
+}
+
+.objective{
+
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 0px;
+    padding-bottom: 10px;
+}
+
+.jobbottom{
+    padding-top: 20px;
+    min-height: 620px;
+
+}
+
+.jobdesc{
+    padding-left: 180px;
+    display: inline-block;
+    position: relative;
+}
+
+.jobfunction{
+    font-size: 12.5px;
+    padding-bottom: 18px;
+    color: #333333;
+}
+
+.para1,.para2{
+    font-size: 12px;
+    padding-bottom: 33px;
+}
+
+p.para1 span{
+    font-weight: bold;
+    color: #333333;
+}
+
+.skills,.domainwork,.otherdetail{
+    font-size: 12.5px;
+    color: #333333;
+    padding-bottom: 18px;
+}
+
+.domainwork{
+    padding-bottom: 80px;
+}
+
+.jobpersonalinfo{
+    display: inline-block;
+    padding-bottom: 20px;
+    position: absolute;
+    padding-left: 190px;
+    padding-top: 80px;
+    padding-right: 100px;
+
+}
+
+.jobname{
+    padding-left: 40px;
+    font-size: 0.97em;
+    color: #333333;
+}
+
+label.followjob{
+    font-size: 0.85em;
+    color: #333333;
+}
+
+.postby{
+    padding-left: 80px;
+    padding-top: 25px;
+    color: #333333;
+}
+
+.imgtag{
+    padding-left: 75px;
+}
+
+.personname{
+    padding-left: 80px;
+    font-size: 0.8em;
+}
+
+.personqualification{
+    padding-left: 25px;
+    font-size: 0.8em;
+}
+
+
+
+
+

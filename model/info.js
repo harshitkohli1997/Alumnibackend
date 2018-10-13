@@ -12,9 +12,6 @@ const InfoSchema = new Schema({
     gender:{
         type:String,
     },
-    /*role:{
-        type:String,
-    },*/
     mobilePhone:{
         type:Number,
     },
