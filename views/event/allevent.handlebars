@@ -15,7 +15,9 @@
 <div class="container">
 <h1>Events</h1>
 <h5>Discover and participate at events organized for alumn</h5>
-<button class="btn btn-danger">Post a new Event</button>
+{{#if user}}
+<a href="/postevent" class="btn btn-danger">Post a new Event</a>
+{{/if}}
 <br><br><br></div> </div>
 <div class="second"><br><br><br>
 
