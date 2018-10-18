@@ -2,9 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 
+const{ ensureAuthenticated, ensureGuest }= require('../configuration/ensureauth')
+
 const Event = mongoose.model('Event')
 
-router.get('/event', (req,res) => {
+router.get('/event' ,(req,res) => {
     Event.find({})
     .then(event => {
         res.render('event/allevent', {
@@ -14,7 +16,7 @@ router.get('/event', (req,res) => {
    
 });
 
-router.get('/postevent', (req,res) => {
+router.get('/postevent',ensureAuthenticated,(req,res) => {
     res.render('event/postevent');
 });
 
