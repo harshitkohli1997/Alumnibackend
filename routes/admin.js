@@ -22,7 +22,7 @@ router.get('/adminactive', (req,res)=> {
 
 router.get('/view/:id', (req,res) => {
     
-    console.log(req.params.id)
+    
     Info.findOne({userID:req.params.id})
     .then(result => {
         console.log(result)
