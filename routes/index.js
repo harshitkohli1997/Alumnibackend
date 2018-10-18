@@ -6,12 +6,14 @@ var express           =     require('express')
     ,passport =require('passport')
     ,auth = require('./auth')
     ,pages=require('./pages')
-    ,event = require('./event');
+    ,event = require('./event')
+    ,admin = require('./admin');
 
 router.use('/',career);
 router.use('/',input);
 router.use('/', auth);
 router.use('/',event);
+router.use('/',admin)
 
 
 router.get('/login', users.login);

@@ -40,7 +40,8 @@ mongoose.connect('mongodb://vaibhav:learning123@ds119523.mlab.com:19523/alumni-w
     })
 
   app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    partialsDir: __dirname + '/views/partials/'
   }));
   app.set('view engine', 'handlebars');
 

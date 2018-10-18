@@ -59,12 +59,14 @@ router.get('/profileupdate', (req,res)=> {
                         userData,
                         infoData
                     };
+                    const resf = data;
+                    console.log(resf)
                     console.log(userData);
                     console.log('end of data');
                     console.log(data);
                     res.render('profile/abc', {
                         result1:data
-
+                        
                     })
                 })
         })
