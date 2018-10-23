@@ -1,0 +1,96 @@
+.first {
+    text-align: center;
+}
+.second {
+
+    background-color: white;
+}
+.album-card-settings{
+    color:grey;
+    position: relative;
+    cursor: pointer;
+}
+.album-image-setts{
+    box-shadow: 0px 8px 18px 0px rgba(0,0,0,0.3);
+    border-radius: 15px;
+}
+.album-image-hover-div-vertical-1{
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    z-index: 1;
+    width: 3px;
+    height: 0;
+    cursor: pointer;
+    color: white;
+    background-color: white;
+    transition: height 1s;
+
+}
+.album-image-hover-div-vertical-2{
+    position: absolute;
+    top: 8%;
+    z-index: 1;
+    right: 10%;
+    width: 3px;
+    height: 0;
+    cursor: pointer;
+    color: white;
+    background-color: white;
+    transition: height 1s;
+
+}
+.album-image-hover-div-horizontal-1{
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    z-index: 1;
+    height: 3px;
+    width: 0;
+    cursor: pointer;
+    color: white;
+    background-color: white;
+    transition: width 1s;
+}
+.album-image-hover-div-horizontal-2{
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    height: 3px;
+    z-index: 1;
+    width: 0;
+    cursor: pointer;
+    color: white;
+    background-color: white;
+    transition: width 1s;
+}
+.album-image-hover-text{
+    position: absolute;
+    font-size: 20px;
+    z-index: 0;
+    top: 0;
+    letter-spacing: 1.2px;
+    word-spacing: 2px;
+    height: 100%;
+    width: 96%;
+    border-radius: 15px;
+    display: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    padding: 50px;
+    text-align: center;
+}
+.album-card-settings:hover .album-image-hover-div-vertical-1, .album-card-settings:hover .album-image-hover-div-vertical-2 {
+
+    height: 85%;
+
+
+}
+.album-card-settings:hover .album-image-hover-div-horizontal-1,.album-card-settings:hover .album-image-hover-div-horizontal-2{
+    width: 85%;
+}
+.album-card-settings:hover .album-image-hover-text{
+    display: block;
+
+}

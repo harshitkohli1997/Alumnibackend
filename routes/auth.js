@@ -35,13 +35,7 @@ else {
 }
 });
 
-router.get('/updateinfo', (req,res) => {
-    res.render('Login/updateinfo')
-})
 
-router.get('/dashboard', (req,res) => {
-    res.render('profile/profile_page')
-})
 router.get('/logout' ,(req,res) => {
 req.logout();
 res.redirect('/');

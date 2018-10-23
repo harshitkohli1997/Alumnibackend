@@ -1,99 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><title>title </title>
-    <meta charset="UTF-8">
-    <title>Title</title>
-        <!--Bootstrap 4 Used-->
+<head><title> ADGITM Alumni Website | Official Website </title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width">
+    <meta name="description" content="Official alumni website of ADGITM, formerly NIEC. ESTEEMED ALUMNI. Aashmeet. Uber USA. Noopur Arora. IBM. Sourabh J. Amazon. Pranjal Jumde. StackRox, US-CA. Rohit Sikka. Google ..."/>
+    <link rel="icon" href="files/Adgitm_new_logo.png" type="image/png" sizes="16x16">
+    <title>ADGITM Alumni Website | Official Website</title>
+    <!--Bootstrap 4 JQUERY AND FONTAWESOME Used-->
     <link href="Bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <script src="Bootstrap/dist/js/jquery-3.2.1.js"></script>
     <script src="Bootstrap/dist/js/bootstrap.js"></script>
-   
-    <!-- Latest compiled and minified CSS -->
-        <link href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!--Stylesheets created -->
-    <link href="/css/homepage_header_img_eventsdivs.css" rel="stylesheet">
-    <link href="/css/Alumni_needs_jobDivs.css" rel="stylesheet">
-    <link href="/css/socialpage.css" rel="stylesheet">
-    <link href="/css/Success_Stories_alumni.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styleforfooter.css">
-    <link href="/css/homepage_header_navbaritems.css" rel="stylesheet">
+
+    <link href="css/socialpage.css" rel="stylesheet">
     <link href="css/footermap.css" rel="stylesheet">
-
-
-     <link rel="stylesheet" href="css/updateinfo.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script src="Bootstrap/dist/js/jquery-3.2.1.js"></script>
-
+    <link href="css/alumni_body_homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/updateinfo.css">
     <link rel="stylesheet" href="css/profile_page/profile_checkpage_css.css">
+    <link href="css/homepage_gallery_setts.css" rel="stylesheet">
+    <link href="css/notable_alumni_homepage.css" rel="stylesheet">
+
+    <!--Script for Profile Page-->
+    <script src="js_frontend/header_frontend.js"></script>
     <script src="js_frontend/profile_checkoutpage.js"></script>
 
-        <script src="../../Bootstrap/dist/js/jquery-3.2.1.js"></script>
-        <link href="../../Bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-
-
-        <script src="../../Bootstrap/dist/js/bootstrap.js"></script>
-        <link href="../../Bootstrap/dist/css/font-awesome.css" rel="stylesheet">
-        <!--Css and scripts for Profile Page-->
-
-        <script>
-
-            $(()=>{
-                let header = $("#header-navbar")[0];
-                let sticky = header.offsetTop;
-                let headerimgdiv=$('#header-imgdiv')[0]
-                let lowernavbar = $('#lower-navbarmenu')[0]
-                let uppericons=$('#upper-header-icons')[0];
-                let headernavrow=$('#headernav-row')[0];
-
-
-                window.fixednavbar = ()=> {
-                    if(window.pageYOffset > sticky) {
-                        header.classList.add("sticky");
-                        headerimgdiv.childNodes[3].style.display="none"
-                        headernavrow.classList.remove("pt-4")
-                        headernavrow.classList.add("pt-1");
-                        uppericons.style.border="none";
-                        lowernavbar.style.display="none";
-                        document.getElementById('scrollingdiv').style.display="block"
-
-                    }
-                    else {header.classList.remove("sticky");
-                        headernavrow.classList.remove("pt-1")
-                        headernavrow.classList.add("pt-4");
-                        headerimgdiv.childNodes[3].style.display="block"
-                        uppericons.style.borderBottom="1px solid whitesmoke";
-                        lowernavbar.style.display="block";
-                        document.getElementById('scrollingdiv').style.display="none"
-
-                    }
-                }
-                //Side Menu Open
-                let sidemenu =$('.side-menusetts')[0]
-                window.sidemenuopen = function() {
-
-                    sidemenu.style.width="350px";
-                }
-                window.closesidemenu = function() {
-                    sidemenu.style.width="0"
-                }
-            })
-            window.onscroll=function () {
-                fixednavbar()
-            };
-        </script>
-
-
-
-
 </head>
-    <body>
-        {{> _header}}
-        {{{body}}}
+<body style="overflow-x: hidden;width: 100%">
+{{> _header}}
+{{{body}}}
 
-        {{> _footer}}
+{{> _footer}}
 
 
-    </body>
+</body>
 </html>

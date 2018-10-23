@@ -1,36 +1,30 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+
     <title>Profile Page</title>
     <link rel="stylesheet" href="css/profile_page/profile_checkpage_css.css">
-    <script src="js_frontend/profile_checkoutpage.js"></script> --}}
+    <script src="js_frontend/profile_checkoutpage.js"></script>
     <style>
         select option{
             color: black;
         }
     </style>
-{{!-- </head>
-
-<body> --}}
 <!--<label >Name</label>-->
 <!--<input type="text" style="border: none; display: block;border-bottom: 1px gray solid" value="ashish">-->
 <div class="container-fluid">
-    <div class="row" style="position: relative;height: 250px">
-        <div class="col-12 basicinfo-divimg " style="height: 250px"> </div>
+    <div class="row profile-top-div specialinfo-img-profile-div " >
+        <div class="col-12 basicinfo-divimg "> </div>
         <!--Background Image-->
             <div class="row justify-content-center mt-4" style="position: absolute; height: 200px; width: 100%">
                  <div class="col-12 p-2 m-2" style="height: 100px">
-                     <div class="row justify-content-start">
+                     <div class="row justify-content-center justify-content-md-start ">
                          <!--Image Div-->
                          <div class="col-6 col-md-3" align="right">
                              <div style="width: 150px ;height: 150px;position: relative;border-radius: 100px">
-                                 <img src="files/scarlett-johansson_dummyimg.jpg" style="border-radius: 100px" alt="profileimg" height="150px" width="150px">
+                                 <img src="{{user.image}}" style="border-radius: 100px" alt="profileimg" height="150px" width="150px">
                              </div>
 
                      </div>
-                         <div class="col-8 col-sm-6 " style="padding-top: 80px">
-                             <label class="maininfo-label main-headings-settings">Name</label>
+                         <div class="col-8 col-sm-6 " id="profile-name-upperdiv">
+                             <label class="maininfo-label main-headings-settings" style="text-transform: capitalize;font-size: 20px">{{user.firstName}}</label>
                          </div>
                   </div>
                  </div>
@@ -40,10 +34,10 @@
 <!--Inner Content-->
 <!--Need To Correct all those Divs which are coming out of the side div becoz
 col is taken as 12 and also margin is given in that So its using extra space , Thats why-->
-<div class="container mt-3">
+<div class="container mt-3 mb-4">
     <div class="row">
         <!--Side divs-->
-        <div class="col-4">
+        <div class="col-12 col-md-4 ml-3 mr-3 mr-md-0 ml-md-0">
             <div class="row sidedivs" >
                <div class="col-12 p-4" style="border-bottom: 0.5px solid rgba(0,0,0,0.1)">
                    <div class="row pt-1 pr-4 pl-4">
@@ -52,16 +46,16 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                        <div class="col-12 mt-1 p-2"><i class="fa fa-birthday-cake"> </i> Born on 8 August 1998 </div>
                    </div>
                </div>
-                <div class="col-12 p-4" style="border-top: 0.5px solid rgba(0,0,0,0.1);border-bottom: 0.5px solid rgba(0,0,0,0.1)">
-                    <div class="row ml-3">
-                        <div class="central-inner-divheadings">Your Preferences</div>
-                        <div class="col-12 p-0">
-                            <ul style="padding: 2px 20px">
-                                <li >Preference 1</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <!--<div class="col-12 p-4" style="border-top: 0.5px solid rgba(0,0,0,0.1);border-bottom: 0.5px solid rgba(0,0,0,0.1)">-->
+                    <!--<div class="row ml-3">-->
+                        <!--<div class="central-inner-divheadings">Your Preferences</div>-->
+                        <!--<div class="col-12 p-0">-->
+                            <!--<ul style="padding: 2px 20px">-->
+                                <!--<li >Preference 1</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class="col-12 p-4" style="border-top: 0.5px solid rgba(0,0,0,0.1)">
                     <div class="row ml-3">
                         <div class="col-3"><i class="fab fa-facebook-f"></i> </div>
@@ -75,50 +69,50 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <div class="col-12 pl-2 pr-2 pb-1 pt-1 mt-2 mb-2">
                     <label class="maininfo-label central-inner-divheadings mt-1 mb-2">Contact Information</label>
                 </div>
-                <div class="col-12"><i class="fa fa-envelope"></i> abc@gmail.com <i class="fa fa-lock"></i> </div>
+                <div class="col-12"><i class="fa fa-envelope"></i> {{user.email}}<i class="fa fa-lock"></i> </div>
                 <div class="col-12"><i class="fa fa-phone"></i> 8738838388 <i class="fa fa-lock"></i> </div>
                 </div>
             <!--Preferences -->
-            <div class="row mt-3 p-3 sidedivs">
-                <div class="col-12 p-1">You are a mentor on this network</div>
-                <div class="col-12 p-1">You are Offering the following service</div>
-                <div class="col-12">
-                    <ul>
-                        <li>Academics</li>
-                    </ul>
-                </div>
-                <div class="col-12">Currently being mentored by</div>
-                <div class="col-12" style="font-size: 20px">Ramesh Chatterji</div>
-                 <!--Communication preferences-->
-                <div class="col-12 p-0">
-                <div class="row mt-3 p-3 justify-content-center" style="border-top: 0.5px solid lightgrey">
-                    <div class="col-8">
-                        <button class="btn btn-dark" style="width: 150px">Search Mentors</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
+            <!--<div class="row mt-3 p-3 sidedivs">-->
+                <!--<div class="col-12 p-1">You are a mentor on this network</div>-->
+                <!--<div class="col-12 p-1">You are Offering the following service</div>-->
+                <!--<div class="col-12">-->
+                    <!--<ul>-->
+                        <!--<li>Academics</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="col-12">Currently being mentored by</div>-->
+                <!--<div class="col-12" style="font-size: 20px">Ramesh Chatterji</div>-->
+                 <!--&lt;!&ndash;Communication preferences&ndash;&gt;-->
+                <!--<div class="col-12 p-0">-->
+                <!--<div class="row mt-3 p-3 justify-content-center" style="border-top: 0.5px solid lightgrey">-->
+                    <!--<div class="col-8">-->
+                        <!--<button class="btn btn-dark" style="width: 150px">Search Mentors</button>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
         <!--End Of Side Divs-->
 
         <!--Info div central-->
 
-        <div class="col-8">
+        <div class="col-12 col-md-8 mt-3 mt-md-0">
             <!--Central Block 1-->
             <div class="row p-3 pr-0 centralblocksetts" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border-radius: 5px">
             <!--Profile Completion Bar-->
                 <div class="col-12"  style="box-shadow: none">
                 <div class="row">
                     <div class="col-12">Nice Work ! You are Almost There</div>
-                    <div class="col-8 p-3">
+                    <div class="col-12 col-md-8 p-3">
                         <div class="col-12 p-0"><div style="width: 100%;height: 5px;background-color: rgba(0,0,0,0.1)">
                             <div style="background-color: rgba(0,0,0,0.7);width: 40%;height: 5px"></div>
                         </div>
                         </div>
                         <div class="col-12 p-0"> 40% Progress</div>
                     </div>
-                    <div class="col-4 p-3">
-                        <button class="btn" style="background-color: lightgreen;color: rgba(0,0,0,0.7)"><a style="color: inherit" href="profile_checkoutpage.handlebars">Update Profile</a></button>
+                    <div class="col-6 col-md-4 p-3">
+                        <a style="color: inherit" href="/updateinfo">  <button class="btn" style="background-color: lightgreen;color: rgba(0,0,0,0.7)">Update Profile</button> </a>
                     </div>
                 </div>
             </div>
@@ -129,7 +123,7 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                     <!--Pic And Content-->
                     <div class="row justify-content-center">
                         <div class="col-3">
-                            <img src="" alt="abc">
+                            <!--<img src="" alt="abc">-->
                         </div>
                         <div class="col-8 pl-0">
                             <div class="row">
@@ -147,7 +141,7 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >
                     <p style="font-weight:bold;margin-left: 30px"> Other Education</p></div>
                 <div class="col-12 pr-2 pl-2 mb-3 mt-4">
-                    <a href="" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Education Details </a>
+                    <a href="/updateinfo" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Education Details </a>
                 </div>
             </div>
             <!--Experience-->
@@ -155,21 +149,19 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >
                     <p style="font-weight:bold;margin-left: 30px"> Experience</p></div>
                 <div class="col-12 pr-2 pl-2 mb-3 mt-4">
-                    <a href="" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Experience </a>
+                    <a href="/updateinfo" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Experience </a>
                 </div>
             </div>
-            <div class="row mt-3 pt-3 pb-3 centralblocksetts" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border-radius: 5px">
-                <div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >
-                    <p style="font-weight:bold;margin-left: 30px"> Personal Details</p></div>
-                <div class="col-12 pr-2 pl-2 mb-3 mt-3">
-                    <div class="row">
-                        <div class="col-12 ml-4 central-inner-divheadings">Gender</div>
-                        <div class="col-12"> <span href="" style="color: inherit; margin-left: 30px"> Female    <i class="fa fa-lock"></i> </span> </div>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="row mt-3 pt-3 pb-3 centralblocksetts" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border-radius: 5px">-->
+                <!--<div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >-->
+                    <!--<p style="font-weight:bold;margin-left: 30px"> Personal Details</p></div>-->
+                <!--<div class="col-12 pr-2 pl-2 mb-3 mt-3">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-12 ml-4 central-inner-divheadings">Gender</div>-->
+                        <!--<div class="col-12"> <span href="" style="color: inherit; margin-left: 30px"> Female    <i class="fa fa-lock"></i> </span> </div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
-{{!-- </div>
-</body>
-</html> --}}
+</div>

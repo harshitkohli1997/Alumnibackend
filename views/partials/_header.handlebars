@@ -1,64 +1,40 @@
-<link href="/css/header_ss.css" rel="stylesheet">
+<link href="css/header_ss.css" rel="stylesheet">
 
-<style>
-    .sticky {
-
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 50px;
-
-    }
-    .innerdiv-subheadings a{
-        color: inherit;
-        text-decoration: none;
-    }
-    .inner-div-subheadings-icons span{
-        padding: 4px;
-        margin: 2px 10px;
-    }
-    .inner-div-subheadings-icons i{
-        font-size: 30px;
-        cursor: pointer;
-
-    }
-</style>
-<script>
-    $(()=>{
-        let searcchicon = $('#searchicon-header')[0]
-        let searchdiv = $('#headerinputbox')[0]
-        window.searchbaropen =()=>{
-            console.log(searcchicon)
-            searchdiv.style.width = "100%";
-        }
-    })
-</script>
 
 <div class="container-fluid pb-4 header-container-div" id="header-navbar" >
-    <div class="row pt-4 pl-2" id="headernav-row">
-        <div class=" col-sm-4 pl-4" id="header-imgdiv">
+    <div class="row pt-4 pl-md-2" id="headernav-row">
+        <div class=" col-6 pl-md-4 col-md-4" id="header-imgdiv" >
             <!--Logo Div-->
-            <img src="/files/finallogo.png" width="70%" height="auto" style="background-color: transparent">
-            <div class="col-10 p-2 ml-3" id="scrollingdiv">MAKE YOUR LIFE <strong>COUNT</strong></div>
+            <a href="/"> <img src="files/aakhri-logo.png" id="header-adgitm-logo"> </a>
+            <div class="col-12 col-md-10 p-0 p-md-2 ml-md-3" id="scrollingdiv" align="center">MAKE YOUR LIFE <strong>COUNT</strong></div>
         </div>
 
-        <div class="col-7 mr-2 pr-3 mt-2 pb-1">
+        <div class="col-5 col-lg-7 mr-md-2 pr-md-3 ml-3 ml-md-0 mt-2 pb-1 p-0">
             <!--Menu Div -->
             <!--This is for upper bar-->
-            <div class="row ml-2 mr-2 justify-content-end" id="upper-header-icons" style="border-bottom: 1px solid whitesmoke">
+            <div class="row ml-2 mr-2 justify-content-end" id="upper-header-icons" >
 
-                <div class="col-6">
+                <div class="col-12 col-lg-6 p-0">
 
                     <!--Content-->
                     <ul id="upperheaderlist">
-                        <li style="width: 170px" > <a id="searchicon-header" onclick="searchbaropen()"  style="color: inherit;text-decoration: none"> <i  class="fas fa-search"> </i></a>
-                            <!--Input box Div-->
-                            <div id="headerinputbox">
-                                <input width="100%" type="text" placeholder="Search" >
-                            </div>
+                        <li style="width: auto" >
+                            <div id="search-li-navbar">
+                                <div id="headerinputbox">
+                                    <input style="width: 100%" type="text" placeholder="Search" >
+                                </div>
+                                <a id="searchicon-header" onclick="searchbaropen()"  style="display: inline-block;color: inherit;text-decoration: none"> <i  class="fas fa-search"> </i></a>
+                                <!--Input box Div-->
 
+                            </div>
                         </li>
-                        <li>  <a href="/loginuser" style="color: inherit;text-decoration: none"> <i class="fas fa-user-circle" aria-hidden="true"></i> </a> </li>
+                        {{#if user}}
+                            <li>  <a href="/profile" style="color: inherit;text-decoration: none"> <i class="fas fa-user-circle" aria-hidden="true"></i> </a> </li>
+
+                        {{else}}
+                            <li>  <a href="/loginuser" style="color: inherit;text-decoration: none"> <i class="fas fa-user-circle" aria-hidden="true"></i> </a> </li>
+
+                        {{/if}}
                         <li style="cursor: pointer" onclick="sidemenuopen()"> &#9776;</li>
                     </ul>
                 </div>
@@ -69,12 +45,24 @@
                 <div class="col-10">
                     <div class="navbar">
                         <div class="nav-item navigationbar-heading"><a href="/"> Home</a></div>
-                        <div class="nav-item navigationbar-heading"><a href=""> Directory</a></div>
-                        <div class="nav-item navigationbar-heading"><a href=""> Career</a></div>
-                        <div class="nav-item navigationbar-heading"><a href=""> Events</a></div>
+                        <div class="nav-item navigationbar-heading"><a href="/searchbyresource"> Directory</a></div>
+                        <div class="nav-item navigationbar-heading"><a href="/careers"> Career</a></div>
+                        <div class="nav-item navigationbar-heading"><a href="/event"> Events</a></div>
                         <div class="nav-item navigationbar-heading"><a href="/about"> About</a></div>
                         {{#if user}}
-                            <div class="nav-item navigationbar-heading"><a href="">Logout</a></div>
+                            <div class="nav-item navigationbar-heading">
+                                <div class="dropdown-own">
+                                    <a class="dropbtn" > Hi , {{user.firstName}}
+                                        <span style="padding: 1px;margin: 2px"><i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        <a href="/logout">Logout</a>
+                                    </div>
+                                </div>
+
+
+                                <!--&lt;!&ndash;<a href="/logout">Logout</a> -->
+                            </div>
 
                         {{else}}
                         {{/if}}
@@ -86,51 +74,78 @@
 </div>
 <div class="container-fluid pl-0 side-menusetts" style="" >
     <div class="row">
-        <div class="col-8 pt-3 pb-3 pr-3 pl-0" style="background-color: gray;color: white;border: 1px solid rgba(255,255,255,0);">
-            <!--Upper Menu-->
-            <div class="row">
-
-                <div class="col-6 ml-4" >
-                    <h3 style="text-align: center" > Menu </h3>
+        {{#if user}}
+            <div class="col-8 pt-3 pb-3 pr-3 pl-0" style="color: white;">
+                <!--Upper Menu-->
+                <div class="row">
+                    <div class="col-5 p-3">
+                        <h3> <a style="color: inherit;text-transform: capitalize" href="/profile">  {{user.firstName}} </a> </h3>
+                    </div>
+                    <div class="col-6" >
+                        <img style="width: 100px;height: 100px;border-radius: 100px;border: white 1px solid" src="{{user.image}}">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div onclick="closesidemenu()" class="col-3 btn pl-0 ml-1 mr-1" style="font-size: 25px">
-            <h1>  &times;</h1>
-        </div>
+            <div onclick="closesidemenu()" class="col-3 btn pl-0 ml-1 mr-1" style="font-size: 25px">
+                <h1>  &times;</h1>
+            </div>
+
+        {{else}}
+            <div class="col-8 pt-3 pb-3 pr-3 pl-0" style="background-color: gray;color: white;border: 1px solid rgba(255,255,255,0);">
+                <!--Upper Menu-->
+                <div class="row">
+
+                    <div class="col-6 ml-4" >
+                        <h3 style="text-align: center" > Menu </h3>
+                    </div>
+                </div>
+            </div>
+            <div onclick="closesidemenu()" class="col-3 btn pl-0 ml-1 mr-1" style="font-size: 25px">
+                <h1>  &times;</h1>
+            </div>
+        {{/if}}
+
     </div>
     <div class="side-menuinnerdiv-heading pr-3" >INFORMATION FOR</div>
     <div class="innerdiv-subheadings pr-4">Student</div>
     <div class="innerdiv-subheadings pr-4">Alumni</div>
     <div class="side-menuinnerdiv-heading pr-3"> MAIN MENU</div>
     <div class="innerdiv-subheadings pr-4 pt-1 pb-1">About</div>
-    <div class="innerdiv-subheadings pr-4 pt-1 pb-1"> + Directory
+    <div class="innerdiv-subheadings pr-4 pt-1 pb-1" id="Directory" onclick="openul(id)"> + Directory
         <ul>
             <li> <a href=""> Search An Alumni</a></li>
             <li><a href="/searchbyresource"> Search by Resource</a></li>
-            <li><a href=""> Search by Map</a></li>
         </ul>
 
     </div>
-    <div class="innerdiv-subheadings pr-4 pt-1 pb-1" > + Career
+    <div class="innerdiv-subheadings pr-4 pt-1 pb-1" id="Career" onclick="openul(id)" > + Career
         <ul>
             <li>
                 <a href="/jobs"> Jobs</a>
             </li>
-            <li>   <a href=""> Post a job </a></li>
+            {{#if user}}
+                <li>   <a href="/postjob"> Post a job </a></li>
+            {{else}}
+                <li>   <a href="/loginuser"> Post a job </a></li>
+
+            {{/if}}
             <li>
                 <a href="/internships"> Internship</a>
             </li>
-            <li><a href="" >Post an internship</a></li>
+            {{#if user}}
+                <li><a href="/postinternships" >Post an internship</a></li>
+            {{else}}
+                <li><a href="/loginuser" >Post an internship</a></li>
+            {{/if}}
+
         </ul>
 
     </div>
-    <div class="innerdiv-subheadings pr-4 pt-1 pb-1" > + Events
+    <div class="innerdiv-subheadings pr-4 pt-1 pb-1" id="Events" onclick="openul(id)" > + Events
 
         <ul>
-            <li><a href=""> Check for Events</a></li>
-            <li><a href=""> Request for an event</a></li>
-            <li><a href=""> Alumni Calender</a></li>
+            <li><a href="/event"> Check for Events</a></li>
+            <li><a href="/postevent"> Request for an event</a></li>
         </ul>
 
     </div>

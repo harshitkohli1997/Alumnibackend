@@ -1,29 +1,43 @@
-
+<script src="js_frontend/Gallery_Albums_js.js"></script>
 <style>
     .first {
         text-align: center;
     }
     .second {
-        margin-left:9%;
+        margin-left:15%;
     }
     .card{
         box-shadow: 2px 2px;
         color:grey;
     }
 /*Full display Image*/
+    .gallery-card-settings{
+        width: 18rem; margin-left:10px; margin-bottom:10px; height: auto;
+    }
+    @media screen and (max-width: 992px){
+        .gallery-card-settings{
+            margin-left: 20px;
 
+        }
+        .second{
+            margin-left: 5px;
+        }
+    }
     /* The Modal (background) */
     .modal {
         display: none;
         position: fixed;
         z-index: 10;
-        padding-top: 100px;
+        padding-top: 50px;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.9);
+    }
+    .mySlides img{
+        height: 600px;
     }
     /* Modal Content */
     .modal-content {
@@ -132,9 +146,9 @@
     <a class="container">
         <h1>Gallery</h1>
         <h5>Revisit the good old College days with photos posted by your fellow alumni. </h5>
-        <a href="/jobs/postajob"> <button class="btn btn-dark">
+        <div >  <a href="/albums"> <button class="btn btn-dark">
             <i class="fas fa-images" style="margin-left: 10px;margin-right: 10px"></i>
-             Upload Photos</button></a>
+            Albums</button></a> </div>
         <br><br><br>
     </a>
 </div>
@@ -142,52 +156,52 @@
     <div class="container pb-5 ">
 
         <br>
-        <div class="row">
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+        <div class="row pl-md-0 pl-3">
+            <div class="card gallery-card-settings">
 
                    <div class="card-img-top"><img src="files/IT_conference.jpg" onclick="openModal();currentSlide(1)" width="100%" height="190.5px"> </div>
                 </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings" >
                 <div class="card-img-top"><img src="files/IT_conference2.jpg" onclick="openModal();currentSlide(2)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings" >
                 <div class="card-img-top"><img src="files/IT_conference3.jpg" onclick="openModal();currentSlide(3)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings">
                 <div class="card-img-top"><img src="files/Mech_event2.jpg" onclick="openModal();currentSlide(4)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings" >
                 <div class="card-img-top"><img src="files/demoimg4.jpg" onclick="openModal();currentSlide(5)" height="190px" width="100%"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings">
                 <div class="card-img-top"><img src="files/demoimg3.jpg" onclick="openModal();currentSlide(6)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings" >
                 <div class="card-img-top"><img src="files/infosys.jpg" onclick="openModal();currentSlide(7)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings">
                 <div class="card-img-top"><img src="files/playonevent/playon1.jpg" onclick="openModal();currentSlide(8)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px">
+            <div class="card gallery-card-settings">
                 <div class="card-img-top"><img src="files/playonevent/playon2.jpg" onclick="openModal();currentSlide(9)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px;">
+            <div class="card gallery-card-settings" >
                 <div class="card-img-top"><img src="files/playonevent/playon3.jpg" onclick="openModal();currentSlide(10)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px">
+            <div class="card gallery-card-settings" >
                 <div class="card-img-top"><img src="files/playonevent/playon4.jpg" onclick="openModal();currentSlide(11)" width="100%" height="190.5px"> </div>
 
             </div>
-            <div class="card" style="width: 18rem; margin-left:10px; margin-bottom:10px">
+            <div class="card gallery-card-settings" >
                 <div class="card-img-top"><img src="files/playonevent/playon5.jpg" onclick="openModal();currentSlide(12)" width="100%" height="190.5px"> </div>
 
             </div>
@@ -205,7 +219,7 @@
                     </div>
 
                     <div class="mySlides">
-                        <img src="files/IT_conference.jpg" style="width:100%">
+                        <img src="files/IT_conference3.jpg" style="width:100%">
                     </div>
 
                     <div class="mySlides">
@@ -244,37 +258,6 @@
                 </div>
             </div>
 
-            <script>
-                function openModal() {
-                    document.getElementById('myModal').style.display = "block";
-                }
 
-                function closeModal() {
-                    document.getElementById('myModal').style.display = "none";
-                }
-
-                var slideIndex = 1;
-                showSlides(slideIndex);
-
-                function plusSlides(n) {
-                    showSlides(slideIndex += n);
-                }
-
-                function currentSlide(n) {
-                    showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                    var i;
-                    var slides = document.getElementsByClassName("mySlides");
-                    console.log(slides);
-                    if (n > slides.length) {slideIndex = 1}
-                    if (n < 1) {slideIndex = slides.length}
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    slides[slideIndex-1].style.display = "block";
-                }
-            </script>
         </div>
 </div>

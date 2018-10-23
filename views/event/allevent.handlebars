@@ -15,13 +15,15 @@
 <div class="container">
 <h1>Events</h1>
 <h5>Discover and participate at events organized for alumn</h5>
-{{#if user}}
-<a href="/postevent" class="btn btn-danger">Post a new Event</a>
-{{/if}}
-<br><br><br></div> </div>
+    {{#if user}}
+    <a href="/postevent"><button class="btn btn-danger">Post a new Event</button></a>
+    {{else}}
+        <a href="/loginuser"><button class="btn btn-danger">Post a new Event</button></a>
+    {{/if}}
+            <br><br><br></div> </div>
 <div class="second"><br><br><br>
 
-<div class="container">
+<div class="container pb-5">
 {{#each event}}
 {{event}}
 <div class="card text-center" style="margin-right:12%;">

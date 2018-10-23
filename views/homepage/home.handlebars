@@ -6,6 +6,14 @@
     js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=168824083963534&autoLogAppEvents=1';
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=168824083963534&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <style>
     .alumni-gcg-headings{
         color: rgba(255,0,0,0.8);
@@ -21,7 +29,7 @@
 <div class="container-fluid" id="background-img-div">
     <div class="row justify-content-center">
         <div>
-            <img src="files/poster.png" width="1350px" height="auto">
+            <img src="files/poster.png" width="100%" height="auto">
         </div>
     </div>
 </div>
@@ -33,25 +41,31 @@
             <!--This div is created to match with upper content image-->
                 <div class="row">
 
-                 <div class="col-3 pl-1 pr-1">
-                    <div class="row"  >
-                        <div class="col-10 pt-2" style="border: 1px solid black;background-color: rgba(0,0,0,0.7)">
+                 <div class="col-3 pl-1 pr-1" id="side-menu-main">
+                    <div class="row">
+                        <div class="col-12 col-md-10 pt-2" style="border: 1px solid black;background-color: rgba(0,0,0,0.7)">
                             <h4 style="text-align: center;color: white">Connect with Alumni</h4>
                         </div>
-                        <div class="col-10">
+                        <div class="col-12 col-md-10">
                             <ul id="side-div-ul">
                                 <li>
                                     <a href=""> Directory</a>
                                     <ul>
-                                        <li> <a href=""> Search An Alumni</a></li>
+                                        <li> <a href="/searchanalumni"> Search An Alumni</a></li>
                                         <li><a href="/searchbyresource"> Search by Resource</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href=""> Events </a>
                                     <ul>
-                                        <li><a href="">All Events</a></li>
-                                        <li><a href=""> Request for an event</a></li>
+                                        <li><a href="/event">All Events</a></li>
+                                        {{#if user}}
+                                        <li><a href="/postevent"> Request for an event</a></li>
+                                        {{else}}
+                                            <li><a href="/loginuser"> Request for an event</a></li>
+
+                                        {{/if}}
+
                                     </ul>
                                 </li>
                                 <li>
@@ -62,18 +76,28 @@
 
 
                                         </li>
-                                        <li>   <a href=""> Post a job </a></li>
+                                        {{#if user}}
+                                        <li>   <a href="/postjobs"> Post a job </a></li>
+                                        {{else}}
+                                        <li>   <a href="/loginuser"> Post a job </a></li>
+
+                                        {{/if}}
                                         <li>
                                             <a href="/internships"> Internship</a>
                                         </li>
-                                        <li><a href="" >Post an internship</a></li>
+                                        {{#if user}}
+                                        <li><a href="/postinternships" >Post an internship</a></li>
+                                        {{else}}
+                                            <li><a href="/loginuser" >Post an internship</a></li>
+                                        {{/if}}
+
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href=""> More </a>
+                                    <a href="/construction"> More </a>
                                     <ul>
                                         <li>
-                                            <a href=""> Glimpse of Alumni </a>
+                                            <a href="/construction"> Glimpse of Alumni </a>
                                         </li>
                                         <li><a href="/volunteer"> Volunteer Opportunities</a></li>
                                         <li><a href="/faqs"> FAQs</a></li>
@@ -83,35 +107,39 @@
                         </div>
 
                     </div>
+
+
+
                      {{#if user}}
 
                      {{else}}
-                    <div class="row">
-                        <div class="col-10 p-4" style="border: 0.5px solid rgba(0,0,0,0.1); background-color: rgb(255,255,255)">
-                            <div class="row ">
-                                <div class="col-12">
-                                    <h4> Join/Login ADGITM Alumni Network </h4>
-                                </div>
-                                <div class="col-12 p-1">
-                                    <p class="mb-0" style="text-align: justify;padding: 10px; font-style: italic;font-size: 18px;font-weight: 300"> Login Faster with Google </p>
-                                </div>
-                                <!--<div class="row justify-content-center"><div class="col-8"><button class="btn btn-dark"><a href="/login">Login</a> </button> </div> </div>-->
-                                <!--<div class="row mt-3 mb-2 justify-content-center"><a style="color: inherit;text-decoration: none" href="/auth/google"><img src="files/homepage_google" class="col-5 col-md-8" width="100%" height="auto" ></img></a></div>-->
+                         <div class="row">
+                             <div class="col-10 p-4" style="border: 0.5px solid rgba(0,0,0,0.1); background-color: rgb(255,255,255)">
+                                 <div class="row">
+                                     <div class="col-12">
+                                         <h4> Join/Login ADGITM Alumni Network </h4>
+                                     </div>
+                                     <div class="col-12 p-1">
+                                         <p class="mb-0" style="text-align: justify;padding: 10px; font-style: italic;font-size: 18px;font-weight: 300"> Login Faster with Google </p>
+                                     </div>
+                                     <!--<div class="row justify-content-center"><div class="col-8"><button class="btn btn-dark"><a href="/login">Login</a> </button> </div> </div>-->
+                                     <!--<div class="row mt-3 mb-2 justify-content-center"><a style="color: inherit;text-decoration: none" href="/auth/google"><img src="files/homepage_google" class="col-5 col-md-8" width="100%" height="auto" ></img></a></div>-->
 
-                                    <!--<div class="col-6"><a href="/auth/linkedin"> <button class="btn btn-dark">Connect with Linkedin</button></a></div>-->
+                                     <!--<div class="col-6"><a href="/auth/linkedin"> <button class="btn btn-dark">Connect with Linkedin</button></a></div>-->
 
-                                <div class="col-12"  align="center"><a href="/auth/google"><img align ="center" src = "files/final_google.png" alt="image here" width="100%" height="60px" ></a></div>
+                                     <div class="col-12"  align="center"><a href="/auth/google"><img align ="center" src = "files/final_google.png" alt="image here" width="100%" height="60px" ></a></div>
 
 
-                            </div>
-                        </div>
-                    </div>
+                                 </div>
+                             </div>
+                         </div>
                      {{/if}}
-                    <!--Side divs-->
+
+                     <!--Side divs-->
                   </div>
 
                 <!--Central Divs-->
-                <div class="col-9 pl-3 pr-1">
+                <div class="col-12 col-md-9 pl-3 pr-1">
                     <div class="row p-2" style="box-shadow: 0 1px 0 #FFF;border-bottom: 1px solid #DDD">
                         <h1 class="central-heading-adgitm">ADGITM ALUMNI</h1>
                      </div>
@@ -123,7 +151,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <!--We Connect-->
-                        <div class="col-12 col-sm-6 col-md-4 ">
+                        <div class="col-12 col-sm-6 col-md-4 mt-md-0 mb-md-0 mb-2 ">
                             <div class="row pl-3 pr-3">
                                 <h2 class="alumni-gcg-headings">We Gather</h2>
                                 <div class="col-12 pl-0" style="text-align: justify">
@@ -133,7 +161,7 @@
                         </div>
 
                         <!--We Connect-->
-                        <div class="col-12 col-sm-6 col-md-4 ">
+                        <div class="col-12 col-sm-6 col-md-4 mt-md-0 mt-2 mb-md-0 mb-2 ">
                             <div class="row pl-3 pr-3">
                                 <h2 class="alumni-gcg-headings">We Connect</h2>
                                 <div class="col-12 pl-0" style="text-align: justify">
@@ -143,7 +171,7 @@
                         </div>
 
                         <!--We Give-->
-                        <div class="col-12 col-sm-6 col-md-4 ">
+                        <div class="col-12 col-sm-6 col-md-4 mt-md-0 mt-2 mb-md-0 mb-2  ">
                             <div class="row pl-3 pr-3">
                                 <h2 class="alumni-gcg-headings">We Give</h2>
                                 <div class="col-12 pl-0" style="text-align: justify">
@@ -155,62 +183,62 @@
                      </div>
                     <!--End Of We - Content-->
                     <!--Notable Alumni-->
-                    <div class="row mt-5 pt-2 pb-1 pl-2 pr-2" style="background-color: gray">
-                        <div class="col-11 pl-2">  <h3 style="color: white;letter-spacing: 1.2px">Notable Alumni</h3> </div>
+                    <div class="row mt-5 pt-2 pb-1 pl-sm-0 pr-sm-0 pl-lg-2 pr-lg-2" style="background-color: gray">
+                        <div class="col-12 col-lg-11 pl-2">  <h3 id="notable-alumni-heading">Notable Alumni</h3> </div>
                     </div>
                     <!--Alumni Card Row-->
                     <div class="row justify-content-center mt-2">
                         <!--Alumni 1-->
-                        <div class="card mr-1" style="height: 300px;width: 12.7rem; box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
+                        <div class="card mr-md-1 mr-1 notable-alumni-cards"align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
                                 <img class="card-img-settings" src="files/notable-Alumni/rohit-sikka-Google.png" alt="image here" title="Rohit Sikka" width="100%">
                             </div>
                             <div class="card-body" style="height: 150px">
 
 
-                                <h4 class="card-title"> Rohit Sikka </h4>
-                                <p class="card-text pb-1 mb-1"> Year of pass</p>
+                                <h4 class="notable-alumni-card-body-title"> Rohit Sikka </h4>
+                                <p class="card-text pb-1 mb-1"> 2017</p>
                                 <p class="card-text pb-1 mt-1"> Developer at Google </p>
 
                             </div>
                         </div>
                         <!--Alumni 2-->
-                        <div class="card ml-1 mr-1" style="height: 300px;width: 12.7rem;box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
+                        <div class="card ml-md-1 mr-md-1 mr-1 ml-1 notable-alumni-cards" align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
                                 <img class="card-img-settings" src="files/notable-Alumni/noopur-aroraIBM.png" title="Noopur Arora" alt="image here" width="100%" >
                             </div>
                             <div class="card-body">
 
 
-                                <h4 class="card-title">Noopur Arora </h4>
-                                <p class="card-text pb-1 mb-1"> Year of pass</p>
+                                <h4 class="notable-alumni-card-body-title">Noopur Arora </h4>
+                                <p class="card-text pb-1 mb-1"> 2016</p>
                                 <p class="card-text pb-1 mb-1">Developer at IBM </p>
 
                             </div>
                         </div>
                         <!--Alumni 3-->
-                        <div class="card ml-1 mr-1" style="height: 300px;width: 12.7rem;box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
+                        <div class="card mt-md-0 mt-3 ml-md-1 ml-0 mr-md-1 mr-1 notable-alumni-cards" align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
                                 <img src="files/notable-Alumni/Isha-BhatiyaADOBE.png" title="Isha Bhatiya" alt="image here" width="100%" class="card-img-settings">
                             </div>
                             <div class="card-body">
 
 
-                                <h4 class="card-title"> Isha Bhatiya </h4>
+                                <h4 class="notable-alumni-card-body-title"> Isha Bhatiya </h4>
                                 <p class="card-text pb-1 mb-1"> Year of pass</p>
                                 <p class="card-text pb-1 mb-1"> Developer at Adobe </p>
 
                             </div>
                         </div>
                         <!--Alumni 4-->
-                        <div class="card ml-1" style="height: 300px;width: 12.7rem;box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);" align="center">
+                        <div class="card ml-md-1 mt-md-0 mt-3 ml-1 notable-alumni-cards" align="center">
                             <div class="card-img-top pt-2 pb-2" style="background-color: gray" align="center" >
                                 <img src="files/notable-Alumni/pranjal-jumdeStackRox.png" title="Pranjal" alt="image here" width="100%" class="card-img-settings">
                             </div>
                             <div class="card-body">
 
 
-                                <h4 class="card-title"> Pranjal Jumde </h4>
+                                <h4 class="notable-alumni-card-body-title"> Pranjal Jumde </h4>
                                 <p class="card-text pb-1 mb-1"> Year of pass</p>
                                 <p class="card-text pb-1 mb-1"> Developer at StackRox </p>
 
@@ -232,11 +260,10 @@
             <!--This div is created to match with upper content image-->
             <div class="row mt-5">
 
-                <div class="col-3 " style="border-radius: 10px;">
+                <div class="col-12 col-lg-3 mb-3 mb-lg-0 " id="side-div-cards-jobportal" style="border-radius: 10px;">
                     <!--Link Bodies-->
                     <div class="card " style="width: 100%;color: white;background-image: url('files/job_portal_backgroundIMG.jpg');background-position: center;background-position-x: 40%">
-                    <!--<div style="width: 100%;height: 100%;position: absolute"></div>-->
-                    <!--<div style="width: 100%;height: 100%;position: absolute;background-color: rgba(0,0,0,0.5)"></div>-->
+
                     <div class="card-body" style="z-index: 1;background-color: rgba(0,0,0,0.3)">
                         <div class="card-title mb-2" style="font-size: 25px;padding: 5px">Job Portal</div>
                         <div class="card-text " style="margin-left: 6px; width: 30%;height: 3px;background-color: crimson"></div>
@@ -246,24 +273,24 @@
                 </div>
                 <!--Alumni Guidance-->
                 <div class="card mt-3 " style="width: 100%;color: white;background-image: url('files/alumni_guidanceIMG.jpg');background-position: center;background-position-x: 60%">
-                <!--<div style="width: 100%;height: 100%;position: absolute"></div>-->
-                <!--<div style="width: 100%;height: 100%;position: absolute;background-color: rgba(0,0,0,0.5)"></div>-->
+
                 <div class="card-body" style="z-index: 1;background-color: rgba(205,92,92,0.3)">
                     <div class="card-title mb-2" style="font-size: 25px;padding: 5px">Alumni Guidance</div>
                     <div class="card-text " style="margin-left: 6px; width: 30%;height: 3px;background-color: crimson"></div>
                     <div class="card-text mt-2 mb-3">Give advice to your fellow alumni or take guidance from Alumni.</div>
-                    <div class="card-link"><a href="/mentorship"> <button style="width: 40%" class="btn btn-info">View</button> </a> </div>
+                    <div class="card-link"><a href="/construction"> <button style="width: 40%" class="btn btn-info">View</button> </a> </div>
                 </div>
             </div>
         </div>
-        <div class="col-9 pl-1 pr-1">
-            <div class="row pl-3" >
+
+        <div class="col-12 col-lg-9 pl-1 pr-1 mt-lg-0 mt-2">
+            <div class="row pl-lg-3 pl-0">
                 <div class="col-12">
                     <div class="row mb-2">
-                        <div class="col-9">
+                        <div class="col-7 col-lg-9">
                             <h3 style="margin-left: 20px">Gallery</h3>
                         </div>
-                        <div class="col-3" align="center">
+                        <div class="col-5 col-lg-3" align="center">
                             <span class="btn btn-dark" style="color: white"><a style="color: inherit" href="/gallery">Go to Gallery</a> </span>
                         </div>
                     </div>
@@ -271,10 +298,10 @@
                 </div>
                 <div class="col-12 pb-3">
                     <div class="row justify-content-center">
-                        <div class="col-12" style="background-color: rgba(0,0,0,0.7);height: 300px" align="center">
-                            <div class="carousel slide" id="carouselImageGallery" data-ride="carousel" style="width: auto;height: 300px">
+                        <div class="col-12" id="gallery-div" align="center">
+                            <div class="carousel slide" id="carouselImageGallery" data-ride="carousel">
                                 <div class="carousel-inner" style="height: inherit">
-                                    <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" height="300px"></div>
+                                    <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" width="100%"></div>
                                     <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" width="100%"></div>
                                     <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide" width="100%"></div>
 
@@ -290,42 +317,86 @@
                             </div>
                         </div>
                         <!--Carousel Image Small Divs-->
-                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2" style="    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: black;width: 13rem;height: 150px;position: relative">
-                                <div class="carousel slide" id="carouselCSE" data-ride="carousel" style="width: auto;height: 100%;">
+                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2 image-gallery-small-divs">
+                                <div class="carousel slide" id="carouselCSE" data-ride="carousel" >
                                     <div class="carousel-inner" style="height: inherit">
-                                        <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" width="206px" ></div>
-                                        <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" width="100%"></div>
-                                        <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide" width="100%"></div>
+                                        <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" ></div>
+                                        <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" ></div>
+                                        <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide"></div>
                                     </div>
 
                             </div>
-                            <div class="inner-hoverable-carousel-div" style="text-align: center;align-content: center;width: 100%;position: absolute;top: 0;left: 0;height: 100%;background-color: rgba(255,255,255,0.8)"><p style="color: black;cursor: pointer;font-size: 25px;letter-spacing: 1.3px;font-weight: bold;padding-top: 40px">CSE</p></div>
+                            <div class="inner-hoverable-carousel-div"><p>CSE</p></div>
                         </div>
-                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2" style="background-color: black;width: 13rem;height: 150px">
-                            <!--IT Branch-->
-                            <div class="carousel slide" id="carouselIT" data-ride="carousel" style="width: auto;height: 100%;">
+
+                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2 image-gallery-small-divs">
+                            <div class="carousel slide" id="carouselIT" data-ride="carousel" >
                                 <div class="carousel-inner" style="height: inherit">
-                                    <div class="carousel-item active"> <img src="files/IT_conference.jpg" alt="First Slide" width="206px" ></div>
-                                    <div class="carousel-item"><img src="files/IT_conference3.jpg" alt="Second Slide" width="100%"></div>
-                                    <div class="carousel-item"><img src="files/IT_conference2.jpg" alt="Second Slide" width="100%"></div>
+                                    <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide"></div>
                                 </div>
-                                <div class="inner-hoverable-carousel-div" style="text-align: center;align-content: center;width: 100%;position: absolute;top: 0;left: 0;height: 100%;background-color: rgba(255,255,255,0.8)"><p style="color: black;cursor: pointer;font-size: 25px;letter-spacing: 1.3px;font-weight: bold;padding-top: 40px">IT</p></div>
 
                             </div>
-
+                            <div class="inner-hoverable-carousel-div"><p>IT</p></div>
                         </div>
-                        <div class="card mt-3 ml-2 mr-1 pt-2 pb-2" style="background-color: black;width: 13rem;height: 150px">
-                           <!--Mechanical Branch -->
-                            <div class="carousel slide" id="carouselMECH" data-ride="carousel" style="width: auto;height: 100%;">
+
+                        <!--Mechanical Branch-->
+                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2 image-gallery-small-divs">
+                            <div class="carousel slide" id="carouselCSE" data-ride="carousel" >
                                 <div class="carousel-inner" style="height: inherit">
-                                    <div class="carousel-item active"> <img src="files/demoimg4.jpg" alt="First Slide" width="206px" ></div>
-                                    <div class="carousel-item"><img src="files/Mech_event2.jpg" alt="Second Slide" width="100%"></div>
-                                    <div class="carousel-item"><img src="files/Mech_event3.jpg" alt="Second Slide" width="100%"></div>
+                                    <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide"></div>
                                 </div>
-                                <div class="inner-hoverable-carousel-div" style="text-align: center;align-content: center;width: 100%;position: absolute;top: 0;left: 0;height: 100%;background-color: rgba(255,255,255,0.8)"><p style="color: black;cursor: pointer;font-size: 25px;letter-spacing: 1.3px;font-weight: bold;padding-top: 40px">MECH</p></div>
 
                             </div>
+                            <div class="inner-hoverable-carousel-div"><p>MECH</p></div>
                         </div>
+
+
+                        <!--Civil Branch-->
+                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2 image-gallery-small-divs special-small-divs">
+                            <div class="carousel slide" id="carouselCSE" data-ride="carousel" >
+                                <div class="carousel-inner" style="height: inherit">
+                                    <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide"></div>
+                                </div>
+
+                            </div>
+                            <div class="inner-hoverable-carousel-div"><p>CIVIL</p></div>
+                        </div>
+
+
+                        <!--EEE Branch-->
+                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2 image-gallery-small-divs special-small-divs">
+                            <div class="carousel slide" id="carouselCSE" data-ride="carousel" >
+                                <div class="carousel-inner" style="height: inherit">
+                                    <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide"></div>
+                                </div>
+
+                            </div>
+                            <div class="inner-hoverable-carousel-div"><p>EEE</p></div>
+                        </div>
+
+
+                        <!--ECE Branch-->
+                        <div class="card mt-3 ml-2 mr-2 pt-2 pb-2 image-gallery-small-divs special-small-divs">
+                            <div class="carousel slide" id="carouselCSE" data-ride="carousel" >
+                                <div class="carousel-inner" style="height: inherit">
+                                    <div class="carousel-item active"> <img src="files/demoimg3.jpg" alt="First Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg4.jpg" alt="Second Slide" ></div>
+                                    <div class="carousel-item"><img src="files/demoimg2.jpg" alt="Second Slide"></div>
+                                </div>
+
+                            </div>
+                            <div class="inner-hoverable-carousel-div"><p>ECE</p></div>
+                        </div>
+
+
 
                     </div>
                 </div>
@@ -342,74 +413,24 @@
         <div class="col-12 col-sm-10 " align="center" style="padding-top: 20px"> <h1>ADGITM SOCIAL</h1> </div>
     </div>
     <!--Icons Row-->
-    <div class="mt-5 row justify-content-center">
-        <div class="col-1 p-0 iconsets"><div id="fb" align="center"><i title="Fb page" class="fab fa-facebook-f" ></i></div> </div>
-        <div class="col-1 p-0 iconsets"><div id="twitter" align="center"> <i class="fab fa-twitter"></i></div> </div>
-        <div class="col-1 p-0 iconsets"><div id="instagram" align="center"> <i class="fab fa-instagram"></i> </div></div>
-        <div class="col-1 p-0 iconsets"><div id="youtube" align="center"> <i class="fab fa-youtube"></i> </div></div>
+    <div class="mt-5 row justify-content-center ml-md-0 ml-1">
+        <div class="col-2 col-md-1 p-0 iconsets"><div id="fb" align="center"><i title="Fb page" class="fab fa-facebook-f" ></i></div> </div>
+        <div class="col-2 col-md-1 p-0 iconsets"><div id="twitter" align="center"> <i class="fab fa-twitter"></i></div> </div>
+        <div class="col-2 col-md-1 p-0 iconsets"><div id="instagram" align="center"> <i class="fab fa-instagram"></i> </div></div>
+        <div class="col-2 col-md-1 p-0 iconsets"><div id="youtube" align="center"> <i class="fab fa-youtube"></i> </div></div>
 
     </div>
     <!--Social Media Stuff Divs -->
     <!--Streaming Data From different Social Media-->
     <div class="row mt-5 justify-content-center" style="height: auto">
-        <div class="col-8 col-md-6 col-lg-4 pr-0" >
+        <div class="col-10 col-md-6 col-lg-4 mt-md-0 pr-md-2 pr-0 pl-md-2 pl-3 mb-2" >
             <div class="fb-page" data-href="https://www.facebook.com/alumnicseniec/" data-tabs="timeline" data-width="410" data-height="430" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/alumnicseniec/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/alumnicseniec/">Alumni CSE Adgitm</a></blockquote></div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 specialsocialdivs">
-            <div class="row p-0" style="height: auto">
-                <div class="col-6 col-md-12 p-0 pt-md-0 pt-sm-3 pl-sm-3 pr-sm-3">
-                    <div class="socialmediadiv" style="height: 200px">
-                        <img src="files/socialmedia1.jpeg" width="100%" height="100%">
-                        <div class="socialmediahoverable">
-                            <div class="socialdivcontent-slideup" >
-                                <span > @Facebook feed</span>
-                                <div class="socialicon" style="background-color: dodgerblue;" align="center"> <span ><i class="fab fa-facebook-f"></i> </span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-12 p-0 pt-md-3 pt-sm-3 pl-sm-3 pr-sm-3" style="height: 200px">
-                    <div class="socialmediadiv" style="height: 200px">
-                        <img src="files/socialmedia3.jpg" width="100%" height="100%">
-                        <div class="socialmediahoverable">
-                            <div class="socialdivcontent-slideup" >
-                                <span > @Facebook feed</span>
-                                <div class="socialicon" style="background-color: dodgerblue;" align="center"> <span ><i class="fab fa-facebook-f"></i> </span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div class="col-10 col-md-6 col-lg-4 pr-0 mt-md-0 mt-3 pl-md-2 pl-3 pr-0 pr-md-2 mb-2" >
+            <a class="twitter-timeline" data-width="410" data-height="430" href="https://twitter.com/adgitm_delhi?ref_src=twsrc%5Etfw">Tweets by ADGITM</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div class="col-6 col-sm-12 col-lg-3 mt-lg-0 mt-md-2 specialsocialdivs">
-            <div class="row " style="height: auto">
-                <div class="col-12 col-sm-6 col-lg-12 pt-sm-2 pt-lg-0" style="height: 200px">
-                    <div class="carousel slide" data-ride="carousel" data-interval="9000" style="height: 100%;">
-                        <div class="carousel-inner" style="height: 100%">
-                            <div class="socialdivendpart carousel-item active">Content
-                                <span style="font-size: 25px;color: black ;position: absolute;bottom: 0;right: 10px" ><i class="fab fa-facebook-f"></i> </span>
-                            </div>
-                            <div class="socialdivendpart carousel-item">Content2
-                                <span style="font-size: 25px;color: black ;position: absolute;bottom: 0;right: 10px" ><i class="fab fa-facebook-f"></i> </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-12 pt-sm-2 pt-lg-0 mt-lg-3" style="height: 200px">
-
-                    <div class="carousel slide" data-ride="carousel" data-interval="6000" style="height: 100%;">
-                        <div class="carousel-inner" style="height: 100%">
-                            <div class="socialdivendpart carousel-item active">Content
-                                <span style="font-size: 25px;color: black ;position: absolute;bottom: 0;right: 10px" ><i class="fab fa-facebook-f"></i> </span>
-                            </div>
-                            <div class="socialdivendpart carousel-item">Content2
-                                <span style="font-size: 25px;color: black ;position: absolute;bottom: 0;right: 10px" ><i class="fab fa-facebook-f"></i> </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-10 col-md-6 col-lg-4 pr-0 mt-md-0 mt-3 pl-3 pl-md-2 pr-0 pr-md-2 mb-2" >
+        <div class="fb-page" data-href="https://www.facebook.com/Adgitm-It-Alumni-formerly-NIEC-1840900402900099/" data-tabs="timeline" data-width="410" data-height="430" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Adgitm-It-Alumni-formerly-NIEC-1840900402900099/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Adgitm-It-Alumni-formerly-NIEC-1840900402900099/">Adgitm It Alumni -formerly NIEC</a></blockquote></div>
         </div>
     </div>
 </div>

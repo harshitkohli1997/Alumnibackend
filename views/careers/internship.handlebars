@@ -1,6 +1,6 @@
 <style>
     .first {
-    text-align: center;
+        text-align: center;
     }
     .second {
         margin-left:9%;
@@ -12,86 +12,56 @@
 </style>
 
 <div class="first" style="background-color:#F7F7F7; box-shadow:2px 1px;">
-<div class="container">
-<h1>Internships</h1>
-<h5>Exclusive internships posted by alumni, only for students of our institute.</h5>
-<button class="btn btn-danger">Post a new Internship</button>
-<br><br><br>
-<select class="form-control form-control-sm" style="width:500; margin-left:27%;">
-  <option default>Department</option>
-  <option >Department1</option>
-  <option >Department2</option>
-  <option >Departmen3</option>
-  <option >Department4</option>
-  <option >Department5</option>
-  
-</select>
-<br>
-<button class="btn" >Submit</button>
 
-<br><br><br>
+    <h1 style="margin-top: 30px">Internships</h1>
+    <h5>Exclusive internships posted by alumni, only for students of our institute.</h5>
+    {{#if user}}
+    <a href="/postinternships"><button class="btn btn-danger">Post a new Internship </button></a>
+    {{else}}
+        <a href="/loginuser"><button class="btn btn-danger">Post a new Internship </button></a>
+    {{/if}}
+    <br><br><br>
+    <select class="form-control form-control-sm" style="width:700px; margin-left:27%;">
+        <option default>Branch</option>
+        <option >CSE</option>
+        <option >IT</option>
+        <option >ECE</option>
+        <option >EEE</option>
+        <option >Mechanical</option>
+        <option >Civil</option>
+
+
+    </select>
+    <br>
+    <button class="btn" >Submit</button>
+
+    <br><br><br>
 </div>
 </div>
 <div class="second">
     <div class="container">
-       
-<h5 style="text-align:right;">Internships</h5>
-<br>
- <div class="row">
-<div class="card" style="width: 18rem; margin-left:2rem; margin-bottom:2rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" style="width: 18rem; margin-left:2rem; margin-bottom:2rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" style="width: 18rem; margin-left:2rem; margin-bottom:2rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" style="width: 18rem; margin-left:2rem; margin-bottom:2rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" style="width: 18rem; margin-left:2rem; margin-bottom:2rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" style="width: 18rem; margin-left:2rem; margin-bottom:2rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-</div>
-</div>
+
+        <h5 style="text-align:right;"></h5>
+        <br>
+        <div class="row">
+
+            {{#each intern}}
+                <div class="card" style="width: 18rem; margin-left:2rem; margin-bottom:2rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{jobTitle}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{company}}</h6>
+                        <p class="card-text">{{description}}</p>
+                        {{#if user}}
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        {{else}}
+                            <a href="/loginuser" class="card-link">Card link</a>
+                            <a href="/loginuser" class="card-link">Another link</a>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+
+        </div>
+    </div>
 </div>

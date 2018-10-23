@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="../../Bootstrap/dist/js/jquery-3.2.1.js"></script>
-    <link href="../../Bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<style>
+textarea{
+resize: none;
+}
+textarea:focus{
+outline: none;
+}
+label{
+display: block;
+color: gray;
+font-size: 14px;
+margin: 4px 0;
+}
+input{
+width: 90%;
+padding: 10px;
+border: 0.4px solid rgba(0,0,0,0.1);
+}
+input:focus{
+outline-color: skyblue;
+}
+</style>
 
-<!--<style>-->
-    <!--textarea{-->
-        <!--resize: none;-->
-    <!--}-->
-    <!--textarea:focus{-->
-        <!--outline: none;-->
-    <!--}-->
-    <!--label{-->
-        <!--display: block;-->
-        <!--color: gray;-->
-        <!--font-size: 14px;-->
-        <!--margin: 4px 0;-->
-    <!--}-->
-    <!--input{-->
-        <!--width: 90%;-->
-        <!--padding: 10px;-->
-        <!--border: 0.4px solid rgba(0,0,0,0.1);-->
 
-    <!--}-->
-    <!--input:focus{-->
-        <!--outline-color: skyblue;-->
-    <!--}-->
-<!--</style>-->
-<!--<body>-->
+
 <div class="first" style="text-align: center ;background-color:#F7F7F7; box-shadow:2px 1px;">
     <div class="container mt-4">
         <h5 class="pt-4 mb-0">
@@ -56,18 +48,18 @@
             <form id="msform" method="post" action="/postjob">
                 <div class="row">
                     <div class="col-12 col-sm-6 mt-1 mb-2">
-                        <label >* Job Title / Position</label>
-                        <input type="text" name="jobTitle" placeholder="Eg. Salesman, Engineer">
+                        <label  >* Job Title / Position</label>
+                        <input required type="text" name="jobTitle" placeholder="Eg. Salesman, Engineer">
                     </div>
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >* Company</label>
-                        <input type="text" placeholder="" name="company">
+                        <input required type="text" placeholder="" name="company">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >* Location</label>
-                        <input type="text" placeholder="Eg. Delhi Noida Gurugram" name="locaton">
+                        <input required type="text" placeholder="Eg. Delhi Noida Gurugram" name="locaton">
                     </div>
                     <div class="col-12 col-sm-6 mt-1 mb-2">
                         <label >Last Date of Application </label>
@@ -138,5 +130,110 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+
+
+
+
+
+
+
+
+<!--<div class="first" style="text-align: center ;background-color:#F7F7F7; box-shadow:2px 1px;">-->
+    <!--<div class="container mt-4">-->
+        <!--<h5 class="pt-4 mb-0">-->
+            <!--<span><a href=""> Career center </a> </span>-->
+            <!--<span > /</span>-->
+            <!--<span> <a href=""> Job</a></span>-->
+            <!--<span> / </span>-->
+            <!--<span>Add</span>-->
+        <!--</h5>-->
+        <!--<br>-->
+        <!--<h2>POST A JOB</h2>-->
+        <!--<br>-->
+        <!--<h6>Let your fellow alumni know of an opportunity at a company you are associated with.</h6>-->
+        <!--<br>-->
+        <!--<br>-->
+    <!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;Post a Job Heading &ndash;&gt;-->
+<!--<div class="container-fluid mt-4">-->
+    <!--<div class="row justify-content-center p-3">-->
+        <!--<div class="col-12 col-sm-10 col-md-8 ">-->
+            <!--&lt;!&ndash;Main&ndash;&gt;-->
+            <!--<form id="msform" method="post" action="/postjob">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                        <!--<label >* Job Title / Position</label>-->
+                        <!--<input type="text" name="jobTitle" placeholder="Eg. Sales Manager, Engineer" required>-->
+                    <!--</div>-->
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                        <!--<label >* Company</label>-->
+                        <!--<input type="text" placeholder="" name="company" required>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                        <!--<label >* Location</label>-->
+                        <!--<input type="text" placeholder="Eg. Delhi Noida Gurugram" name="locaton" required>-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="col-12 col-sm-6 mt-1 mb-2">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<label >Last Date of Application </label>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input type="text">&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                        <!--<label >Salary per year</label>-->
+                        <!--<input style="width: 100px" type="number" name="salary">-->
+                        <!--&lt;!&ndash;<span style="margin: 0 10px"> To</span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input style="width: 100px" type="number">&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                        <!--<label >Year Of Experience </label>-->
+                        <!--<input style="width: 100px" type="number" name="experience">-->
+                        <!--&lt;!&ndash;<span style="margin: 0 10px"> To</span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input style="width: 100px" type="number">&ndash;&gt;-->
+                    <!--</div>-->
+
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<div class="col-12 col-sm-6 mt-1 mb-2">-->
+                        <!--<label >External Links  </label>-->
+                        <!--<input type="text">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;Input Box &ndash;&gt;-->
+                <!--<div class="row justify-content-center mt-3 p-3">-->
+                    <!--<div class="col-12 col-sm-8 m-2"> <label >Detailed Description</label></div>-->
+                    <!--<div class="col-12 col-sm-8">-->
+                        <!--<div class="row justify-content-center">-->
+                            <!--<div class="col-12" style="border-top: 2px solid black ;">-->
+                                <!--<div class="row justify-content-center " style="border: 0.5px solid rgba(0,0,0,0.1)">-->
+                                    <!--<div class="col btn p-2"><i class=" fas fa-bold"></i> </div>-->
+                                    <!--<div class="col btn"><i class="fas fa-italic"></i> </div>-->
+                                    <!--<div class="col btn"><i class="fas fa-underline"></i> </div>-->
+                                    <!--<div class="col btn"><i class="fas fa-text-height"></i> </div>-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="col-12 p-0" style="border: 0.5px solid rgba(0,0,0,0.1)">-->
+                                <!--<div class="" align="left" style="height: 300px;text-align: left">-->
+                                            <!--<textarea rows="5" cols="100"  style="height: 300px; margin: 0;text-align: left;width: 100%">Functions/Responsibilities &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;Skills Required&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;Other Details&#13;&#10;-->
+                                            <!--</textarea>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row justify-content-end">-->
+                    <!--<div class="col-2 p-2">-->
+                        <!--<button class="btn btn-info p-2 m-2" style="width: 75px;font-size: 18px;font-weight: 200">Post</button>-->
+                    <!--</div>-->
+                    <!--<div class="col-2 p-2">-->
+                        <!--<button class="btn btn-danger p-2 m-2" style="width: 75px;font-size: 18px;font-weight: 200">Cancel</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

@@ -1,0 +1,43 @@
+#gallery-div{
+    background-color: rgba(0,0,0,0.7);height: 300px;
+}
+#carouselImageGallery{
+    width: auto;height: 300px;
+}
+.image-gallery-small-divs{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: black;width: 13rem;height: 150px;position: relative;
+}
+.special-small-divs{
+    display: none;
+}
+.inner-hoverable-carousel-div{
+    transition: 1s;
+    display: none;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+    position: absolute;top: 0;left: 0;height: 100%;
+    background-color: rgba(255,255,255,0.8);
+
+}
+.inner-hoverable-carousel-div p{
+    color: black;cursor: pointer;font-size: 25px;letter-spacing: 1.3px;font-weight: bold;padding-top: 40px;
+}
+.card:hover .inner-hoverable-carousel-div{
+    display: block;
+}
+.image-gallery-small-divs .carousel-item img{
+    width: 100%; height: auto;
+}
+@media screen and (max-width: 992px){
+    #gallery-div,#carouselImageGallery{
+        height: 200px;
+    }
+    .special-small-divs{
+        display: block;
+    }
+    .image-gallery-small-divs{
+        width: 10rem;
+        height: 100px;
+    }
+}

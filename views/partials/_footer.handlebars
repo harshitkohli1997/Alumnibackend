@@ -1,7 +1,18 @@
 <script>
     function scrollup() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;    }
+
+        $('html, body').animate({scrollTop:0},1000);
+        //let bodyheight = $(window).height();
+        // for(i= bodyheight ; i>0; i--)
+        // {   console.log(i);
+        //    setTimeout(()=>{
+        //        document.body.scrollTop = i;
+        //        document.documentElement.scrollTop = i;
+        //    },500)
+        // }
+        // document.body.scrollTop = 0;
+        // document.documentElement.scrollTop = 0;
+    }
 </script>
 <style>
     .footerheadings{
@@ -17,7 +28,7 @@
         text-decoration: none;
     }
     #footer-social-icons i {
-    margin-right: 5px;
+        margin-right: 5px;
     }
     .inputbox-setts{
         border: none; border-bottom: 1px whitesmoke solid;
@@ -31,98 +42,77 @@
         font-size: 20px;
         font-weight: normal;
     }
+    @media screen and (max-width:992px)  {
+        .footerheadings{
+            text-align: center;
+        }
+    }
 </style>
-<!--<footer>-->
-    <!--<div class="ml-3 mr-3 pt-3" style="background-color: #ba0b14;display: block">-->
-        <!--<div style="display: inline-block;width: 200px;height: 100%;">-->
-            <!--<img src="public/files/logo-adgitm-small2.jpg" width="100%">-->
-        <!--</div>-->
-        <!--<div style="display: inline-block; width: 400px;margin:10px 30px">-->
-        <!--<div style="display: inline-block;width: 300px; margin:10px 30px">-->
 
-            <!--<p>ADGITM College-->
-                <!--<br>-->
-                <!--Address-->
-                <!--<br>-->
-                <!--New Delhi-->
-            <!--</p>-->
-
-        <!--</div>-->
-        <!--<div class="social-nav" style="display: inline-block">-->
-            <!--<a href=""> <i class="fa fa-phone"></i> 9838173788 </a>-->
-            <!--<a href=""><i class="fa fa-user"></i> Email </a>-->
-            <!--<a href=""><i class="fa fa-map-marker"></i> Map and Directions </a>-->
-        <!--</div>-->
-        <!--<div>-->
-            <!--<a href=""><i class="fab fa-facebook"></i> </a>-->
-            <!--<a href=""><i class="fab fa-twitter"></i> </a>-->
-            <!--<a href=""><i class="fab fa-linkedin"></i> </a>-->
-            <!--<a href=""><i class="fab fa-instagram"></i> </a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="footer-nav-links" style="display: inline-block;width: 200px;" >-->
-            <!--<a href="">Contact us</a>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</footer>-->
 <div class="container-fluid pb-5" style="background-color:  #bc0404;color: white">
-    <div class="row justify-content-center mt-0 mr-5 pt-5 ml-5 pb-2"style="border-bottom: 2px solid black">
-        <div class="col-12 col-sm-5">
-          <div class="row">
-          <div class="col-4 pr-0 pt-2 pl-3" align="right">  <img src="/files/Adgitm_new_logo.png" width="100%"></div>
-          <div class="col-7 pl-0">
-              <div class="row pl-2 pt-3">
-              <div class="col-12"><h5 class="footerheadings">ADGITM College</h5></div>
-                  <div class="col-8"><h6>FC-26, Shastri Park, New Delhi - 110 053</h6></div>
-              <div class="col-12 mt-1 p-1">
-                 <div class="row justify-content-start" id="footer-social-icons" >
-                     <div class="col-6" align="left">
-                         <a href=""> <i class="fa fa-phone"></i> 9838173788 </a>
-                     </div>
-                     <div class="col-6">   <a href=""><i class="fa fa-user"></i> Email </a>
-                     </div>
-                     <div class="col-8"> <a href=""><i class="fa fa-map-marker"></i> Map and Directions </a>
-                     </div>
-                 </div>
+    <div class="row justify-content-center mt-0 mr-md-5 pt-5 ml-md-5 ml-sm-0  pb-2"style="border-bottom: 2px solid black">
+        <div class="col-12 col-md-5">
+            <div class="row">
+                <div class="col-6 col-md-4 pr-0 pt-2 pl-md-3 pl-sm-0" align="right">  <img src="files/Adgitm_new_logo.png" width="100%"></div>
+                <div class="col-6 col-md-7 pl-0">
+                    <div class="row pl-2 pt-3">
+                        <div class="col-12"><h5 class="footerheadings">ADGITM College</h5></div>
+                        <div class="col-8"><h6>FC-26, Shastri Park, New Delhi - 110 053</h6></div>
+                        <div class="col-12 mt-1 p-1">
+                            <div class="row justify-content-md-start justify-content-center" id="footer-social-icons" >
+                                <div class="col-12" align="left">
+                                    <a href=""> <i class="fa fa-phone"></i>+(91)49905900-99</a>
+                                </div>
+                                <div class="col-12">   <i class="fa fa-user"></i> info@niecdelhi.ac.in
+                                </div>
+                                <div class="col-12"> <a href="https://www.google.co.in/maps/dir//adgitm/@28.7016989,77.0367178,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390cfc5e54e6b163:0x523ae20fe007eccc!2m2!1d77.2611304!2d28.6778623"><i class="fa fa-map-marker"></i> Map and Directions </a>
+                                </div>
+                            </div>
 
-              </div>
-          </div>
-          </div>
-          </div>
-        </div>
-        <div class="col-3">
-            <div class="row pt-1">
-                <h4 class="pl-3 pr-3 mb-0 pb-0 footerheadings">Social Links</h4>
-            </div>
-            <div class="row">
-                <div class="col-12 pt-2">Connect With Facebook</div>
-                <div class="col-12 pt-2">Connect With Gmail</div>
-                <div class="col-12 pt-2">Connect With LinkedIn</div>
-            </div>
-            <div class="row mt-2"><h4 class="pl-3 pr-3 mb-0 pb-0 footerheadings">Privacy Policy</h4></div>
-            <div class="row">
-                <div class="col-12 pt-2">About Us</div>
-                <div class="col-12 pt-2">Terms And Conditions</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="col-12 col-md-3 mt-3 mt-md-0">
+            <div class="row">
+                <div class="col-6 col-md-12">
+                    <div class="row pt-1">
+                        <h4 class="pl-3 pr-3 mb-0 pb-0 footerheadings">Social Links</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 pt-2"><a href="https://www.facebook.com/adgitm/" style="color: inherit">Connect With Facebook</a></div>
+                        <div class="col-12 pt-2"><a href="https://twitter.com/adgitm_delhi" style="color: inherit">Connect With Twitter</a></div>
+                        <div class="col-12 pt-2"><a href="https://www.linkedin.com/school/northern-india-engineering-college/" style="color: inherit">Connect With LinkedIn</a></div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-12">
+                    <div class="row mt-md-2 mt-0"><a href="/privacypolicy" style="color: inherit"> <h4 class="pl-3 pr-3 mb-0 pb-0 footerheadings">Privacy Policy</h4></a></div>
+                    <div class="row">
+                        <div class="col-12 pt-2"><a href="/about" style="color: inherit">About Us</a></div>
+                        <div class="col-12 pt-2"><a href="/termsofuse" style="color: inherit">Terms And Conditions</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-md-4 mt-md-0 mt-3">
             <div class="row justify-content-center" >
                 <div class="col-12"><h4 class="mb-0 pb-1 footerheadings">Contact us</h4></div>
                 <div class="col-12"  id="contactusform">
-                    <form>
-                       <div class="col-10 pl-0 mt-1 mb-2">
-                           <input class="input-group-text" type="text" placeholder="Name">
-                       </div>
-                        <div class="col-10 pl-0 mt-1 mb-2">
-                            <input class="input-group-text" type="email" placeholder="Email">
+                    <form class="row justify-content-center" action="/contactus" method="post">
+                        <div class="col-7 col-md-10 pl-0 mt-1 mb-2 ml-2 mr-2">
+                            <input class="input-group-text" type="text" placeholder="Name" name="Name">
                         </div>
-                        <div class="col-10 pl-0 mt-1 mb-1">
-                            <textarea class="input-group-text" style="overflow-x: auto;resize: none" type="text" placeholder="Message" rows="2" cols="22" ></textarea>
+                        <div class="col-7 col-md-10 pl-0 ml-2 mr-2 mt-1 mb-2">
+                            <input class="input-group-text" type="email" placeholder="Email" name="Email">
+                        </div>
+                        <div class="col-7 col-md-10  pl-0 mt-1 ml-2 mr-2 mb-1">
+                            <textarea class="input-group-text" style="overflow-x: auto;resize: none" type="text" placeholder="Message" rows="2" cols="22" name="Message"></textarea>
 
                         </div>
-                        <div class="col-10 pl-0 mt-1 mb-2">
-                            <input class="btn btn-dark" type="submit">
+                        <div class="col-5 col-md-10 pl-0 mt-2 mb-2">
+                            <input class="btn btn-dark ml-3 ml-md-0" type="submit" value="Submit">
                         </div>
 
                     </form>
@@ -132,10 +122,9 @@
 
 
     </div>
-<div class="mt-1 row justify-content-center">
-    <div class="col-1 btn" onclick="scrollup()">
-           <i style="font-size: 40px;color: rgba(0,0,0,0.8)" class="fas fa-chevron-circle-up"></i>
+    <div class="mt-1 row justify-content-center">
+        <div class="col-2 col-md-1 btn" onclick="scrollup()">
+            <i style="font-size: 40px;color: rgba(0,0,0,0.8)" class="fas fa-chevron-circle-up"></i>
+        </div>
     </div>
-
-</div>
 </div>

@@ -1,30 +1,29 @@
 <style>
-.card{
-display: inline-block;
-margin-left:3%;
-margin-bottom: 4%;
-}
+    .card-adminpage{
+        display: inline-block;
+        margin-left:3%;
+        margin-bottom: 4%;
+    }
 </style>
 <br><br>
 <h1 style="margin-left:15%;">Active Users:</h1>
 <br><br>
 {{#each result}}
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{image}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{firstName}} {{lastName}}</h5>
-    
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> {{email}}</li>
-   
-  <div class="card-body">
-    <a href="/view/{{id}}" class="btn btn-danger">View Details</a>
+    <div class="card card-adminpage" style="width: 18rem;">
+        <img class="card-img-top" src="{{image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{firstName}} {{lastName}}</h5>
 
-  </div>
-</div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> {{email}}</li>
+
+            <div class="card-body">
+                <a href="/view/{{id}}" class="btn btn-danger">View Details</a>
+
+            </div>
+    </div>
 
 
 
 {{/each}}
-

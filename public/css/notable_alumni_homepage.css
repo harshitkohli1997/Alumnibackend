@@ -1,0 +1,26 @@
+#notable-alumni-heading{
+    color: white;letter-spacing: 1.2px;
+
+}
+.notable-alumni-cards{
+    height: 300px;width: 12rem; box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+}
+.card-img-settings{
+    border: 2px solid white;width: 120px;height: 120px;border-radius: 100px;
+}
+.notable-alumni-card-body-title{
+    padding-bottom: 8px;
+}
+@media screen and (max-width: 992px){
+    #notable-alumni-heading{
+        font-weight: bold;
+        text-align: center;
+    }
+    .notable-alumni-cards{
+        height: auto; width: 10rem;
+    }
+    .notable-alumni-card-body-title{
+        margin-bottom:2px ;
+        padding-bottom: 2px;
+    }
+}

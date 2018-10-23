@@ -63,4 +63,14 @@ body{
     padding-bottom: 30px;
     border-bottom: 1px solid gray;
 }
+@media screen and (max-width: 992px){
+    .container-newlogin{
+        width: 80%;
 
+        padding: 10px 20px;
+        margin: 30px auto;
+    }
+    .text1 p,.text2 p{
+        padding-bottom: 10px;
+    }
+}

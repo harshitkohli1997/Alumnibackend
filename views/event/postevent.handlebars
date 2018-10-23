@@ -1,5 +1,5 @@
 <style>
-    .card {
+    .card-jobs {
         background-color:#F7F7F7;
         box-shadow: 2px 2px;
     }
@@ -7,12 +7,15 @@
         background-color: #FF3B3B  ;
         color: white;
     }
+    textarea{
+
+    }
 </style>
 <br><br>
 <div class="container">
-    <div class="card" style="width:55%; margin-left:20%;">
+    <div class="card card-jobs" style="width:55%; margin-left:20%;">
 <form action="/postevent" method="POST">
-    <div class="secred" style="height:80%;">
+    <div class="secred" style="height:50px;">
     <h3 style="margin-left:30%;">Post a new Event</h3>
     </div>
     <br><br>
@@ -30,7 +33,7 @@
   </div>
   <div class="form-group" style="width:70%; margin-left:15%;">
     <label for="formGroupExampleInput2">Description</label><br>
-    <textarea name="eventdesc" style="width:100%; h eight:70%;"></textarea>
+    <textarea name="eventdesc" style="width:100%; height:70%;"></textarea>
   </div>
  
  <input type="submit" class="btn btn-danger" style="margin-left:40%;">
