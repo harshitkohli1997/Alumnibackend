@@ -74,7 +74,7 @@
     width: 0;
     color: gray;
     position: fixed;
-    transition: 2s;
+    transition: 1.5s ease-in-out;
     overflow-x: hidden;
     overflow-y: scroll;
     top: 0;
@@ -182,6 +182,14 @@
 .dropdown-own:hover .dropdown-content {
     display: block;
 }
+.innerdiv-subheadings .side-menu-ul{
+    list-style-type: none;
+    margin-left: 20px;
+}
+.innerdiv-subheadings .side-menu-ul li{
+    margin: 5px 2px;
+    font-size: 14px;
+}
 
 .sticky {
 
@@ -204,6 +212,10 @@
     cursor: pointer;
 
 }
+#side-menu-optional-divs{
+    display: none;
+    border: 1px solid black;
+}
 
 @media screen and (max-width: 992px){
     #upper-header-icons{
@@ -224,6 +236,9 @@
     }
     #search-li-navbar{
         width: 40px;
+    }
+    #side-menu-optional-divs{
+        display: block;
     }
 
 }

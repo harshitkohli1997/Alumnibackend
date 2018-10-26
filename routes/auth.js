@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const mongoose = require('mongoose');
-const User = require('../model/user');
-
+const User = mongoose.model('User');
 const Info = mongoose.model('Info');
+const config = require('../configuration/ensureauth');
+
 
 router.get('/auth/google', passport.authenticate('google',
 {scope: ['profile','email']}));//means what we require from google 
@@ -16,35 +17,45 @@ passport.authenticate('google',{failureRedirect:'/'}),
     .then(info => {
       if(info)
       {
-          console.log('User Info exists');
-          res.redirect('/dashboard');
+          console.log('Proceeding to Dashboard');
+          res.redirect('/');
       }
       else {
-              console.log('Update info required');
+              console.log('Update Information required');
               res.redirect('/updateinfo')
+              console.log(req.user);
       }
     })
 
 });
 router.get('/verify', (req,res)=>{
-if(req.user){
+console.log(req.user)
+    if(req.user){
+
     console.log('authenticated');
+    console.log(req.user);
 }
 else {
     console.log('not auth');
+    console.log(req.user)
 }
 });
 
 
-router.get('/logout' ,(req,res) => {
+
+
+router.get('/logout',(req,res) => {
 req.logout();
 res.redirect('/');
 });
+
 module.exports = router;
 
 router.get('/test', (req,res) => {
     console.log(req.user.id);
 })
+
+
 
 // router.get('/auth/google', passport.authenticate('google',
 //     {scope: ['profile','email']})

@@ -5,36 +5,78 @@ const InfoSchema = new Schema({
     userID: {
         type: String,
 
-     },
-     email:{
-         type:String
-     },
-    gender:{
-        type:String,
     },
-    mobilePhone:{
-        type:Number,
+    fbLink: {
+        type: String
     },
-    city:{
+    gLink: {
+        type: String
+    },
+    linkedinLink: {
+        type: String
+    },
+    githubLink: {
+        type: String
+    },
+    twitterLink:{
         type:String
     },
-    graduationYear:{
+    ResumeLink:{
+        type:String
+    },
+    mobilePhone: {
+        type: Number,
+    },
+    city: {
+        type: String
+    },
+    graduationYear: {
         type: Number
     },
-    entryYear:{
-      type: Number
+    entryYear: {
+        type: Number
     },
-    course:{
-        type:String
+    course: {
+        type: String
     },
-    branch:{
-        type:String
+    branch: {
+        type: String
     },
-    enrollementNumber:{
-        type:Number,
+    enrollementNumber: {
+        type: Number,
     },
-
+    otherEducation:[{
+        yearEntry :{
+            type: String
+        },
+        yearGraduation:{
+            type: String
+        },
+        degree: {
+            type: String
+        },
+        field:{
+            type: String
+        },
+        specialisation:{
+            type: String
+        }
+    }],
+    experience:[{
+        employer:{
+            type: String
+        },
+        job:{
+            type: String
+        },
+        from:{
+            type: String
+        },
+        to:{
+            type: String
+        }
+    }]
 });
-// mongoose.model('Info',InfoSchema);
-module.exports = mongoose.model('Info', InfoSchema);
 
+
+module.exports = mongoose.model('Info', InfoSchema);

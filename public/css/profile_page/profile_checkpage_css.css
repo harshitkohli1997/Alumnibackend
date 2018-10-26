@@ -126,9 +126,12 @@
         padding-top: 20px; padding-left: 80px;
     }
     .profile-footer-save-btn{
-        right: 2%;
+        right: 4%;
     }
     .profile-footer-discard-btn{
-        right: 70%;
+        right: 60%;
+    }
+    .maininfo-inputbox-setts{
+        width: 90%;
     }
 }

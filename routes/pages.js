@@ -1,7 +1,10 @@
 const express  = require('express');
 const router = express.Router();
 //const{ ensureAuthenticated, ensureGuest }= require('../configuration/ensureauth')
-const config = require('../configuration/ensureauth');
+const config = require('../configuration/ensureauth')
+    ,mongoose = require('mongoose')
+    ,User = mongoose.model('User');
+const Info = mongoose.model('Info');
 
 //Login Files Rendering Through these Routes
 router.get('/loginuser', function(req, res, next) {
@@ -20,7 +23,23 @@ router.get('/test', (req,res)=>{
 //profile page
 
 router.post('/profile',(req,res)=>{
-    res.render('profile/profile_page',{userobj:req.body});
+    res.redirect('/profile');
+})
+
+router.get('/profile',(req,res)=>{
+    User.findOne({googleID: req.user.googleID})
+        .then(result => {
+            Info.findOne({})
+                .then(result1 => {
+                    infoData = result1;
+
+                    console.log('Sending data...');
+                    res.render('profile/profile_page', {
+                        info:infoData
+
+                    })
+                })
+        })
 })
 
 router.get('/updateinfo', (req,res) => {

@@ -42,8 +42,8 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                <div class="col-12 p-4" style="border-bottom: 0.5px solid rgba(0,0,0,0.1)">
                    <div class="row pt-1 pr-4 pl-4">
                        <div class="col-12 mt-1 p-2"><i class="fa fa-user"></i> Alumni </div>
-                       <div class="col-12 mt-1 p-2"><i class="fa fa-location-arrow"></i> Lives in New Delhi, India </div>
-                       <div class="col-12 mt-1 p-2"><i class="fa fa-birthday-cake"> </i> Born on 8 August 1998 </div>
+                       <div class="col-12 mt-1 p-2"><i class="fa fa-location-arrow"></i> {{info.city}} </div>
+                       <div class="col-12 mt-1 p-2"><i class="fa fa-birthday-cake"> </i></div>
                    </div>
                </div>
                 <!--<div class="col-12 p-4" style="border-top: 0.5px solid rgba(0,0,0,0.1);border-bottom: 0.5px solid rgba(0,0,0,0.1)">-->
@@ -58,9 +58,17 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <!--</div>-->
                 <div class="col-12 p-4" style="border-top: 0.5px solid rgba(0,0,0,0.1)">
                     <div class="row ml-3">
-                        <div class="col-3"><i class="fab fa-facebook-f"></i> </div>
+                        <div class="col-3"><i class="fab fa-facebook-f"></i></div>
                         <div class="col-3"><i class="fab fa-linkedin"></i> </div>
                         <div class="col-3"></div>
+                    </div>
+
+                    <!--Resume Link-->
+
+                    <div class="row mt-3 p-3" style="border-top: 0.5px solid lightgrey">
+                        <div class="col-12 p-3 central-inner-divheadings">Resume</div>
+                        <div class="col-2"><i class="fas fa-link"></i> </div><div class="col">{{info.ResumeLink}}</div>
+
                     </div>
                 </div>
             </div>
@@ -70,7 +78,7 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                     <label class="maininfo-label central-inner-divheadings mt-1 mb-2">Contact Information</label>
                 </div>
                 <div class="col-12"><i class="fa fa-envelope"></i> {{user.email}}<i class="fa fa-lock"></i> </div>
-                <div class="col-12"><i class="fa fa-phone"></i> 8738838388 <i class="fa fa-lock"></i> </div>
+                <div class="col-12"><i class="fa fa-phone"></i> {{user.mobilePhone}} <i class="fa fa-lock"></i> </div>
                 </div>
             <!--Preferences -->
             <!--<div class="row mt-3 p-3 sidedivs">-->
@@ -128,9 +136,9 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                         <div class="col-8 pl-0">
                             <div class="row">
                              <div class="col-12"> GGSIPU</div>
-                                <div class="col-12">Batch from - to</div>
-                                <div class="col-12"> Branch </div>
-                                <div class="col-12">Registration No.</div>
+                                <div class="col-12">Batch {{info.entryYear}} - {{info.graduationYear}}</div>
+                                <div class="col-12"> {{info.branch}} </div>
+                                <div class="col-12">{{info.enrollementNumber}}</div>
                             </div>
                         </div>
                     </div>
@@ -141,6 +149,16 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >
                     <p style="font-weight:bold;margin-left: 30px"> Other Education</p></div>
                 <div class="col-12 pr-2 pl-2 mb-3 mt-4">
+                    {{#if info.otherEducation.yearEntry}}
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 col-md-8">Batch {{info.otherEducation.yearEntry}} - {{info.otherEducation.yearGraduation}}</div>
+                            <div class="col-12 col-md-8">Degree - {{info.otherEducation.degree}}</div>
+                            <div class="col-12 col-md-8">Feild - {{info.otherEducation.field}}</div>
+                            <div class="col-12 col-md-8">Specialization In - {{info.otherEducation.specialisation}}</div>
+                        </div>
+                    </div>
+                    {{/if}}
                     <a href="/updateinfo" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Education Details </a>
                 </div>
             </div>
@@ -149,6 +167,13 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >
                     <p style="font-weight:bold;margin-left: 30px"> Experience</p></div>
                 <div class="col-12 pr-2 pl-2 mb-3 mt-4">
+                    {{#if info.experience.employer}}
+                        <div class="row">
+                            <div class="col-12 col-md-8">Currently working As {{info.experience.employer}}</div>
+                            <div class="col-12 col-md-8">Currently working at- {{info.experience.job}}</div>
+                            <div class="col-12 col-md-8">Years - {{info.experience.from}}-{{info.experience.to}}</div>
+                        </div>
+                    {{/if}}
                     <a href="/updateinfo" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Experience </a>
                 </div>
             </div>

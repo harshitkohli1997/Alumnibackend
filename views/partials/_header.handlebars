@@ -77,7 +77,7 @@
         {{#if user}}
             <div class="col-8 pt-3 pb-3 pr-3 pl-0" style="color: white;">
                 <!--Upper Menu-->
-                <div class="row">
+                <div class="row pl-4">
                     <div class="col-5 p-3">
                         <h3> <a style="color: inherit;text-transform: capitalize" href="/profile">  {{user.firstName}} </a> </h3>
                     </div>
@@ -106,20 +106,26 @@
         {{/if}}
 
     </div>
+    <div class="row mt-2 mb-2 " id="side-menu-optional-divs">
+        <div class="col p-3 ml-3" style="background-color: darkblue;font-size: 20px;color: white"><a style="color: inherit" href="/"> Home </a></div>
+       {{#if user}}
+        <div class="col-6"  style="background-color: darkblue;font-size: 20px;color: white" ><a href="/logout"> Logout</a></div>
+       {{/if}}
+    </div>
     <div class="side-menuinnerdiv-heading pr-3" >INFORMATION FOR</div>
     <div class="innerdiv-subheadings pr-4">Student</div>
     <div class="innerdiv-subheadings pr-4">Alumni</div>
     <div class="side-menuinnerdiv-heading pr-3"> MAIN MENU</div>
     <div class="innerdiv-subheadings pr-4 pt-1 pb-1">About</div>
     <div class="innerdiv-subheadings pr-4 pt-1 pb-1" id="Directory" onclick="openul(id)"> + Directory
-        <ul>
-            <li> <a href=""> Search An Alumni</a></li>
+        <ul class="side-menu-ul">
+            <li> <a href="/searchanalumni"> Search An Alumni</a></li>
             <li><a href="/searchbyresource"> Search by Resource</a></li>
         </ul>
 
     </div>
     <div class="innerdiv-subheadings pr-4 pt-1 pb-1" id="Career" onclick="openul(id)" > + Career
-        <ul>
+        <ul class="side-menu-ul">
             <li>
                 <a href="/jobs"> Jobs</a>
             </li>
@@ -143,7 +149,7 @@
     </div>
     <div class="innerdiv-subheadings pr-4 pt-1 pb-1" id="Events" onclick="openul(id)" > + Events
 
-        <ul>
+        <ul class="side-menu-ul">
             <li><a href="/event"> Check for Events</a></li>
             <li><a href="/postevent"> Request for an event</a></li>
         </ul>

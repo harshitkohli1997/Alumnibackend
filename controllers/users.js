@@ -35,7 +35,7 @@ exports.mail = (req,res) => {
         service: 'Gmail',
         auth: {
             user: 'vaibhav.aggarwal2402@gmail.com',
-            pass: 'learning@123'
+            password: 'learning@123'
         }
     });
 
