@@ -4,12 +4,63 @@ const express  = require('express')
     ,nodemailer = require('nodemailer')
     ,User = mongoose.model('User');
 const Info = mongoose.model('Info');
+const fileUpload = require('express-fileupload');
 //const{ ensureAuthenticated, ensureGuest }= require('../configuration/ensureauth')
 const config = require('../configuration/ensureauth');
 
+router.use(fileUpload());
 
+router.get('/upload', (req,res) => {
+    res.render('profile/abc')
+})
+
+router.post('/upload', (req,res) => {
+    console.log(req.files)
+    if (Object.keys(req.files).length == 0) {
+        return res.status(400).send('No files were uploaded.');
+      }
+ 
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  let sampleFile = req.files.sampleFile;
+  console.log(req.files);
+  console.log(sampleFile.name)
+ 
+  // Use the mv() method to place the file somewhere on your server
+  sampleFile.mv(upload, function(err) {
+    if (err)
+      return res.status(500).send(err);
+ 
+    res.send('File uploaded!');
+  });
+})
 
 router.post('/profileupdate', function(req, res) {
+
+
+            console.log(req.files)
+            if (Object.keys(req.files).length == 0) {
+                var path = '';
+                console.log('not upload')
+                
+            }
+        
+        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+        let sampleFile = req.files.sampleFile;
+        console.log(req.files);
+        console.log(sampleFile.name)
+        var path = 'uploads/'+Date.now()+`${sampleFile.name}`;
+        var upload = 'public/'+path;
+        
+        // Use the mv() method to place the file somewhere on your server
+        sampleFile.mv(upload, function(err) {
+            if (err)
+            {
+                console.log(err);
+            }
+
+        
+            console.log('File uploaded!');
+        });
 
 
 
@@ -28,6 +79,8 @@ router.post('/profileupdate', function(req, res) {
         githubLink: req.body.githubLink,
         twitterLink: req.body.twitterLink,
         ResumeLink: req.body.ResumeLink,
+        visitingcard:path,
+        
         otherEducation: [{
             yearEntry: req.body.yearEntry,
             yearGraduation: req.body.yearGraduation,
