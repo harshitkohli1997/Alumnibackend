@@ -119,8 +119,8 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                         </div>
                         <div class="col-12 p-0"> 40% Progress</div>
                     </div>
-                    <div class="col-6 col-md-4 p-3">
-                        <a style="color: inherit" href="/updateinfo">  <button class="btn" style="background-color: lightgreen;color: rgba(0,0,0,0.7)">Update Profile</button> </a>
+                    <div class="col-6 col-md-4 p-3"> 
+                        <a  href="/editprofile/{{info.id}}"  class="btn btn-danger" style="background-color: lightgreen;color: rgba(0,0,0,0.7)">Update Profile </a>
                     </div>
                 </div>
             </div>
@@ -149,16 +149,17 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >
                     <p style="font-weight:bold;margin-left: 30px"> Other Education</p></div>
                 <div class="col-12 pr-2 pl-2 mb-3 mt-4">
-                    {{#if info.otherEducation.yearEntry}}
+                    {{#each info.otherEducation}}
+                     
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-12 col-md-8">Batch {{info.otherEducation.yearEntry}} - {{info.otherEducation.yearGraduation}}</div>
-                            <div class="col-12 col-md-8">Degree - {{info.otherEducation.degree}}</div>
-                            <div class="col-12 col-md-8">Feild - {{info.otherEducation.field}}</div>
-                            <div class="col-12 col-md-8">Specialization In - {{info.otherEducation.specialisation}}</div>
+                            <div class="col-12 col-md-8">Batch {{this.yearEntry}} - {{this.yearGraduation}}</div>
+                            <div class="col-12 col-md-8">Degree - {{this.degree}}</div>
+                            <div class="col-12 col-md-8">Feild - {{this.field}}</div>
+                            <div class="col-12 col-md-8">Specialization In - {{this.specialisation}}</div>
                         </div>
                     </div>
-                    {{/if}}
+                    {{/each}}
                     <a href="/updateinfo" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Education Details </a>
                 </div>
             </div>
@@ -167,13 +168,13 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                 <div class="col-12 p-1" style="border-bottom: 1px solid rgba(0,0,0,0.1)" >
                     <p style="font-weight:bold;margin-left: 30px"> Experience</p></div>
                 <div class="col-12 pr-2 pl-2 mb-3 mt-4">
-                    {{#if info.experience.employer}}
+                    {{#each info.experience}}
                         <div class="row">
-                            <div class="col-12 col-md-8">Currently working As {{info.experience.employer}}</div>
-                            <div class="col-12 col-md-8">Currently working at- {{info.experience.job}}</div>
-                            <div class="col-12 col-md-8">Years - {{info.experience.from}}-{{info.experience.to}}</div>
+                            <div class="col-12 col-md-8">Currently working As {{thisemployer}}</div>
+                            <div class="col-12 col-md-8">Currently working at- {{this.job}}</div>
+                            <div class="col-12 col-md-8">Years - {{this.from}}-{{this.to}}</div>
                         </div>
-                    {{/if}}
+                    {{/each}}
                     <a href="/updateinfo" style="color: inherit; margin-left: 30px">    <i class="fa fa-plus"></i> Add another Experience </a>
                 </div>
             </div>

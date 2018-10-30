@@ -44,7 +44,8 @@ router.post('/profileupdate', function(req, res) {
                 
             }
         
-        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+        else {
+            // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
         let sampleFile = req.files.sampleFile;
         console.log(req.files);
         console.log(sampleFile.name)
@@ -61,6 +62,7 @@ router.post('/profileupdate', function(req, res) {
         
             console.log('File uploaded!');
         });
+    }
 
 
 
@@ -121,10 +123,7 @@ router.get('/profileupdate',(req,res)=> {
                         infoData
                     };
                     console.log('Sending data...');
-                    res.render('homepage/home', {
-                        result1:data
-
-                    })
+                    res.redirect('/profile')
                 })
         })
 })
