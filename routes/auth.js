@@ -18,7 +18,7 @@ passport.authenticate('google',{failureRedirect:'/'}),
       if(info)
       {
           console.log('Proceeding to Dashboard');
-          res.redirect('/');
+          res.redirect('/profile');
       }
       else {
               console.log('Update Information required');
