@@ -55,13 +55,16 @@ mongoose.connect('mongodb://root:adgitm1365@ds125058.mlab.com:25058/websitedata'
    app.use(bodyParser.urlencoded({ extended: false }));
    app.use(session({ secret: 'keyboard cat', key: 'sid'}));
 
-   app.use(methodOverride('_method'));
-  
-  
+  app.use(methodOverride('_method'));
+
    app.use(passport.initialize());
    app.use(passport.session());
+
+
+
+
   
-   app.use(expressValidator({
+  app.use(expressValidator({
       errorFormatter: function(param, msg, value) {
           var namespace = param.split('.')
               , root    = namespace.shift()

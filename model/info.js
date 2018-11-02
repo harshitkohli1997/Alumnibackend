@@ -24,9 +24,6 @@ const InfoSchema = new Schema({
     ResumeLink:{
         type:String
     },
-    visitingcard:{
-       type:String
-    },
     mobilePhone: {
         type: Number,
     },
@@ -44,6 +41,9 @@ const InfoSchema = new Schema({
     },
     branch: {
         type: String
+    },
+    visitingcard:{
+        type:String
     },
     enrollementNumber: {
         type: Number,

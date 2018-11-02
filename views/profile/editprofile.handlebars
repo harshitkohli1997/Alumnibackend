@@ -1,4 +1,3 @@
-
     <script src="../../public/Bootstrap/dist/js/jquery-3.2.1.js"></script>
     <script>
         function deleteparent(element) {
@@ -79,9 +78,9 @@
         }
     </style>
 <!--<label >Name</label>-->
+
 <!--<input type="text" style="border: none; display: block;border-bottom: 1px gray solid" value="ashish">-->
-    <form action="/editprofile/{{info.id}}?_method=PUT" method="post" class="col s12">
-  <input type="hidden" name="_method" value="PUT">
+    <form style="position: relative" action="/editprofile/{{info.id}}" method="post" encType="multipart/form-data">
 <div class="container-fluid">
     <div class="row profile-top-div">
         <div class="col-12 basicinfo-divimg "> </div>
@@ -167,16 +166,16 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                     <div class="row mt-3">
                         <div class="col-12 ml-3">
                             <div class="row mt-2 mb-2">
-                            <div class="col-2"><i class="fab fa-facebook-f"></i> </div><div class="col"><input class="maininfo-inputbox-setts inputbox-blue-sets" value="{{info.fbLink}}" name="fbLink"></div>
+                            <div class="col-2"><i class="fab fa-facebook-f"></i> </div><div class="col"><input class="maininfo-inputbox-setts inputbox-blue-sets" name="fbLink"></div>
                             </div>
                             <div class="row mt-2 mb-2">
-                                <div class="col-2"><i class="fab fa-linkedin"></i> </div><div class="col"><input class="inputbox-blue-sets maininfo-inputbox-setts" value="{{info.linkedinLink}}" name="linkedinLink"></div>
+                                <div class="col-2"><i class="fab fa-linkedin"></i> </div><div class="col"><input class="inputbox-blue-sets maininfo-inputbox-setts" name="linkedinLink"></div>
                             </div>
                             <div class="row mb-2 mt-2">
-                                <div class="col-2"><i class="fab fa-google-plus-official"></i> </div><div class="col"><input  class=" inputbox-blue-sets maininfo-inputbox-setts" value="{{info.gLink}}" name="gLink"></div>
+                                <div class="col-2"><i class="fab fa-google-plus-official"></i> </div><div class="col"><input  class=" inputbox-blue-sets maininfo-inputbox-setts" name="gLink"></div>
                             </div>
                             <div class="row mt-2 mb-2">
-                                <div class="col-2"><i class="fab fa-github"></i> </div><div class="col"><input class=" inputbox-blue-sets maininfo-inputbox-setts" value="{{info.githubLink}}" name="githubLink"></div>
+                                <div class="col-2"><i class="fab fa-github"></i> </div><div class="col"><input class=" inputbox-blue-sets maininfo-inputbox-setts" name="githubLink"></div>
                             </div>
 
                             <div class="row mt-2 mb-2">
@@ -189,10 +188,17 @@ col is taken as 12 and also margin is given in that So its using extra space , T
 
                 <div class="row mt-3 p-3" style="border-top: 0.5px solid lightgrey">
                     <div class="col-12 p-3 central-inner-divheadings">Resume</div>
-                    <div class="col-2"><i class="fas fa-link"></i> </div><div class="col"><input style="background-color: rgba(135,206,250,0.3);border-bottom: 1px solid skyblue" class="maininfo-inputbox-setts" value="{{info.ResumeLink}}" name="ResumeLink"></div>
+                    <div class="col-2"><i class="fas fa-link"></i> </div><div class="col"><input style="background-color: rgba(135,206,250,0.3);border-bottom: 1px solid skyblue" class="maininfo-inputbox-setts" name="ResumeLink"></div>
 
                 </div>
-            
+                
+                {{#if info.visitingcard}}
+                <div class="abc" style="display:none">
+                 <input type="file" name="sampleFile">
+                 </div>
+                 {{else}}
+                 Visiting Card:  <i class="fas fa-id-card"></i> <input type="file" name="sampleFile">
+                 {{/if}}
                 </div>
             </div>
         <div class="col-12 col-md-8 ml-1 ml-md-0 mt-3 mt-md-0 pl-0 pl-md-2">
@@ -215,7 +221,7 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                                 </div>
                                 <div class="col-6">
                                     <label class="central-inner-divheadings">Registration No.</label>
-                                    <input class="maininfo-inputbox-setts" type="text" placeholder="Enrollement Number" value="{{info.enrollementNumber}}" name="enrollementNumber">
+                                    <input class="maininfo-inputbox-setts" type="text" placeholder="Enrollement Number" name="enrollementNumber">
                                 </div>
                             </div>
                             <div class="row">
@@ -245,11 +251,11 @@ col is taken as 12 and also margin is given in that So its using extra space , T
                             <div class="row">
                                 <div class="col-6">
                                     <label class="central-inner-divheadings" >Year of start</label>
-                                    <input type="text" class="maininfo-inputbox-setts"  placeholder="Year" value="{{info.entryYear}}" name="entryYear">
+                                    <input type="text" class="maininfo-inputbox-setts" placeholder="Year" name="entryYear">
                                 </div>
                                 <div class="col-6">
                                     <label class="central-inner-divheadings" >Year of Graduation</label>
-                                    <input type="text" class="maininfo-inputbox-setts" placeholder="Year" value="{{info.graduationYear}}" name="graduationYear">
+                                    <input type="text" class="maininfo-inputbox-setts" placeholder="Year" name="graduationYear">
                                 </div>
                             </div>
                         </div>

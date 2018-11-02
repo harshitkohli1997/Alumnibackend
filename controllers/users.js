@@ -34,16 +34,19 @@ exports.mail = (req,res) => {
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'vaibhav.aggarwal2402@gmail.com',
-            password: 'learning@123'
+            user: 'adgitmalumni@gmail.com',
+            password: 'qwerty@123'
         }
     });
 
     var mailOptions = {
-        from: 'vaibhav.aggarwal2402@gmail.com',
-        to: 'vaibhavz2402@gmail.com',
-        subject: 'ADGITM Alumni',
-        text: 'User Login on ADGITM Alumni Page'
+        from: 'adgitmalumni@gmail.com',
+        to: req.user.email,
+        subject: 'Welcome To ADGITM Alumni',
+        text: `Welcome ${req.user.name},
+                Thanks for signing up to keep in touch with Dr. Akhilesh Das Gupta Institute of Technology and Management College. From now on you will get regular updates of all the upcoming Alumni Events.
+                Your Unique Id is ${req.user.id}. 
+                Enjoy your Day!!`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {

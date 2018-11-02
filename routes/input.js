@@ -16,42 +16,42 @@ router.get('/upload', (req,res) => {
 
 router.post('/upload', (req,res) => {
     console.log(req.files)
-    if (Object.keys(req.files).length == 0) {
-        return res.status(400).send('No files were uploaded.');
-      }
- 
-  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-  let sampleFile = req.files.sampleFile;
-  console.log(req.files);
-  console.log(sampleFile.name)
- 
-  // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv(upload, function(err) {
-    if (err)
-      return res.status(500).send(err);
- 
-    res.send('File uploaded!');
-  });
+    if (!req.files) {
+        console.log('no files')
+    }
+
+    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    let sampleFile = req.files.sampleFile;
+    console.log(req.files);
+    console.log(sampleFile.name)
+
+    // Use the mv() method to place the file somewhere on your server
+    sampleFile.mv(upload, function(err) {
+        if (err)
+            return res.status(500).send(err);
+
+        res.send('File uploaded!');
+    });
 })
 
 router.post('/profileupdate', function(req, res) {
 
 
-            console.log(req.files)
-            if (Object.keys(req.files).length == 0) {
-                var path = '';
-                console.log('not upload')
-                
-            }
-        
-        else {
-            // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    console.log(req.files)
+    if (Object.keys(req.files).length === 0) {
+        var path = '';
+        console.log('not upload')
+
+    }
+
+    else {
+        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
         let sampleFile = req.files.sampleFile;
         console.log(req.files);
         console.log(sampleFile.name)
-        var path = 'uploads/'+Date.now()+`${sampleFile.name}`;
-        var upload = 'public/'+path;
-        
+        const path = 'uploads/'+Date.now()+`${sampleFile.name}`;
+        const upload = 'public/'+path;
+
         // Use the mv() method to place the file somewhere on your server
         sampleFile.mv(upload, function(err) {
             if (err)
@@ -59,7 +59,7 @@ router.post('/profileupdate', function(req, res) {
                 console.log(err);
             }
 
-        
+
             console.log('File uploaded!');
         });
     }
@@ -82,7 +82,7 @@ router.post('/profileupdate', function(req, res) {
         twitterLink: req.body.twitterLink,
         ResumeLink: req.body.ResumeLink,
         visitingcard:path,
-        
+
         otherEducation: [{
             yearEntry: req.body.yearEntry,
             yearGraduation: req.body.yearGraduation,
@@ -99,14 +99,14 @@ router.post('/profileupdate', function(req, res) {
     }
 
 
-        new Info(newInfo)
+    new Info(newInfo)
         .save()
-            .then(info => {
-                res.redirect('/profileupdate');
-                done(null,info);
-                });
+        .then(info => {
+            res.redirect('/profileupdate');
+            done(null,info);
+        });
 
-   
+
 });
 
 router.get('/profileupdate',(req,res)=> {
@@ -130,11 +130,9 @@ router.get('/profileupdate',(req,res)=> {
 
 /*
 router.post('/contactus', (req,res) =>{
-
     const Name = req.body.Name;
     const Email = req.body.Email;
     const Message = req.body.Message;
-
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -143,7 +141,6 @@ router.post('/contactus', (req,res) =>{
             password: 'qwerty@123'
         }
     });
-
     var mailOptions = {
         from: Email,
         to: 'adgitmalumni@gmai.com',
@@ -151,7 +148,6 @@ router.post('/contactus', (req,res) =>{
         sub: 'Query on adgitmalumni.in',
         text: Message
     };
-
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
@@ -159,8 +155,6 @@ router.post('/contactus', (req,res) =>{
             console.log('Email sent: ' + info.response);
         }
     });
-
-
 })
 */
 

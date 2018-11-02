@@ -23,7 +23,8 @@ module.exports = function(passport){
             firstName:profile.name.givenName,
             lastName:profile.name.familyName,
             email: profile.emails[0].value,
-            image: image
+            image: image,
+            status: 'Alumni'
         }
         // chedck for existing user
     User.findOne({

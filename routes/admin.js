@@ -3,6 +3,7 @@ const express  = require('express')
     ,mongoose = require('mongoose');
 const User = mongoose.model('User');
 const Admin = mongoose.model('Admin');
+const Info = mongoose.model('Info');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -20,25 +21,27 @@ const LocalStrategy = require('passport-local').Strategy;
 // })
 
 
-// router.get('/adminhome', (req,res) => {
-
-//     res.render('admin/adminhome')
-// });
+router.get('/adminhome', (req,res) => {
+    Info.countDocuments({})
+        .then(number => {
+        console.log('number', number)
+            res.render('admin/adminhome')
+    });
+    res.render('admin/adminhome')
+});
 
 // router.get('/admin',(req,res)=>{
 //    res.render('admin/adminlogin')
 // });
-// router.get('/adminactive', (req,res)=> {
-//     console.log('return function');
-//     User.find({})
-//         .then(result => {
-//             res.render('admin/adminactive', {
-//                 result:result
-
-
-//             })
-//         })
-// });
+router.get('/adminactive', (req,res)=> {
+    console.log('return function');
+    User.find({})
+        .then(result => {
+            res.render('admin/adminactive', {
+                result:result
+            })
+        })
+});
 
 
 

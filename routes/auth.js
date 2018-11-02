@@ -3,7 +3,8 @@ const router = express.Router();
 const passport = require('passport');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
-const Info = mongoose.model('Info');
+const Info = mongoose.model('Info')
+    ,nodemailer = require('nodemailer');
 const config = require('../configuration/ensureauth');
 
 
@@ -13,20 +14,52 @@ router.get('/auth/google', passport.authenticate('google',
 router.get('/auth/google/callback',
 passport.authenticate('google',{failureRedirect:'/'}),
 (req,res)=>{
-    Info.findOne({userID:req.user.id})
-    .then(info => {
-      if(info)
-      {
-          console.log('Proceeding to Dashboard');
-          res.redirect('/profile');
-      }
-      else {
-              console.log('Update Information required');
-              res.redirect('/updateinfo')
-              console.log(req.user);
-      }
-    })
+    if(req.user.status === 'admin')
+    {
+        /*console.log('Welcome to Admin Portal')
 
+
+        const transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+                user: 'adgitmalumni@gmail.com',
+                password: 'qwerty@123'
+            }
+        });
+
+        const mailOptions = {
+            from: 'adgitmalumni@gmail.com',
+            to: req.user.email,
+            subject: 'Welcome To ADGITM Alumni',
+            text: `Welcome,
+                Thanks for signing up to keep in touch with Dr. Akhilesh Das Gupta Institute of Technology and Management College. From now on you will get regular updates of all the upcoming Alumni Events.
+                Your Unique Id is . 
+                Enjoy your Day!!`
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });*/
+        res.redirect('/adminhome');
+    }
+    else {
+        Info.findOne({userID: req.user.id})
+            .then(info => {
+                if (info) {
+                    console.log('Proceeding to Dashboard');
+                    res.redirect('/profile');
+                }
+                else {
+                    console.log('Update Information required');
+                    res.redirect('/updateinfo')
+                    console.log(req.user);
+                }
+            })
+    }
 });
 router.get('/verify', (req,res)=>{
 console.log(req.user)
